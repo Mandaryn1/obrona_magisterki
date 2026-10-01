@@ -13,56 +13,53 @@ Zbiór notatek przygotowanych na egzamin dyplomowy (obronę magisterską).
     5. [Bazy danych bibliograficznych. Baza Scopus.](./PrzygotowanieIPublikowanieArtykułówNaukowych/5_Bazy_danych_bibliograficznych_Baza_Scopus.md)
     6. [Narzędzia AI w pracy naukowca.](./PrzygotowanieIPublikowanieArtykułówNaukowych/6_Narzędzia_AI_w_pracy_naukowca.md)
 
-- Zaawansowane metody analizy i eksploracji danych, od roku akademickiego 2025/2026
+- [Zaawansowana eksploracja danych, do roku akademickiego 2024/2025](./ZaawansowanaEksploracjaDanych/)
 
-    1. Metody zapisu danych przestrzennych. Typ SDO_GEOMETRY.
-    2. Funkcje i operatory przestrzenne. Zapytania przestrzenne, przykłady zastosowań.
-    3. Analiza danych przestrzennych. Omów przykładowe zastosowanie takiej analizy.
-    4. Metody identyfikacji obserwacji odstających. Wymień znane metody i omów jedną z nich.
-    5. Metody estymacji gęstości rozkładu prawdopodobieństwa. Wymień znane metody i omów jedną z nich.
-    6. ANOVA, MANOVA – postawienie zagadnienia, przykłady zastosowań.
-    7. Modele regresji. Regresja wielokrotna. Postawienie zagadnienia.
-    8. Metody redukcji wymiaru i liczności próby. Wymień znane metody i omów jedną z nich.
-    9. Metody analizy skupień. Wymień znane metody i omów jedną z nich.
-    10. Systemy rekomendacji. Wymień rodzaje systemów rekomendacji i omów przykładowy.
-    11. Ocena jakości modeli analizy skupień.
-    12. Ocena jakości modeli regresyjnych i prognozujących.
-    13. Statystyczne sterowanie procesem SPC – cel i metody.
+    1. [Metody identyfikacji obserwacji odstających. Wymień znane metody i omów jedną z nich.](./ZaawansowanaEksploracjaDanych/1_Metody_identyfikacji_obserwacji_odstających.md)
+    2. [Metody estymacji gęstości rozkładu prawdopodobieństwa. Wymień znane metody i omów jedną z nich.](./ZaawansowanaEksploracjaDanych/2_Metody_estymacji_gęstości_rozkładu_prawdopodobieństwa.md)
+    3. [Wnioskowanie statystyczne. ANOVA, MANOVA – postawienie zagadnienia, przykłady zastosowań.](./ZaawansowanaEksploracjaDanych/3_Wnioskowanie_statystyczne_ANOVA_MANOVA.md)
+    4. [Modele regresji. Regresja wielokrotna. Postawienie zagadnienia.](./ZaawansowanaEksploracjaDanych/4_Modele_regresji_Regresja_wielokrotna.md)
+    5. [Metody redukcji wymiaru i liczności próby. Wymień znane metody i omów jedną z nich.](./ZaawansowanaEksploracjaDanych/5_Metody_redukcji_wymiaru_i_liczności_próby.md)
+    6. [Metody analizy skupień. Wymień znane metody i omów jedną z nich.](./ZaawansowanaEksploracjaDanych/6_Metody_analizy_skupień.md)
+    7. [Systemy rekomendacji. Wymień rodzaje systemów rekomendacji i omów przykładowy.](./ZaawansowanaEksploracjaDanych/7_Systemy_rekomendacji.md)
+    8. [Metody porównania modeli uczenia maszynowego. Omów na przykładzie.](./ZaawansowanaEksploracjaDanych/8_Metody_porównania_modeli_uczenia_maszynowego.md)
+    9. [Ocena jakości modeli klasyfikacyjnych.](./ZaawansowanaEksploracjaDanych/9_Ocena_jakości_modeli_klasyfikacyjnych.md)
+    10. [Ocena jakości modeli regresyjnych i prognozujących.](./ZaawansowanaEksploracjaDanych/10_Ocena_jakości_modeli_regresyjnych_i_prognozujących.md)
 
-- Metody wnioskowania wielokryterialnego
+- [Metody wnioskowania wielokryterialnego](./MetodyWnioskowaniaWielokryterialnego/)
 
-    1. Jakie są główne zadania normalizacji wartości analizowanych kryteriów optymalizacji.
-    2. Na czym polega metoda leksykograficzna.
-    3. W jaki sposób wyznaczane są wagi ważności kryteriów w metodzie AHP.
-    4. Opisz warianty należące do zbioru wariantów optymalnych w sensie Pareto.
-    5. Scharakteryzuj metodę Blina.
+    1. [Jakie są główne zadania normalizacji wartości analizowanych kryteriów optymalizacji.](./MetodyWnioskowaniaWielokryterialnego/1_Główne_zadania_normalizacji_wartości_kryteriów_optymalizacji.md)
+    2. [Na czym polega metoda leksykograficzna.](./MetodyWnioskowaniaWielokryterialnego/2_Metoda_leksykograficzna.md)
+    3. [W jaki sposób wyznaczane są wagi ważności kryteriów w metodzie AHP.](./MetodyWnioskowaniaWielokryterialnego/3_Wyznaczanie_wag_ważności_kryteriów_w_metodzie_AHP.md)
+    4. [Opisz warianty należące do zbioru wariantów optymalnych w sensie Pareto.](./MetodyWnioskowaniaWielokryterialnego/4_Warianty_optymalne_w_sensie_Pareto.md)
+    5. [Scharakteryzuj metodę Blina.](./MetodyWnioskowaniaWielokryterialnego/5_Metoda_Blina.md)
 
-- Internet Rzeczy
+- [Internet Rzeczy](./InternetRzeczy/)
 
-    1. Krótko opisz zagadnienie Internetu Rzeczy.
-    2. Co to jest magistrala, interfejs, protokół? Scharakteryzuj i opisz różnice.
-    3. Scharakteryzuj pojęcie mikrokontrolera i mikroprocesora. Podaj różnice między tymi pojęciami.
-    4. Wyjaśnij, co oznacza skrót CISC. Krótko opisz ten termin.
-    5. Wyjaśnij, co oznacza skrót RISC. Krótko opisz to pojęcie.
-    6. Opisz i podaj różnice pomiędzy UART a USRT.
-    7. Czym jest i co powoduje pojemność pasożytnicza?
-    8. Jakie cechy powinien posiadać sensor inteligentny?
-    9. Czym są i do czego służą aktuatory?
-    10. Opisz zasadę działania modulacji szerokości impulsów PWM (ang. pulse width
-    modulation).
+    1. [Krótko opisz zagadnienie Internetu Rzeczy.](./InternetRzeczy/1_Zagadnienie_Internetu_Rzeczy.md)
+    2. [Co to jest magistrala, interfejs, protokół? Scharakteryzuj i opisz różnice.](./InternetRzeczy/2_Magistrala_interfejs_protokół.md)
+    3. [Scharakteryzuj pojęcie mikrokontrolera i mikroprocesora. Podaj różnice między tymi pojęciami.](./InternetRzeczy/3_Mikrokontroler_i_mikroprocesor.md)
+    4. [Wyjaśnij, co oznacza skrót CISC. Krótko opisz ten termin.](./InternetRzeczy/4_Architektura_CISC.md)
+    5. [Wyjaśnij, co oznacza skrót RISC. Krótko opisz to pojęcie.](./InternetRzeczy/5_Architektura_RISC.md)
+    6. [Opisz i podaj różnice pomiędzy UART a USRT.](./InternetRzeczy/6_UART_i_USRT.md)
+    7. [Czym jest i co powoduje pojemność pasożytnicza?](./InternetRzeczy/7_Pojemność_pasożytnicza.md)
+    8. [Jakie cechy powinien posiadać sensor inteligentny?](./InternetRzeczy/8_Cechy_sensora_inteligentnego.md)
+    9. [Czym są i do czego służą aktuatory?](./InternetRzeczy/9_Aktuatory.md)
+    10. [Opisz zasadę działania modulacji szerokości impulsów PWM (ang. pulse width modulation).](./InternetRzeczy/10_Modulacja_szerokości_impulsów_PWM.md)
 
-- Bariery w przestrzeni cyfrowej
+- [Bariery w przestrzeni cyfrowej](./BarieryWPrzestrzeniCyfrowej/)
 
-    1. Projektowanie uniwersalne – idea, przepisy prawne, zasady.
-    2. Ergonomia interfejsów oprogramowania – definicja, obszary, typy i przykłady.
-    3. Użyteczność i dostępność interfejsu oprogramowania.
-    4. Technologie wspomagające osoby z niepełnosprawnościami.
-    5. Wytyczne dostępności treści internetowych WCAG 2.1 – zasady, poziomy, weryfikacja.
-    6. Metody oceny jakości interfejsu – klasyfikacja, typy metod.
-    7. Techniki oceny jakości interfejsów z udziałem i bez udziału użytkowników.
-    8. Metodyka SUS.
-    9. Ocena heurystyczna – heurystyki Nielsena-Molicha.
-    10. Okulografia – idea, istota, urządzenia, eksperyment, rezultaty.
+    1. [Projektowanie uniwersalne – idea, przepisy prawne, zasady.](./BarieryWPrzestrzeniCyfrowej/1_Projektowanie_uniwersalne_idea_przepisy_prawne_zasady.md)
+    2. [Ergonomia interfejsów oprogramowania – definicja, obszary, typy i przykłady.](./BarieryWPrzestrzeniCyfrowej/2_Ergonomia_interfejsów_oprogramowania.md)
+    3. [Użyteczność i dostępność interfejsu oprogramowania.](./BarieryWPrzestrzeniCyfrowej/3_Użyteczność_i_dostępność_interfejsu_oprogramowania.md)
+    4. [Technologie wspomagające osoby z niepełnosprawnościami.](./BarieryWPrzestrzeniCyfrowej/4_Technologie_wspomagające_osoby_z_niepełnosprawnościami.md)
+    5. [Wytyczne dostępności treści internetowych WCAG 2.1 – zasady, poziomy, weryfikacja.](./BarieryWPrzestrzeniCyfrowej/5_Wytyczne_WCAG_2.1_zasady_poziomy_weryfikacja.md)
+    6. [Metody oceny jakości interfejsu – klasyfikacja, typy metod.](./BarieryWPrzestrzeniCyfrowej/6_Metody_oceny_jakości_interfejsu_klasyfikacja_typy_metod.md)
+    7. [Techniki oceny jakości interfejsów z udziałem i bez udziału użytkowników.](./BarieryWPrzestrzeniCyfrowej/7_Techniki_oceny_jakości_interfejsów_z_udziałem_i_bez_udziału_użytkowników.md)
+    8. [Metodyka SUS.](./BarieryWPrzestrzeniCyfrowej/8_Metodyka_SUS.md)
+    9. [Ocena heurystyczna – heurystyki Nielsena-Molicha.](./BarieryWPrzestrzeniCyfrowej/9_Ocena_heurystyczna_heurystyki_Nielsena-Molicha.md)
+    10. [Okulografia – idea, istota, urządzenia, eksperyment, rezultaty.](./BarieryWPrzestrzeniCyfrowej/10_Okulografia_idea_istota_urządzenia_eksperyment_rezultaty.md)
+    - [Materiały dodatkowe: persony, UCD, prototypowanie, raport z badań](./BarieryWPrzestrzeniCyfrowej/Dodatkowe_Persony_UCD_Prototypowanie_Raport_z_badań.md)
 
 - Bezpieczeństwo środowiska i aplikacji chmurowych
 
