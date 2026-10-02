@@ -1,4 +1,4 @@
-# Protokół Diffiego-Hellmana (DH)
+# Wyjaśnij ogólną ideę protokołu Diffiego-Hellmana. Dlaczego umożliwia on uzgodnienie wspólnego sekretu przez niezabezpieczony kanał komunikacyjny?
 
 ## Cel
 
@@ -38,51 +38,7 @@ Wspólny klucz: **$K=2$**. Podsłuchujący zna $p=23,\,g=5,\,A=8,\,B=19$, ale ab
 
 ## Dlaczego jest bezpieczny wobec podsłuchu
 
-Podsłuchujący (Ewa) widzi: $p,g,A,B$. Chce obliczyć $g^{ab}$.
-
-- Wprost: znaleźć $a$ z $A=g^a$ – **problem logarytmu dyskretnego (DLP)**; dla dużych $p$ nie ma wydajnego algorytmu (najlepsze: sito ciała liczbowego – sub-wykładnicze; dla $p$ 2048 bitów nieosiągalne).
-- Bezpieczeństwo protokołu opiera się formalnie na **założeniu Diffiego-Hellmana (CDH)**: z $g^a$ i $g^b$ trudno obliczyć $g^{ab}$ (nie jest znane, czy trudniejsze niż DLP, ale **w praktyce nie znaleziono lepszego ataku**). Wersja decyzyjna: **DDH**.
-- Sekrety $a,b$ **nigdy nie opuszczają** stron; przez kanał idą tylko $A,B$.
-
-## Wymagania na parametry
-
-- $p$ – **bezpieczna liczba pierwsza** ($p=2q+1$, $q$ pierwsze), zalecane **≥ 2048 bitów** (standardowe grupy: RFC 3526, RFC 7919 *ffdhe*),
-- $g$ generuje podgrupę dużego rzędu pierwszego,
-- $a,b$ – losowe, o odpowiedniej długości (≥ 256 bitów),
-- **Walidacja kluczy publicznych** (sprawdzenie, że $A\notin\{0,1,p-1\}$, należy do podgrupy), by uniknąć ataków na małe podgrupy.
-- **Nie** stosować grup małych/ułomnych (DH-512, DH-1024 – atak *Logjam*).
-
-## Główny problem: brak uwierzytelniania – atak „człowiek w środku" (MITM)
-
-Czysty DH **nie uwierzytelnia stron**. Aktywny przeciwnik Mallory:
-
-1. przechwytuje $A$ od Alicji, wysyła do Boba własne $M_1=g^{m_1}$,
-2. przechwytuje $B$ od Boba, wysyła do Alicji $M_2=g^{m_2}$,
-3. Alicja uzgadnia klucz $K_A=g^{a m_2}$ z Mallorym, Bob $K_B=g^{b m_1}$ z Mallorym – Mallory **odczytuje i przekazuje** wiadomości, a strony nie wiedzą o niczym.
-
-**Obrona:** **uwierzytelnienie wymiany** – **podpisy cyfrowe** (certyfikaty) na wartościach DH (jak w TLS, IKE, SSH), MAC z kluczem wstępnie współdzielonym, hasła (PAKE).
-
-## Warianty i zastosowania
-
-| Wariant | Opis |
-| :--- | :--- |
-| **DHE / EDH** (ephemeral) | **efemeryczne** klucze DH (nowe $a,b$ dla każdej sesji) → **forward secrecy** (poufność przekazywania): kompromitacja klucza długoterminowego nie ujawnia dawnych sesji |
-| **ECDH / ECDHE** | DH na **krzywych eliptycznych** (Curve25519, P-256) – krótsze klucze, szybsze (temat 14) |
-| **Statyczny DH** | stałe klucze publiczne (np. w certyfikacie); brak forward secrecy |
-| **DH z wieloma stronami** | uogólnienia (Burmester–Desmedt) |
-| **X3DH, Double Ratchet** | protokoły komunikatorów (Signal) oparte na DH |
-| **KEM (DH jako enkapsulacja klucza)** | w podejściu postkwantowym zastępowany przez ML-KEM |
-
-**Zastosowania:** **TLS** (ECDHE), **SSH**, **IPsec/IKE**, VPN (WireGuard – Curve25519), Signal, WhatsApp.
-
-## DH a RSA
-
-| | DH | RSA |
-| :--- | :--- | :--- |
-| Funkcja | **uzgadnianie klucza** (obie strony wnoszą wkład) | szyfrowanie/podpis (klucz transportowany) |
-| Problem trudny | **logarytm dyskretny / CDH** | faktoryzacja / problem RSA |
-| Forward secrecy | **tak** (wersje efemeryczne) | nie przy transportowaniu klucza RSA |
-| Podpis | nie | tak |
+Dlaczego to działa przez niezabezpieczony kanał: podsłuchujący widzi p, g, A i B, ale żeby policzyć gᵃᵇ, musiałby znać a lub b. Ich wyznaczenie z A lub B to problem logarytmu dyskretnego, który dla dużych liczb jest praktycznie nieobliczalny. Obliczenie potęgi modulo jest łatwe, a odwrócenie go jest trudne.
 
 ## Podsumowanie
 

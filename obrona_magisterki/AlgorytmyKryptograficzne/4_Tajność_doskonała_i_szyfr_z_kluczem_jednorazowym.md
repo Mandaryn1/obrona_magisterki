@@ -1,74 +1,16 @@
-# Tajność doskonała. Szyfr z kluczem jednorazowym
+# Wyjaśnij pojęcie tajności doskonałej. Dlaczego szyfr z kluczem jednorazowym jest doskonale tajny, ale ponowne użycie tego samego klucza jest niebezpieczne?
 
-## Tajność doskonała (perfect secrecy)
+**Tajność doskonała (Shannon)** oznacza, że szyfrogram **nie daje żadnej informacji o tekście jawnym**. Formalnie: prawdopodobieństwo, że wiadomością jest M, po zobaczeniu szyfrogramu C jest takie samo jak przed jego zobaczeniem, czyli P(M|C) = P(M). Przeciwnik, nawet z nieograniczoną mocą obliczeniową, nie dowie się niczego o treści. Shannon udowodnił, że warunkiem jest klucz **co najmniej tak długi jak wiadomość** i **użyty tylko raz**.
 
-Pojęcie wprowadzone przez **Claude'a Shannona** (1949, *Communication Theory of Secrecy Systems*). Szyfr ma **tajność doskonałą**, jeśli **szyfrogram nie dostarcza żadnej informacji o tekście jawnym** – wiedza atakującego o wiadomości po zobaczeniu szyfrogramu jest taka sama jak przed jego zobaczeniem, **nawet przy nieograniczonej mocy obliczeniowej**.
+**Szyfr z kluczem jednorazowym (OTP, one-time pad)** szyfruje przez XOR tekstu z kluczem: c = m ⊕ k. Klucz jest **losowy, równie długi jak wiadomość i używany jednorazowo**. Jest doskonale tajny, bo dla danego szyfrogramu każdy tekst jawny tej samej długości jest równie prawdopodobny: istnieje dokładnie jeden klucz, który go z tym szyfrogramem łączy, a klucz jest losowy. Szyfrogram wygląda więc jak losowy szum.
 
-**Definicja formalna:** dla każdego rozkładu na wiadomościach, każdej wiadomości $m$ i szyfrogramu $c$ (o dodatniej wartości prawdopodobieństwa):
+**Dlaczego ponowne użycie klucza jest niebezpieczne:** jeśli ten sam klucz zaszyfruje dwie wiadomości, to
 
-$$P(M=m\mid C=c)=P(M=m)$$
+c₁ ⊕ c₂ = (m₁ ⊕ k) ⊕ (m₂ ⊕ k) = m₁ ⊕ m₂
 
-Równoważnie: $P(C=c\mid M=m_0)=P(C=c\mid M=m_1)$ dla dowolnych $m_0,m_1$ – rozkład szyfrogramu nie zależy od wiadomości. Czyli informacja wzajemna $I(M;C)=0$.
+Klucz się **skraca** i zostaje XOR dwóch tekstów jawnych. Z niego można odtwarzać treść przez analizę statystyczną i zgadywanie fragmentów (tzw. *crib dragging*). Gdy poznamy jeden tekst, od razu mamy klucz i wszystkie pozostałe wiadomości. Tak złamano szyfrowaną korespondencję radziecką w projekcie **VENONA**, gdzie klucze częściowo użyto ponownie.
 
-### Warunki konieczne (twierdzenie Shannona)
-
-Przy $|M|=|K|=|C|$ szyfr ma tajność doskonałą wtedy i tylko wtedy, gdy:
-
-1. **klucz jest wybierany jednostajnie losowo** z całej przestrzeni kluczy,
-2. **każda para $(m,c)$** ma dokładnie jeden klucz przekształcający $m$ w $c$.
-
-Wniosek: **długość klucza ≥ długość wiadomości** ($|K|\ge|M|$). Klucz krótszy od wiadomości **nie może** zapewnić tajności doskonałej.
-
-## Szyfr z kluczem jednorazowym (one-time pad, OTP; szyfr Vernama)
-
-**Gilbert Vernam** (1917) zaproponował XOR; **Joseph Mauborgne** zauważył, że klucz musi być losowy i jednorazowy. Shannon udowodnił doskonałą tajność.
-
-### Algorytm
-
-- klucz $k$ – **losowy ciąg bitów tej samej długości** co wiadomość, używany **tylko raz**,
-- szyfrowanie: $c=m\oplus k$, deszyfrowanie: $m=c\oplus k$ (XOR jest swoją odwrotnością).
-
-(Wersja alfabetowa: dodawanie mod 26, „one-time pad" z notesem papierowym.)
-
-**Przykład** (8 bitów): $m=01001000$ („H"), $k=10110101$ → $c=m\oplus k=11111101$. Odszyfrowanie: $c\oplus k=01001000$.
-
-### Dlaczego jest doskonale tajny
-
-Dla każdego szyfrogramu $c$ i **każdego możliwego tekstu** $m'$ (tej samej długości) istnieje dokładnie jeden klucz $k'=c\oplus m'$, który go wygeneruje, a wszystkie klucze są **równie prawdopodobne**. Atakujący widzi więc szyfrogram zgodny z **każdą** wiadomością z równym prawdopodobieństwem – np. szyfrogram `11111101` może być zarówno „H", jak i dowolną inną literą. Brute force niczego nie daje (nie wiadomo, który wynik jest właściwy).
-
-## Dlaczego ponowne użycie klucza jest niebezpieczne
-
-Jeśli ten sam klucz $k$ posłuży do zaszyfrowania dwóch wiadomości:
-
-$$c_1\oplus c_2=(m_1\oplus k)\oplus(m_2\oplus k)=m_1\oplus m_2$$
-
-**Klucz znika z równania**, a atakujący otrzymuje XOR dwóch tekstów jawnych – bez żadnych tajemnic. Z tego można odtworzyć oba teksty metodami statystycznymi (analiza częstości, znane fragmenty, **crib dragging** – przesuwanie zgadywanego słowa po $c_1\oplus c_2$). Znając choćby jedną wiadomość, atakujący odzyskuje **cały klucz** ($k=m_1\oplus c_1$) i odczytuje wszystkie inne.
-
-**Przykład** (sprawdzony): $m_1=$ `ATTACK AT DAWN`, $m_2=$ `RETREAT AT TEN`, ten sam klucz – obliczone $c_1\oplus c_2$ jest identyczne z $m_1\oplus m_2$. Z cząstkowej znajomości (np. „AT" w obu miejscach) rozpoczyna się łamanie.
-
-Dodatkowo szyfr jest **plastyczny (malleable)**: atakujący może zmienić bit w szyfrogramie i zmieni dokładnie ten bit w tekście jawnym – **brak integralności**; potrzebny MAC.
-
-### Przykłady historyczne
-
-- **Projekt VENONA** (USA, 1943–1980): Sowieci ponownie użyli części stron notesów OTP; dzięki temu dało się częściowo odczytać radzieckie depesze.
-- **WEP** (Wi-Fi) i błędne użycie strumieniowych szyfrów z powtarzanym strumieniem klucza (RC4 z krótkim IV) – ta sama klasa błędu (powtórzenie strumienia).
-- **Powtórne użycie nonce w AES-GCM / ChaCha20** – ten sam efekt (odzyskanie XOR tekstów i klucza uwierzytelniającego).
-
-## Wady praktyczne OTP
-
-| Problem | Opis |
-| :--- | :--- |
-| **Długość klucza** | klucz tak długi jak wiadomość – trzeba go wcześniej bezpiecznie przekazać (**problem dystrybucji klucza przenosi się**: skoro potrafimy bezpiecznie przekazać klucz, to po co nie przekazać samej wiadomości?) |
-| **Prawdziwa losowość** | klucz musi pochodzić z **prawdziwego** źródła losowego (nie z PRNG – wtedy to szyfr strumieniowy bez tajności doskonałej) |
-| **Jednorazowość** | zarządzanie, niszczenie użytych fragmentów, synchronizacja stron |
-| **Brak integralności** | podatny na modyfikację bez MAC |
-| **Koszt** | duże ilości danych, ręczne zarządzanie |
-
-Używany w ograniczonym zakresie: **gorąca linia Waszyngton–Moskwa** (historyczny), komunikacja wywiadowcza/dyplomatyczna wysokiego ryzyka; **QKD** (kryptografia kwantowa, temat 15) generuje klucze, które można użyć w OTP.
-
-## Szyfry strumieniowe jako przybliżenie OTP
-
-Zamiast prawdziwie losowego klucza stosuje się **krótki klucz + generator pseudolosowy (PRNG/szyfr strumieniowy)**, który rozwija go w długi strumień. Nie ma już tajności doskonałej (klucz krótszy od wiadomości), ale zachowuje się **bezpieczeństwo obliczeniowe** – ten sam wzór $c=m\oplus z$, lecz **bezpieczne tylko przy unikalnym nonce** dla każdej wiadomości.
+**Wady OTP w praktyce:** klucz musi być tak długi jak wiadomość, bezpiecznie rozdzielany i naprawdę losowy. Dodatkowo szyfr nie zapewnia **integralności**: zmiana bitu w szyfrogramie zmienia ten sam bit tekstu jawnego. Dlatego stosuje się szyfry strumieniowe, które naśladują OTP pseudolosowym strumieniem, ale z tym samym ograniczeniem: nonce nie wolno powtórzyć.
 
 ## Podsumowanie
 
