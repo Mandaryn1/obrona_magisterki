@@ -4,7 +4,7 @@ Zbiór notatek przygotowanych na egzamin dyplomowy (obronę magisterską).
 
 ## Rozdziały - przedmioty
 
-- [Przygotowanie i publikowanie artykułów naukowych]
+- [Przygotowanie i publikowanie artykułów naukowych](./obrona_magisterki/PrzygotowanieIPublikowanieArtykułówNaukowych/PrzygotowanieIPublikowanieArtykułówNaukowych_tytul.md)
 
     1. [Struktura publikacji naukowych, schemat IMRaD.](./obrona_magisterki/PrzygotowanieIPublikowanieArtykułówNaukowych/1_Struktura_publikacji_naukowych_schemat_IMRaD.md)
     2. [Identyfikator ORCID. Indeks Hirscha.](./obrona_magisterki/PrzygotowanieIPublikowanieArtykułówNaukowych/2_Identyfikator_ORCID_Indeks_Hirscha.md)
@@ -13,7 +13,7 @@ Zbiór notatek przygotowanych na egzamin dyplomowy (obronę magisterską).
     5. [Bazy danych bibliograficznych. Baza Scopus.](./obrona_magisterki/PrzygotowanieIPublikowanieArtykułówNaukowych/5_Bazy_danych_bibliograficznych_Baza_Scopus.md)
     6. [Narzędzia AI w pracy naukowca.](./obrona_magisterki/PrzygotowanieIPublikowanieArtykułówNaukowych/6_Narzędzia_AI_w_pracy_naukowca.md)
 
-- [Zaawansowana eksploracja danych, do roku akademickiego 2024/2025]
+- [Zaawansowana eksploracja danych, do roku akademickiego 2024/2025](./obrona_magisterki/ZaawansowanaEksploracjaDanych/ZaawansowanaEksploracjaDanych_tytul.md)
 
     1. [Metody identyfikacji obserwacji odstających. Wymień znane metody i omów jedną z nich.](./obrona_magisterki/ZaawansowanaEksploracjaDanych/1_Metody_identyfikacji_obserwacji_odstających.md)
     2. [Metody estymacji gęstości rozkładu prawdopodobieństwa. Wymień znane metody i omów jedną z nich.](./obrona_magisterki/ZaawansowanaEksploracjaDanych/2_Metody_estymacji_gęstości_rozkładu_prawdopodobieństwa.md)
@@ -26,7 +26,7 @@ Zbiór notatek przygotowanych na egzamin dyplomowy (obronę magisterską).
     9. [Ocena jakości modeli klasyfikacyjnych.](./obrona_magisterki/ZaawansowanaEksploracjaDanych/9_Ocena_jakości_modeli_klasyfikacyjnych.md)
     10. [Ocena jakości modeli regresyjnych i prognozujących.](./obrona_magisterki/ZaawansowanaEksploracjaDanych/10_Ocena_jakości_modeli_regresyjnych_i_prognozujących.md)
 
-- [Metody wnioskowania wielokryterialnego]
+- [Metody wnioskowania wielokryterialnego](./obrona_magisterki/MetodyWnioskowaniaWielokryterialnego/MetodyWnioskowaniaWielokryterialnego_tytul.md)
 
     1. [Jakie są główne zadania normalizacji wartości analizowanych kryteriów optymalizacji.](./obrona_magisterki/MetodyWnioskowaniaWielokryterialnego/1_Główne_zadania_normalizacji_wartości_kryteriów_optymalizacji.md)
     2. [Na czym polega metoda leksykograficzna.](./obrona_magisterki/MetodyWnioskowaniaWielokryterialnego/2_Metoda_leksykograficzna.md)
@@ -34,7 +34,7 @@ Zbiór notatek przygotowanych na egzamin dyplomowy (obronę magisterską).
     4. [Opisz warianty należące do zbioru wariantów optymalnych w sensie Pareto.](./obrona_magisterki/MetodyWnioskowaniaWielokryterialnego/4_Warianty_optymalne_w_sensie_Pareto.md)
     5. [Scharakteryzuj metodę Blina.](./obrona_magisterki/MetodyWnioskowaniaWielokryterialnego/5_Metoda_Blina.md)
 
-- [Internet Rzeczy]
+- [Internet Rzeczy](./obrona_magisterki/InternetRzeczy/InternetRzeczy_tytul.md)
 
     1. [Krótko opisz zagadnienie Internetu Rzeczy.](./obrona_magisterki/InternetRzeczy/1_Zagadnienie_Internetu_Rzeczy.md)
     2. [Co to jest magistrala, interfejs, protokół? Scharakteryzuj i opisz różnice.](./obrona_magisterki/InternetRzeczy/2_Magistrala_interfejs_protokół.md)
@@ -47,7 +47,7 @@ Zbiór notatek przygotowanych na egzamin dyplomowy (obronę magisterską).
     9. [Czym są i do czego służą aktuatory?](./obrona_magisterki/InternetRzeczy/9_Aktuatory.md)
     10. [Opisz zasadę działania modulacji szerokości impulsów PWM (ang. pulse width modulation).](./obrona_magisterki/InternetRzeczy/10_Modulacja_szerokości_impulsów_PWM.md)
 
-- [Bariery w przestrzeni cyfrowej]
+- [Bariery w przestrzeni cyfrowej](./obrona_magisterki/BarieryWPrzestrzeniCyfrowej/BarieryWPrzestrzeniCyfrowej_tytul.md)
 
     1. [Projektowanie uniwersalne – idea, przepisy prawne, zasady.](./obrona_magisterki/BarieryWPrzestrzeniCyfrowej/1_Projektowanie_uniwersalne_idea_przepisy_prawne_zasady.md)
     2. [Ergonomia interfejsów oprogramowania – definicja, obszary, typy i przykłady.](./obrona_magisterki/BarieryWPrzestrzeniCyfrowej/2_Ergonomia_interfejsów_oprogramowania.md)
@@ -61,7 +61,7 @@ Zbiór notatek przygotowanych na egzamin dyplomowy (obronę magisterską).
     10. [Okulografia – idea, istota, urządzenia, eksperyment, rezultaty.](./obrona_magisterki/BarieryWPrzestrzeniCyfrowej/10_Okulografia_idea_istota_urządzenia_eksperyment_rezultaty.md)
     - [Materiały dodatkowe: persony, UCD, prototypowanie, raport z badań](./obrona_magisterki/BarieryWPrzestrzeniCyfrowej/Dodatkowe_Persony_UCD_Prototypowanie_Raport_z_badań.md)
 
-- [Bezpieczeństwo środowiska i aplikacji chmurowych]
+- [Bezpieczeństwo środowiska i aplikacji chmurowych](./obrona_magisterki/BezpieczeństwoŚrodowiskaIAplikacjiChmurowych/BezpieczeństwoŚrodowiskaIAplikacjiChmurowych_tytul.md)
 
     1. [Jakie są cechy chmury obliczeniowej wg NIST?](./obrona_magisterki/BezpieczeństwoŚrodowiskaIAplikacjiChmurowych/1_Cechy_chmury_obliczeniowej_wg_NIST.md)
     2. [Jakie są główne zagrożenia bezpieczeństwa chmury?](./obrona_magisterki/BezpieczeństwoŚrodowiskaIAplikacjiChmurowych/2_Główne_zagrożenia_bezpieczeństwa_chmury.md)
@@ -79,7 +79,7 @@ Zbiór notatek przygotowanych na egzamin dyplomowy (obronę magisterską).
     14. [Co oznacza pojęcie Data minimization?](./obrona_magisterki/BezpieczeństwoŚrodowiskaIAplikacjiChmurowych/14_Data_minimization_minimalizacja_danych.md)
     15. [Czym jest OWASP Top 10?](./obrona_magisterki/BezpieczeństwoŚrodowiskaIAplikacjiChmurowych/15_OWASP_Top_10.md)
 
-- [Algorytmy kryptograficzne]
+- [Algorytmy kryptograficzne](./obrona_magisterki/AlgorytmyKryptograficzne/AlgorytmyKryptograficzne_tytul.md)
 
     1. [Wyjaśnij, czym zajmuje się kryptografia, a czym kryptoanaliza. Jakie są podstawowe cele stosowania mechanizmów kryptograficznych?](./obrona_magisterki/AlgorytmyKryptograficzne/1_Kryptografia_i_kryptoanaliza_cele_mechanizmów_kryptograficznych.md)
     2. [Przedstaw podstawową klasyfikację systemów kryptograficznych. Wyjaśnij różnice między systemami symetrycznymi i asymetrycznymi oraz strumieniowymi i blokowymi.](./obrona_magisterki/AlgorytmyKryptograficzne/2_Klasyfikacja_systemów_kryptograficznych.md)
@@ -97,7 +97,7 @@ Zbiór notatek przygotowanych na egzamin dyplomowy (obronę magisterską).
     14. [Na czym polega główna idea kryptografii krzywych eliptycznych? Dlaczego jest ona atrakcyjna w porównaniu z klasycznymi systemami asymetrycznymi?](./obrona_magisterki/AlgorytmyKryptograficzne/14_Kryptografia_krzywych_eliptycznych.md)
     15. [Omów ogólnie, jakie wyzwania dla współczesnej kryptografii wiążą się z rozwojem komputerów kwantowych. Czym różni się kryptografia kwantowa od kryptografii postkwantowej?](./obrona_magisterki/AlgorytmyKryptograficzne/15_Komputery_kwantowe_a_kryptografia_kwantowa_i_postkwantowa.md)
 
-- [Bezpieczeństwo w sieciach komputerowych]
+- [Bezpieczeństwo w sieciach komputerowych](./obrona_magisterki/BezpieczeństwoWSieciachKomputerowych/BezpieczeństwoWSieciachKomputerowych_tytul.md)
 
     1. [Podstawowe zadania bezpieczeństwa i cyberbezpieczeństwa w infrastrukturze sieciowej.](./obrona_magisterki/BezpieczeństwoWSieciachKomputerowych/1_Podstawowe_zadania_bezpieczeństwa_i_cyberbezpieczeństwa_w_infrastrukturze_sieciowej.md)
     2. [Rola systemów Windows i Linux w analizie bezpieczeństwa sieci komputerowej.](./obrona_magisterki/BezpieczeństwoWSieciachKomputerowych/2_Rola_systemów_Windows_i_Linux_w_analizie_bezpieczeństwa_sieci.md)
@@ -112,7 +112,7 @@ Zbiór notatek przygotowanych na egzamin dyplomowy (obronę magisterską).
     11. [Podstawowe działania administratora w zakresie zabezpieczania infrastruktury sieciowej.](./obrona_magisterki/BezpieczeństwoWSieciachKomputerowych/11_Podstawowe_działania_administratora_w_zakresie_zabezpieczania_infrastruktury_sieciowej.md)
     12. [Praktyczne znaczenie narzędzi takich jak Wireshark, nmap oraz systemowe narzędzia diagnostyczne.](./obrona_magisterki/BezpieczeństwoWSieciachKomputerowych/12_Praktyczne_znaczenie_Wireshark_nmap_i_systemowych_narzędzi_diagnostycznych.md)
 
-- [Ochrona sieci dostępowych]
+- [Ochrona sieci dostępowych](./obrona_magisterki/OchronaSieciDostępowych/OchronaSieciDostępowych_tytul.md)
 
     1. [Podstawowe zagrożenia występujące w lokalnych sieciach komputerowych oraz ich wpływ na bezpieczeństwo infrastruktury.](./obrona_magisterki/OchronaSieciDostępowych/1_Podstawowe_zagrożenia_w_lokalnych_sieciach_komputerowych.md)
     2. [Podatności technologii Ethernet oraz protokołów wykorzystywanych w lokalnych sieciach komputerowych.](./obrona_magisterki/OchronaSieciDostępowych/2_Podatności_Ethernetu_i_protokołów_lokalnych_sieci_komputerowych.md)
@@ -126,7 +126,7 @@ Zbiór notatek przygotowanych na egzamin dyplomowy (obronę magisterską).
     10. [Systemy zarządzania bezpieczeństwem informacji w ochronie sieci lokalnych.](./obrona_magisterki/OchronaSieciDostępowych/10_Systemy_zarządzania_bezpieczeństwem_informacji_w_ochronie_sieci_lokalnych.md)
     11. [Zagrożenia i metody ochrony systemów mobilnych oraz urządzeń IoT.](./obrona_magisterki/OchronaSieciDostępowych/11_Zagrożenia_i_metody_ochrony_systemów_mobilnych_oraz_urządzeń_IoT.md)
 
-- [Bezpieczeństwo sieci teleinformatycznych]
+- [Bezpieczeństwo sieci teleinformatycznych](./obrona_magisterki/BezpieczeństwoSieciTeleinformatycznych/BezpieczeństwoSieciTeleinformatycznych_tytul.md)
 
     1. [Ataki polegające na rozpoznaniu, uzyskaniu dostępu oraz inżynierii społecznej.](./obrona_magisterki/BezpieczeństwoSieciTeleinformatycznych/1_Ataki_polegające_na_rozpoznaniu_uzyskaniu_dostępu_oraz_inżynierii_społecznej.md)
     2. [Standardy i dobre praktyki bezpieczeństwa: ISO 27001, NIS2 oraz inne wybrane normy.](./obrona_magisterki/BezpieczeństwoSieciTeleinformatycznych/2_Standardy_i_dobre_praktyki_bezpieczeństwa_ISO_27001_NIS2_i_inne_normy.md)
@@ -140,7 +140,7 @@ Zbiór notatek przygotowanych na egzamin dyplomowy (obronę magisterską).
     10. [Etapy i metody testowania bezpieczeństwa sieci teleinformatycznych.](./obrona_magisterki/BezpieczeństwoSieciTeleinformatycznych/10_Etapy_i_metody_testowania_bezpieczeństwa_sieci_teleinformatycznych.md)
     11. [Rola sztucznej inteligencji i uczenia maszynowego w ochronie sieci teleinformatycznych.](./obrona_magisterki/BezpieczeństwoSieciTeleinformatycznych/11_Zastosowanie_sztucznej_inteligencji_i_uczenia_maszynowego_w_ochronie_sieci.md)
 
-- [Bezpieczeństwo systemów operacyjnych i usług]
+- [Bezpieczeństwo systemów operacyjnych i usług](./obrona_magisterki/BezpieczeństwoSystemówOperacyjnychIUsług/BezpieczeństwoSystemówOperacyjnychIUsług_tytul.md)
 
     1. [Podstawowe cele bezpieczeństwa systemów operacyjnych i usług sieciowych.](./obrona_magisterki/BezpieczeństwoSystemówOperacyjnychIUsług/1_Podstawowe_cele_bezpieczeństwa_systemów_operacyjnych_i_usług_sieciowych.md)
     2. [Architektura systemu operacyjnego z punktu widzenia bezpieczeństwa.](./obrona_magisterki/BezpieczeństwoSystemówOperacyjnychIUsług/2_Architektura_systemu_operacyjnego_z_punktu_widzenia_bezpieczeństwa.md)
