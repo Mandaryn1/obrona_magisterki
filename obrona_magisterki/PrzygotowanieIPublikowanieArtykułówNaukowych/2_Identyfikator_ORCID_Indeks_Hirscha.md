@@ -44,3 +44,6 @@ Po opublikowaniu swoich prac w wolnym dostępie można policzyć cytowania za po
 - naukowcy o krótkim stażu nie mają szans na wysoki h-index,
 - jest mało zróżnicowany, wielu naukowców uzyskuje podobny h-index,
 - zjawisko cytowania negatywnego – cytowanie nie musi oznaczać uznania dla tekstu naukowego lub badacza, może oznaczać krytykę.
+
+---
+[⬅️ Poprzedni temat](1_Struktura_publikacji_naukowych_schemat_IMRaD.md) | [Powrót do spisu treści](../../README.md) | [Następny temat ➡️](3_Rodzaje_artykułów_naukowych.md)

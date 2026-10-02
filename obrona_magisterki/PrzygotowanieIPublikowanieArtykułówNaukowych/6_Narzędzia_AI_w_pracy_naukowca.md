@@ -29,3 +29,6 @@ Jest to zaawansowane narzędzie oparte na generatywnej sztucznej inteligencji (L
 ## Podsumowanie wartości dla badacza
 
 Oba asystenty AI pomagają rozwiązywać typowe problemy współczesnych naukowców, takie jak **przeciążenie informacyjne**, **nieefektywne wyszukiwanie** tradycyjnymi metodami oraz **silosy dyscyplinarne**, które utrudniają współpracę między różnymi dziedzinami nauki. Dzięki integracji modeli językowych z rzetelnymi, zweryfikowanymi bazami danych, badacze otrzymują wiarygodne podsumowania poparte konkretnymi cytowaniami, co minimalizuje zjawisko halucynacji i zwiększa efektywność całego procesu badawczego.
+
+---
+[⬅️ Poprzedni temat](5_Bazy_danych_bibliograficznych_Baza_Scopus.md) | [Powrót do spisu treści](../../README.md)

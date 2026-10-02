@@ -22,3 +22,6 @@ Terminu „lista filadelfijska” użył jako pierwszy Andrzej Kajetan Wróblews
 - Journal Citation Reports (JCR) Social Sciences Edition.
 
 Tytuły czasopism legitymujących się wskaźnikiem Impact Factor publikowane są w postaci listy za dany rok i umieszczane w osobnym wydawnictwie ISI Journal Citation Reports (JCR). Dostęp do listy mają subskrybenci wydawnictwa Thomson Reuters, powinna więc go mieć większość uczelni wyższych w kraju
+
+---
+[⬅️ Poprzedni temat](3_Rodzaje_artykułów_naukowych.md) | [Powrót do spisu treści](../../README.md) | [Następny temat ➡️](5_Bazy_danych_bibliograficznych_Baza_Scopus.md)

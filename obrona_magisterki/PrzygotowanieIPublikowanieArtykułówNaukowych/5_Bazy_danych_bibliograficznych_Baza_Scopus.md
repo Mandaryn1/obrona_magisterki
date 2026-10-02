@@ -85,3 +85,6 @@ Baza Scopus jest to największa na świecie, niezależna od źródła baza stres
 Wszystkie uczelnie wyższe i instytuty naukowe mają dostęp do Scopusa na podstawie licencji krajowej. Elsevier zadbał o to, aby mieć od Ministerstwa listę adresów IP instytucji, które mają prawo do zalogowania i korzystania z bazy.
 
 Scopus jest neutralny w doborze źródeł, opiera się na ocenie niezależnych ekspertów z różnych dziedzin recenzowane, wysokiej jakości, czy czasopismo przestrzega standardów wydawniczych.
+
+---
+[⬅️ Poprzedni temat](4_Wskaźniki_bibliometryczne_Lista_Filadelfijska.md) | [Powrót do spisu treści](../../README.md) | [Następny temat ➡️](6_Narzędzia_AI_w_pracy_naukowca.md)

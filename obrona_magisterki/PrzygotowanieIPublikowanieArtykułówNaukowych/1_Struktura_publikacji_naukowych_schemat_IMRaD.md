@@ -63,3 +63,6 @@ Pokazanie, co nasze wyniki w ogóle znaczą i dlaczego nasze analizy są ważne.
 - Jakie wnioski z tego można wyciągnąć?
 - Jakie plany badawcze mamy?
 - Czy nasze wyniki potwierdziły hipotezę?
+
+---
+[⬅️️ Poprzedni temat](0_Wstep.md) | [Powrót do spisu treści](../../README.md) | [Następny temat ➡️](2_Identyfikator_ORCID_Indeks_Hirscha.md)

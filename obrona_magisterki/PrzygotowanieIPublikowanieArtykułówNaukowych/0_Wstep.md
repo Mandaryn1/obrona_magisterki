@@ -27,3 +27,6 @@ Warunki poprawności hipotezy:
 
 - Ma określoną strukturę, w której musimy przedstawić czytelnikowi kontekst naszej pracy oraz wyjaśnić, jaki problem chcemy rozwiązać i dlaczego.
 - Po przeczytaniu publikacji czytelnik musi być w stanie wskazać jednoznaczny wniosek przyczyniający się do postępu w danej dziedzinie badawczej.
+
+---
+[⬅️ Poprzedni temat](PrzygotowanieIPublikowanieArtykułówNaukowych_tytul.md) | [Powrót do spisu treści](../../README.md) | [Następny temat ➡️](1_Struktura_publikacji_naukowych_schemat_IMRaD.md)
