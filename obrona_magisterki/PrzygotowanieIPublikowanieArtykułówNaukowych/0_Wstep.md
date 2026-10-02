@@ -29,4 +29,4 @@ Warunki poprawności hipotezy:
 - Po przeczytaniu publikacji czytelnik musi być w stanie wskazać jednoznaczny wniosek przyczyniający się do postępu w danej dziedzinie badawczej.
 
 ---
-[⬅️ Poprzedni temat](PrzygotowanieIPublikowanieArtykułówNaukowych_tytul.md) | [Powrót do spisu treści](../../README.md) | [Następny temat ➡️](1_Struktura_publikacji_naukowych_schemat_IMRaD.md)
+[⬅️ Poprzedni temat](PrzygotowanieIPublikowanieArtykułówNaukowych_tytul.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](1_Struktura_publikacji_naukowych_schemat_IMRaD.md)

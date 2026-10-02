@@ -78,3 +78,6 @@ Katalog produktów z kontami użytkowników:
 - Wraz z **privacy by design** i **prawem do bycia zapomnianym** to kluczowe zasady GDPR w wykładzie.
 - W chmurze szczególnie ważna ze względu na lokalizację danych, transfery międzynarodowe i łatwość replikacji.
 - Realizacja: ograniczone pola, klasyfikacja, pseudonimizacja/anonimizacja, maskowanie w logach, retencja, szyfrowanie, kontrola dostępu.
+
+---
+[⬅️ Poprzedni temat](13_TDE_Transparent_Data_Encryption.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](15_OWASP_Top_10.md)

@@ -106,3 +106,6 @@ Fale radiowe **rozchodzą się poza fizyczne granice budynku** – brak „kabla
 
 - Zagrożenia WLAN: **podsłuch**, **łamanie WEP/WPA-PSK (atak słownikowy offline)**, **rogue AP**, **evil twin**, **deauth/jamming**, **MITM**, atak na **WPS**, **KRACK**; także Bluetooth, Zigbee, RFID.
 - Zabezpieczenia: **WPA3 / WPA2-Enterprise (802.1X)**, wyłączenie WEP/WPS, silne hasła, **PMF (802.11w)**, **segmentacja** (goście, IoT), **WIDS/WIPS**, kontroler i zarządzanie AP, VPN, szkolenia.
+
+---
+[⬅️ Poprzedni temat](5_Zasady_projektowania_bezpiecznej_infrastruktury_sieci_lokalnej_i_zabezpieczanie_urządzeń.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](7_Rola_wielowarstwowej_ochrony_w_zabezpieczaniu_lokalnych_sieci_komputerowych.md)

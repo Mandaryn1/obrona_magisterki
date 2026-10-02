@@ -109,3 +109,6 @@ szyfrowanie ruchu (TLS) ogranicza widoczność, ogromny wolumen danych, **fałsz
 - Monitoring daje **widoczność**, wczesne wykrywanie, możliwość **analizy kryminalistycznej**, szybką reakcję i dowody zgodności.
 - Podstawa wykrywania: **profil (baseline) normalnego ruchu i serwerów** + **wykrywanie anomalii (NBA, reguły)**.
 - Narzędzia zbiorcze: **SIEM** (korelacja, agregacja, forensics, retencja) i **SOAR** (automatyzacja reakcji).
+
+---
+[⬅️ Poprzedni temat](2_Podatności_Ethernetu_i_protokołów_lokalnych_sieci_komputerowych.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](4_Narzędzia_do_monitorowania_i_analizy_ruchu_w_lokalnych_sieciach_komputerowych.md)

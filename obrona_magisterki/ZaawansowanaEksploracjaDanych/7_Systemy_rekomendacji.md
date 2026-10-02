@@ -157,3 +157,6 @@ Zalety: czytelne, interpretowalne reguły; nie wymaga profili użytkowników; do
 - **Item-to-item CF (Amazon)**: macierz użytkownik–przedmiot → podobieństwo kosinusowe przedmiotów → polecanie podobnych do posiadanych.
 - **Reguły asocjacyjne**: wsparcie, ufność, lift; Apriori wykorzystuje monotoniczność wsparcia (zbiór częsty ⇒ podzbiory częste).
 - Historia: Tapestry (1992), GroupLens (1994), Amazon (1998), Netflix Prize (2006–09), Spotify, TikTok.
+
+---
+[⬅️ Poprzedni temat](6_Metody_analizy_skupień.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](8_Metody_porównania_modeli_uczenia_maszynowego.md)

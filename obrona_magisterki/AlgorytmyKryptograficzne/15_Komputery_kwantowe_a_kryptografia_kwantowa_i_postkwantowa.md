@@ -112,3 +112,6 @@ Do kryptografii kwantowej zalicza się też m.in. **kwantowe generatory liczb lo
 - Szczególnie groźne: **„harvest now, decrypt later"** – dane zbierane dziś, odszyfrowane później.
 - **Kryptografia kwantowa (QKD, BB84):** bezpieczeństwo z fizyki, dedykowany sprzęt, tylko dystrybucja klucza, wymaga uwierzytelnionego kanału.
 - **Kryptografia postkwantowa:** klasyczne algorytmy odporne na kwanty (kraty: **ML-KEM, ML-DSA**; hash-based: **SLH-DSA**; kody: HQC); standardy NIST 2024; migracja i **kryptoagilność**, rozwiązania hybrydowe.
+
+---
+[⬅️ Poprzedni temat](14_Kryptografia_krzywych_eliptycznych.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](../BezpieczeństwoWSieciachKomputerowych/BezpieczeństwoWSieciachKomputerowych_tytul.md)

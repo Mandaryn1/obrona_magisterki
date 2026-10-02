@@ -74,3 +74,6 @@ Dobór łączności to kompromis: **zasięg – przepustowość – pobór energ
 - Pętla: pomiar → przetwarzanie lokalne → komunikacja → analiza w chmurze/na brzegu → akcja.
 - Architektura warstwowa: urządzenia – sieć – platforma – aplikacje, z bezpieczeństwem jako zagadnieniem przekrojowym.
 - Główne wyzwania: bezpieczeństwo i prywatność, interoperacyjność, energia, skalowalność.
+
+---
+[⬅️ Poprzedni temat](0_Wstep.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](2_Magistrala_interfejs_protokół.md)

@@ -100,3 +100,6 @@ wykres kropkowy, diagram łodyga–liście, wykres skrzynkowy (pudełko z wąsam
 | **Kaggle** | społeczność: konkursy, zbiory danych, notebooki, oferty pracy |
 
 Kryteria wyboru narzędzia: licencja, dostępność potrzebnych algorytmów, przejrzystość interfejsu, możliwość importu danych potrzebnego typu.
+
+---
+[⬅️ Poprzedni temat](ZaawansowanaEksploracjaDanych_tytul.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](1_Metody_identyfikacji_obserwacji_odstających.md)

@@ -92,3 +92,6 @@ Dane w chmurze mogą znajdować się w trzech stanach, a każdy wymaga innej och
 - **W tranzycie:** **TLS** (najnowsze wersje), HTTPS wszędzie, mTLS między usługami, VPN; certyfikaty zarządzane centralnie i odnawiane; monitorowanie prób obejścia.
 - **W użyciu:** SGX/SEV (confidential computing) – najtrudniejsze, najsilniejsze.
 - Szyfrowanie wymaga planowania, testów wydajności i **dobrego zarządzania kluczami**.
+
+---
+[⬅️ Poprzedni temat](8_Mechanizmy_RBAC_i_ABAC.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](10_RPO_Recovery_Point_Objective.md)

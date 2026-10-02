@@ -71,3 +71,6 @@ Współcześnie podział jest rozmyty: procesory x86 wewnętrznie tłumaczą roz
 - Dąży do **jednego cyklu na rozkaz** i wysokiego taktowania; złożoność przeniesiona do kompilatora.
 - Zalety: energooszczędność, prosty rdzeń, wydajność – stąd dominacja ARM w urządzeniach mobilnych i IoT.
 - Wada: dłuższy kod.
+
+---
+[⬅️ Poprzedni temat](4_Architektura_CISC.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](6_UART_i_USRT.md)

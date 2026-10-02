@@ -276,3 +276,6 @@ $$H_0:\ \boldsymbol{\mu}_1=\boldsymbol{\mu}_2=\dots=\boldsymbol{\mu}_k\quad(\tex
 - **ANOVA**: $H_0:\ \mu_1=\dots=\mu_k$; rozkład $SS_{total}=SS_{between}+SS_{within}$; $F=MS_b/MS_w$; po istotnym $F$ – post-hoc (Tukey).
 - Warianty: jednoczynnikowa, powtarzane pomiary, dwuczynnikowa (bez/z powtórzeniami, interakcja); nieparametryczne: Kruskal-Wallis, Friedman.
 - **MANOVA**: wiele zmiennych zależnych naraz, testy Wilksa/Pillaia/Hotellinga/Roya; wymaga wielowymiarowej normalności i jednorodności macierzy kowariancji.
+
+---
+[⬅️ Poprzedni temat](2_Metody_estymacji_gęstości_rozkładu_prawdopodobieństwa.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](4_Modele_regresji_Regresja_wielokrotna.md)

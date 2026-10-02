@@ -57,3 +57,6 @@ Sieć teleinformatyczna to infrastruktura łącząca systemy informatyczne i tel
 | **PTES / OSSTMM / ISSAF** | metodyki testów penetracyjnych |
 | **OSINT** | wywiad z otwartych źródeł |
 | **ML / UEBA / NDR** | uczenie maszynowe / analiza zachowań / wykrywanie zagrożeń w sieci |
+
+---
+[⬅️ Poprzedni temat](BezpieczeństwoSieciTeleinformatycznych_tytul.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](1_Ataki_polegające_na_rozpoznaniu_uzyskaniu_dostępu_oraz_inżynierii_społecznej.md)

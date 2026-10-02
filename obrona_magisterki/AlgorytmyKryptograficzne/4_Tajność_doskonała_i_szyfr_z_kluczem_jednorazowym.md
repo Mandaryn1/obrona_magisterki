@@ -76,3 +76,6 @@ Zamiast prawdziwie losowego klucza stosuje się **krótki klucz + generator pseu
 - **OTP:** $c=m\oplus k$; doskonale tajny (Shannon).
 - Ponowne użycie klucza: $c_1\oplus c_2=m_1\oplus m_2$ – klucz znika, tekst zostaje odsłonięty (Venona).
 - Wady: klucz długości wiadomości, dystrybucja, prawdziwa losowość, brak integralności → w praktyce stosuje się szyfry obliczeniowo bezpieczne.
+
+---
+[⬅️ Poprzedni temat](3_Zasada_Kerckhoffsa.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️️](5_Szyfry_klasyczne_a_nowoczesne_algorytmy_kryptograficzne.md)

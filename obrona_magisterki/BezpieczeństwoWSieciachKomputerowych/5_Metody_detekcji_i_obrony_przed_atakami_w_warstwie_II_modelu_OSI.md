@@ -118,3 +118,6 @@ storm-control broadcast level 1.00
 - Ataki L2 (**MAC flooding, ARP spoofing, rogue DHCP/starvation, STP, VLAN hopping, MAC spoofing**) wykorzystują zaufanie w segmencie i omijają zapory.
 - Obrona to **mechanizmy przełączników**: **Port Security, DHCP snooping, DAI, IP Source Guard, BPDU/Root Guard**, poprawna konfiguracja VLAN/trunków, **802.1X/NAC**, storm control, ochrona fizyczna.
 - Detekcja: logi przełączników, **arpwatch**, analiza ruchu (Wireshark, NIDS na SPAN/TAP), SIEM.
+
+---
+[⬅️ Poprzedni temat](4_Klasyfikacja_najważniejszych_rodzajów_ataków_sieciowych.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](6_Metody_detekcji_i_obrony_przed_atakami_w_warstwie_III_modelu_OSI.md)

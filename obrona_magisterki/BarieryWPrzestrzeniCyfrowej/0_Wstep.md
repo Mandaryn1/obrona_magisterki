@@ -47,3 +47,6 @@
 | **ISO 9241** | „Ergonomia interakcji człowiek–system" (m.in. 110 – zasady dialogu, 210 – projektowanie ukierunkowane na człowieka, 11 – definicja użyteczności) |
 | **ISO 25062** | standardowy format raportu z testów użyteczności |
 | **NCBiR** | Narodowe Centrum Badań i Rozwoju |
+
+---
+[⬅️ Poprzedni temat](BarieryWPrzestrzeniCyfrowej_tytul.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](1_Projektowanie_uniwersalne_idea_przepisy_prawne_zasady.md)

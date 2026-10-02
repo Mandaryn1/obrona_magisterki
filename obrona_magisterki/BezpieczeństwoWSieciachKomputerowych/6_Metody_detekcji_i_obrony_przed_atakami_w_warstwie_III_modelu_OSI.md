@@ -121,3 +121,6 @@ Przykładowa reguła Suricata *(uzupełnienie)*: `alert icmp any any -> $HOME_NE
 - Ataki L3: **IP spoofing**, ataki **ICMP** (flood, smurf, Ping of Death, tunelowanie), **DoS/DDoS i amplifikacja**, ataki na **routing** (fałszywe trasy, BGP hijacking), nadużycia fragmentacji.
 - Obrona: **filtrowanie wejściowe/wyjściowe, uRPF, ACL, zapory stanowe, rate limiting ICMP, wyłączenie source routing/redirectów/directed broadcast, uwierzytelnianie routingu, RPKI, IPsec/VPN, scrubbing/CDN/RTBH**.
 - Detekcja: **IDS/IPS, NetFlow, analiza pakietów, logi i SIEM**.
+
+---
+[⬅️ Poprzedni temat](5_Metody_detekcji_i_obrony_przed_atakami_w_warstwie_II_modelu_OSI.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](7_Narzędzia_do_identyfikacji_ataków_na_protokoły_i_usługi_sieciowe.md)

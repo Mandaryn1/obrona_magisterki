@@ -126,3 +126,6 @@ print(roc_auc_score(y_test, clf.predict_proba(X_test)[:, 1]))   # AUC (binarna)
 - Przy klasach niezrównoważonych accuracy wprowadza w błąd – używamy precyzji/czułości/F1/AUC.
 - Wieloklasowo: macierz $K\times K$, miary „jedna kontra reszta” i uśrednianie (macro/weighted/micro).
 - Wiarygodna ocena: hold-out 80/20 i **k-krotna walidacja krzyżowa** (k=10), kontrola przeuczenia.
+
+---
+[⬅️ Poprzedni temat](8_Metody_porównania_modeli_uczenia_maszynowego.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](10_Ocena_jakości_modeli_regresyjnych_i_prognozujących.md)

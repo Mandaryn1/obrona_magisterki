@@ -96,3 +96,6 @@ $$K=\sum_{j=1}^{k}w_j\left(D_j\frac{K_j}{K_j^{max}}+(1-D_j)\frac{K_j^{min}}{K_j}
 - **5 typów:** testowanie, inspekcja, wywiad, modelowanie analityczne, symulacja (ostatnie dwa rzadko stosowane).
 - **4 grupy metryk:** wydajnościowe, bazujące na problemach, bazujące na ocenach użytkowników, behawioralne/fizjologiczne.
 - Globalne miary (WUP, SUS, SUM) łączą wiele wskaźników; wymagają normalizacji i wag.
+
+---
+[⬅️ Poprzedni temat](5_Wytyczne_WCAG_2.1_zasady_poziomy_weryfikacja.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](7_Techniki_oceny_jakości_interfejsów_z_udziałem_i_bez_udziału_użytkowników.md)

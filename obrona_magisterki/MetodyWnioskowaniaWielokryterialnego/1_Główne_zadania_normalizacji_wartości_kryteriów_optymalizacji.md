@@ -81,3 +81,6 @@ Suma ważona po unitaryzacji z wagami $w=(0{,}5;\,0{,}3;\,0{,}2)$: A = 0,500; B 
 - Główne zadania: porównywalność kryteriów, eliminacja wpływu jednostek, wyrównanie wpływu kryteriów, możliwość agregacji z wagami, zamiana destymulant na stymulanty, ujednolicenie danych jakościowych i ilościowych.
 - Metody: unitaryzacja zerowana (min–max), ilorazowa, względem sumy, wektorowa (TOPSIS), z-score, względem ideału/nadiru, funkcje użyteczności.
 - Wybór metody może wpłynąć na ranking – warto zrobić analizę wrażliwości.
+
+---
+[⬅️ Poprzedni temat](0_Wstep.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](2_Metoda_leksykograficzna.md)

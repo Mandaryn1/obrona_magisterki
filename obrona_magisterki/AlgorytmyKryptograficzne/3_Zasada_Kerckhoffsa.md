@@ -58,3 +58,6 @@ natomiast **algorytm, protokół, format, kod źródłowy** mogą być jawne bez
 - Powody: algorytmy się ujawniają, klucze można wymienić, otwartość umożliwia publiczną weryfikację i standaryzację.
 - Przeciwieństwo: **security through obscurity** – zawodzi (A5/1, CSS, Crypto-1).
 - Praktyka: standardowe algorytmy, ochrona i zarządzanie kluczami, kryptoagilność.
+
+---
+[⬅️ Poprzedni temat](2_Klasyfikacja_systemów_kryptograficznych.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](4_Tajność_doskonała_i_szyfr_z_kluczem_jednorazowym.md)

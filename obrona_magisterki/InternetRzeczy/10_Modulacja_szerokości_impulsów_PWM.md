@@ -111,3 +111,6 @@ Filtr RC uśrednia przebieg: napięcie wyjściowe ≈ $D\cdot V_{max}$. Częstot
 - Generowany sprzętowo przez timer i komparator; parametry: częstotliwość $f=f_{clk}/(N(TOP+1))$, rozdzielczość $n$ bitów.
 - Pozwala w sposób **energooszczędny** regulować moc: jasność LED, prędkość silników, temperaturę, położenie serwa (impuls 1–2 ms co 20 ms), a także realizować „DAC" z filtrem RC i zasilacze impulsowe.
 - Wady: zakłócenia EMI, tętnienia, kompromis rozdzielczość–częstotliwość.
+
+---
+[⬅️ Poprzedni temat](9_Aktuatory.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](../BarieryWPrzestrzeniCyfrowej/BarieryWPrzestrzeniCyfrowej_tytul.md)

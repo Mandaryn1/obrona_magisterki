@@ -89,3 +89,6 @@ Przykład z wykładu: wielokrotne nieudane logowania z tego samego IP → system
 - Wskaźniki: skanowanie, brute force, skoki wolumenu, beaconing C2, tunelowanie DNS, eksfiltracja, ruch boczny, spoofing L2.
 - Wykrycia trafiają do **SIEM/SOC/SOAR**; reakcja wg procedur (rejestr, powiadomienie, izolacja, post-mortem).
 - Wyzwania: szyfrowanie, skala, fałszywe alarmy, SPOF, prawo.
+
+---
+[⬅️ Poprzedni temat](7_Narzędzia_do_identyfikacji_ataków_na_protokoły_i_usługi_sieciowe.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](9_Metody_zapobiegania_nieuprawnionemu_dostępowi_do_zasobów_sprzętowych_i_programowych.md)

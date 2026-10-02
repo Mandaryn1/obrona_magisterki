@@ -200,3 +200,6 @@ Alert/podatność **pilna**, gdy: wysoki CVSS **i** krytyczny zasób **i** aktyw
 - **Źródła alertów:** IDS/IPS, zapory, SIEM (korelacja), EDR, NAC/ISE, urządzenia sieciowe i logi, skanery, honeypoty oraz **zewnętrzne threat intelligence** (SANS, MITRE, FIRST, CIS, Talos, FireEye, AIS) wymieniane przez **STIX/TAXII/MISP/TIP**.
 - **Struktura alertu:** czas, sensor, sygnatura/reguła, kategoria i priorytet, źródło/cel (IP, porty), użytkownik/host, payload, akcja, odniesienia (CVE, ATT&CK); **SIEM wzbogaca** o kontekst użytkownika, urządzenia i postury.
 - **Ocena:** weryfikacja TP/FP/FN, pytania kontekstowe (kto, jak ważny, uprawniony?), krytyczność aktywa, korelacja, **CVSS (0–10: Niski <4, Średni, Wysoki, Krytyczny ≥9; metryki Base/Temporal/Environmental)** + CVE/NVD; priorytetyzacja i walka z alert fatigue.
+
+---
+[⬅️ Poprzedni temat](8_Audyt_bezpieczeństwa_testy_penetracyjne_i_ocena_podatności.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](10_Systemy_zarządzania_bezpieczeństwem_informacji_w_ochronie_sieci_lokalnych.md)

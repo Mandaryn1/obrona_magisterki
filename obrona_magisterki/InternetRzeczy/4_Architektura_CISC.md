@@ -60,3 +60,6 @@ CISC dąży do **zmniejszenia liczby instrukcji $N_{instr}$** (złożone rozkazy
 - Cel historyczny: krótkie programy i bliskość do języków wysokiego poziomu.
 - Wady: skomplikowany sprzęt, zmienny czas rozkazów, trudne potokowanie.
 - Przykład: x86; współcześnie realizowane z wewnętrznym rdzeniem RISC-podobnym.
+
+---
+[⬅️ Poprzedni temat](3_Mikrokontroler_i_mikroprocesor.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](5_Architektura_RISC.md)

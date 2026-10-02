@@ -78,3 +78,6 @@ Technologie wspomagające **nie zastąpią** dobrego projektu. Interfejs musi by
 - Technologie wspomagające/adaptacyjne **kompensują ograniczenia człowieka** (temat 3), ale ich użycie zależy od jakości projektu (temat 5).
 - Wspomagające = ułatwiają i **nie zastępują** interakcji (skróty, predykcja, powiększanie, czytnik); adaptacyjne = **specjalnie zaprojektowane** urządzenia/oprogramowanie (brajl, przełączniki).
 - Główne technologie: **czytniki ekranu, lupy, wysoki kontrast, duże czcionki, rozpoznawanie mowy, tekst predykcyjny, monitory brajlowskie**.
+
+---
+[⬅️ Poprzedni temat](3_Użyteczność_i_dostępność_interfejsu_oprogramowania.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](5_Wytyczne_WCAG_2.1_zasady_poziomy_weryfikacja.md)

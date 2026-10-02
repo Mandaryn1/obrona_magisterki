@@ -86,3 +86,6 @@ Sama optymalność Pareto nie wskazuje jednego wariantu. Stosuje się:
 - Dominacja: nie gorszy na wszystkich kryteriach i lepszy na co najmniej jednym.
 - Warianty Pareto są wzajemnie nieporównywalne; reprezentują **kompromisy** między kryteriami. Zbiór może zawierać jeden wariant (kryteria zgodne) albo wszystkie (kryteria przeciwstawne).
 - Pierwszy krok analizy wielokryterialnej: **odrzucić warianty zdominowane**, potem wybrać jeden z pozostałych według preferencji decydenta.
+
+---
+[⬅️ Poprzedni temat](3_Wyznaczanie_wag_ważności_kryteriów_w_metodzie_AHP.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](5_Metoda_Blina.md)

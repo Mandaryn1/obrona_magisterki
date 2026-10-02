@@ -95,3 +95,6 @@ Opracowane od lat 70. XX w. (DES 1977, RSA 1977, DH 1976, AES 2001). Cechy:
 - **Klasyczne:** podstawieniowe (Cezar, Vigenère, Playfair, Hill) i przestawieniowe (płotowy, kolumnowy); łamane analizą statystyczną, małe lub okresowe klucze, brak formalnego uzasadnienia.
 - **Nowoczesne:** operacje na bitach, duże klucze, S-boksy i permutacje (dezorientacja i dyfuzja), kryptografia asymetryczna, skróty, podpisy.
 - **Zmiana podejścia:** od tajności metody do **tajności klucza** (Kerckhoffs), od intuicji do **formalnych definicji i dowodów**, od COA do **CPA/CCA**, od ukrywania do **publicznej weryfikacji** i bezpieczeństwa mierzonego w bitach.
+
+---
+[⬅️ Poprzedni temat](4_Tajność_doskonała_i_szyfr_z_kluczem_jednorazowym.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](6_Tryby_pracy_szyfrów_blokowych.md)

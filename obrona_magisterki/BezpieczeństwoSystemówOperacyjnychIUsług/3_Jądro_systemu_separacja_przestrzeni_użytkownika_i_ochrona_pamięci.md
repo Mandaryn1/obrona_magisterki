@@ -83,3 +83,6 @@ aktualizacje jądra i sterowników, **Secure Boot + podpisane moduły**, wyłąc
 - **Separacja:** tryb użytkownika (ring 3) vs jądra (ring 0), **wywołania systemowe** jako jedyna brama, **własne przestrzenie adresowe** procesów, IPC kontrolowane, dodatkowo namespaces, seccomp, integrity levels, hypervisor.
 - **Ochrona pamięci:** MMU i uprawnienia stron (R/W/X), **NX/DEP, ASLR/KASLR, stack canary, CFG/CET, SMEP/SMAP, KPTI**, podpisy sterowników i Secure Boot.
 - Kompromitacja jądra = kompromitacja systemu (rootkity); utwardzone jądro (ASLR, PaX, sandboxing, ograniczenia, rozszerzony audyt – wykład W8) zmniejsza ryzyko.
+
+---
+[⬅️ Poprzedni temat](2_Architektura_systemu_operacyjnego_z_punktu_widzenia_bezpieczeństwa.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](4_Zarządzanie_użytkownikami_uprawnieniami_i_kontrolą_dostępu_w_systemach_operacyjnych.md)

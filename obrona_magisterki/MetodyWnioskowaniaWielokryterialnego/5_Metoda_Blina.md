@@ -82,3 +82,6 @@ Reguła większości **nie gwarantuje przechodniości** – jak w przykładzie, 
 - W wielokryterialnym porządkowaniu wariantów: kryteria „głosują"; wariant $r$ jest lepszy od $v$, gdy $l(r,v)>g(r,v)$.
 - Zalety: prostota i niekonieczność wag; wady: możliwe cykle (paradoks Condorcet'a), ignorowanie wielkości różnic.
 - **Pamiętaj: opis jest moją interpretacją; zweryfikuj z materiałami z zajęć.**
+
+---
+[⬅️ Poprzedni temat](4_Warianty_optymalne_w_sensie_Pareto.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](../InternetRzeczy/InternetRzeczy_tytul.md)

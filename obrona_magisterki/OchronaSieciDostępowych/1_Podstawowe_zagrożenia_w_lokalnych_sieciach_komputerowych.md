@@ -98,3 +98,6 @@ segmentacja (VLAN, strefy), **kontrola dostępu do portów (802.1X, port securit
 - Główne zagrożenia LAN: **fizyczne**, **ataki L2/L3**, **podsłuch/MITM**, **DoS**, **malware**, **ataki na hasła i uprawnienia**, **socjotechnika**, **niezabezpieczone urządzenia (IoT, drukarki, rogue AP)**, **insider**, **łańcuch dostaw**.
 - Wpływ: naruszenie **CIA**, rozprzestrzenianie się incydentu (ruch boczny), straty finansowe, prawne i wizerunkowe.
 - Ochrona wymaga podejścia wielowarstwowego (temat 7).
+
+---
+[⬅️ Poprzedni temat](0_Wstep.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](2_Podatności_Ethernetu_i_protokołów_lokalnych_sieci_komputerowych.md)

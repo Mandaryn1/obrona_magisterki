@@ -64,3 +64,6 @@ Mikroprocesor/SBC wybiera się, gdy potrzebny jest system operacyjny, złożona 
 - **Mikroprocesor** = sama jednostka obliczeniowa; wymaga zewnętrznej pamięci i układów I/O; wysoka moc, system operacyjny, komputery.
 - **Mikrokontroler** = CPU + pamięć + peryferia w jednym układzie; tani, energooszczędny, do sterowania w czasie rzeczywistym, urządzenia wbudowane i IoT.
 - Granica się zaciera: SoC integrują coraz więcej, a mikrokontrolery zyskują rdzenie 32-bitowe i radio.
+
+---
+[⬅️ Poprzedni temat](2_Magistrala_interfejs_protokół.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](4_Architektura_CISC.md)

@@ -105,3 +105,6 @@ W praktyce często łączy się oba podejścia: **RBAC jako szkielet** (podstawo
 - **RBAC** – uprawnienia przypisane do **ról**, role do użytkowników; **prosty**, dobry przy stałych, dobrze określonych rolach; mniej elastyczny.
 - **ABAC** – decyzje na podstawie **atrybutów** użytkownika, zasobu i środowiska; **elastyczny i złożony**, dobry dla dynamicznych środowisk **cloud-native**.
 - Często stosowane razem; oba realizują zasadę najmniejszych uprawnień.
+
+---
+[⬅️ Poprzedni temat](7_MFA_w_kontekście_chmury.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](9_Szyfrowanie_danych_w_spoczynku_i_w_tranzycie.md)

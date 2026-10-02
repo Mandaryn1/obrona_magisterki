@@ -153,3 +153,6 @@ systematyczne zarządzanie ryzykiem, spójne polityki, jasne role, zgodność z 
 - **ISMS (SZBI)** to system **polityk, ról, procesów i kontroli** zarządzania bezpieczeństwem informacji oparty na **ryzyku** i **PDCA**; podstawa: **ISO/IEC 27001** (wymagania, cele kontroli), **27002** (kontrole), **27005** (ryzyko).
 - Kluczowe elementy: **governance i role** (właściciel, opiekun, IOD), **polityki** (uwierzytelnianie, hasła, dopuszczalne użycie, zdalny dostęp, incydenty, dane), **SoA**, **zarządzanie ryzykiem** (unikanie, redukcja, transfer, akceptacja), **zarządzanie aktywami/podatnościami/konfiguracją/poprawkami**, **audyty i certyfikacja**.
 - W sieci lokalnej ISMS przekłada się na **kontrole techniczne** (802.1X, segmentacja, monitoring) i zgodność (RODO, KSC/NIS2).
+
+---
+[⬅️ Poprzedni temat](9_Źródła_struktura_i_ocena_alertów_bezpieczeństwa_w_lokalnych_sieciach_komputerowych.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](11_Zagrożenia_i_metody_ochrony_systemów_mobilnych_oraz_urządzeń_IoT.md)

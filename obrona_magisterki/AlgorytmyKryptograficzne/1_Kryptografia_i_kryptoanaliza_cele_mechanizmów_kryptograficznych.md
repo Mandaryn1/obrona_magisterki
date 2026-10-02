@@ -75,3 +75,6 @@ Algorytm jest „złamany", jeśli istnieje atak **szybszy niż brute force** (n
 - **Kryptografia** – projektowanie metod ochrony informacji; **kryptoanaliza** – ich łamanie i ocena odporności; razem **kryptologia**.
 - Cele: **poufność, integralność, uwierzytelnianie, niezaprzeczalność** (+ świeżość).
 - Modele ataku: **COA, KPA, CPA, CCA**; metody: brute force, analiza statystyczna, kryptoanaliza różnicowa/liniowa, ataki urodzinowe, kanały boczne, ataki na protokoły.
+
+---
+[⬅️ Poprzedni temat](0_Wstep.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](2_Klasyfikacja_systemów_kryptograficznych.md)

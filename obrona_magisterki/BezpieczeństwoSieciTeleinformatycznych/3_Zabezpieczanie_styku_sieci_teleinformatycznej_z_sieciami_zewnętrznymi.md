@@ -106,3 +106,6 @@ iptables -A FORWARD -j LOG --log-prefix "FW-DROP: "
 - Architektura: **router brzegowy (ACL, uRPF, anty-DDoS) → zapora/NGFW + IPS → DMZ → zapora wewnętrzna → strefy**; redundancja.
 - Mechanizmy: **zapory, IDS/IPS, WAF, reverse proxy, NAT, VPN z MFA, filtrowanie DNS/poczty/WWW, egress filtering, zabezpieczenie routingu, inspekcja TLS, SIEM**.
 - Zasady: domyślna odmowa, minimalna ekspozycja, separacja stref, zero trust, utwardzanie urządzeń brzegowych, testy i przeglądy reguł.
+
+---
+[⬅️ Poprzedni temat](2_Standardy_i_dobre_praktyki_bezpieczeństwa_ISO_27001_NIS2_i_inne_normy.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](4_Kontrola_dostępu_do_sieci_oraz_mechanizmy_NAC.md)

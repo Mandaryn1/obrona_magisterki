@@ -109,3 +109,6 @@ ss -tulpn ; last -a | head ; auditctl -l ; aide --check
 - **Zapobieganie:** utwardzanie (minimalizacja usług, najmniejsze uprawnienia, AppLocker/SELinux), **aktualizacje**, zapora, AV/Defender, Secure Boot+TPM, szyfrowanie, kopie zapasowe, MFA i blokady brute force, piaskownice, edukacja.
 - **Wykrywanie:** **logi i audyt** (Event Log 4624/4625/4670/4663; `auth.log`, auditd), monitorowanie procesów i połączeń (`netstat`, `ps`, `ss`), **kontrola integralności**, wykrywanie rootkitów, HIDS/EDR/SIEM, reguły anomalii.
 - Całość uzupełnia **reagowanie na incydenty** (temat 11) i **testy bezpieczeństwa** (temat 12).
+
+---
+[⬅️ Poprzedni temat](6_Mechanizmy_uwierzytelniania_hasła_klucze_SSH_2FA_IAM_i_SSO.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](8_Zastosowanie_kryptografii_w_ochronie_danych_i_komunikacji.md)

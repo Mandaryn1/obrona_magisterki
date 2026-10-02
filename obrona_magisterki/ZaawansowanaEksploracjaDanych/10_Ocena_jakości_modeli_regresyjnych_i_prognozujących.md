@@ -88,3 +88,6 @@ mape = np.mean(np.abs((y_test - y_pred) / y_test)) * 100
 - Dla **prognoz** dodatkowo: ME (obciążenie), **MPE, MAPE, sMAPE, MASE** (miary względne i skalowane).
 - Szeregi czasowe: podział **chronologiczny**, walidacja z przesuwanym początkiem, porównanie z prognozą naiwną.
 - Zawsze ocena na danych niewidzianych (hold-out, k-fold CV) i analiza reszt.
+
+---
+[⬅️ Poprzedni temat](9_Ocena_jakości_modeli_klasyfikacyjnych.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](../MetodyWnioskowaniaWielokryterialnego/MetodyWnioskowaniaWielokryterialnego_tytul.md)

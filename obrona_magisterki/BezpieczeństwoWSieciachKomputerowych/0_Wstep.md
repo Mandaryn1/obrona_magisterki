@@ -37,3 +37,6 @@
 | **DMZ** | strefa zdemilitaryzowana dla usług wystawionych na zewnątrz |
 | **NAC / 802.1X** | kontrola dostępu do sieci / uwierzytelnianie portowe |
 | **SPAN / TAP** | lustrzane odbicie portu / sprzętowy rozgałęźnik do podsłuchu ruchu |
+
+---
+[⬅️ Poprzedni temat](BezpieczeństwoWSieciachKomputerowych_tytul.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](1_Podstawowe_zadania_bezpieczeństwa_i_cyberbezpieczeństwa_w_infrastrukturze_sieciowej.md)

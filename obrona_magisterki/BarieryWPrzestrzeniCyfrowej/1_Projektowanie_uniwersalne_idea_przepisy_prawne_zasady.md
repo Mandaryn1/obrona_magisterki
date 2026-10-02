@@ -117,3 +117,6 @@ Wg wykładu (8 zasad); **kolejne zasady z przykładami z przestrzeni cyfrowej:**
 - Podstawy: humanocentryczność, równość szans, prawo (Konstytucja, ustawy 2019, dyrektywa 2016/2102, konwencja ONZ, EAA).
 - 8 zasad (wg wykładu): równy dostęp, elastyczność, prostota i intuicyjność, czytelna informacja, tolerancja na błędy, mały wysiłek fizyczny, odpowiednia wielkość i przestrzeń, percepcja równości.
 - W Polsce standardem minimalnym dostępności cyfrowej podmiotów publicznych jest WCAG 2.1.
+
+---
+[⬅️ Poprzedni temat](0_Wstep.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](2_Ergonomia_interfejsów_oprogramowania.md)

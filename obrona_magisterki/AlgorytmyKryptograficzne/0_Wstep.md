@@ -52,3 +52,6 @@
 | postkwantowe | **ML-KEM, ML-DSA, SLH-DSA** (standardy NIST) | – |
 
 **Złota zasada:** nie wymyślaj własnych algorytmów ani protokołów – używaj sprawdzonych bibliotek (libsodium, OpenSSL, Bouncy Castle) i standardowych konstrukcji.
+
+---
+[⬅️ Poprzedni temat](AlgorytmyKryptograficzne_tytul.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](1_Kryptografia_i_kryptoanaliza_cele_mechanizmów_kryptograficznych.md)

@@ -87,3 +87,6 @@ W Kubernetes odpowiednikiem są **NetworkPolicies** i segmentacja przez przestrz
 - **VPC** = prywatna, logicznie izolowana sieć wirtualna klienta w chmurze publicznej (podsieci, trasy, bramy, reguły ruchu).
 - Służy do **izolacji, segmentacji i kontroli ruchu**; razem z **Security Groups, NACL i firewallami** realizuje zasadę najmniejszych uprawnień w sieci.
 - Podsieci prywatne dla danych i aplikacji, publiczne tylko dla brzegu; mikrosegmentacja ogranicza ruch boczny.
+
+---
+[⬅️ Poprzedni temat](11_RTO_Recovery_Time_Objective.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](13_TDE_Transparent_Data_Encryption.md)

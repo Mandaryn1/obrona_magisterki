@@ -41,3 +41,6 @@ Każda cecha, która jest korzyścią biznesową, tworzy jednocześnie specyficz
 - NIST: chmura = współdzielona pula konfigurowalnych zasobów dostępna na żądanie przez sieć, szybko przydzielana i zwalniana z minimalnym zaangażowaniem dostawcy.
 - **5 cech:** samoobsługa na żądanie, szeroki dostęp do sieci, pula zasobów, szybka elastyczność, mierzalna usługa.
 - Każda cecha niesie konkretne wymagania: **kontrola dostępu i monitoring**, **uwierzytelnianie i warstwy ochrony**, **izolacja i szyfrowanie**, **automatyzacja i monitoring w czasie rzeczywistym**, **ochrona danych metrycznych**.
+
+---
+[⬅️ Poprzedni temat](0_Wstep.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](2_Główne_zagrożenia_bezpieczeństwa_chmury.md)

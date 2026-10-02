@@ -170,3 +170,6 @@ Wymaga: identyfikacji luk z **biuletynów dostawców i CVE**, kompetencji w ocen
 - **Ocena podatności** (skanery: Nessus, OpenVAS, Nmap – **identyfikacja**), **test penetracyjny** (autoryzowane symulowane ataki – **wykorzystanie**; black/gray/white box; fazy: planowanie, odkrywanie, atak, raportowanie), **analiza ryzyka** (znaczenie dla organizacji) i **audyt** (wewnętrzny/zewnętrzny/zgodności, cykl PDCA) uzupełniają się.
 - Wyniki służą do **działań naprawczych, baseline'u, priorytetyzacji i oceny kosztów**; testy powtarza się okresowo i po zmianach (ST&E).
 - Ćwiczenia: **red, blue, white, purple team**; skanowanie **uwierzytelnione** daje mniej fałszywych alarmów, **inwazyjne** niesie ryzyko awarii.
+
+---
+[⬅️ Poprzedni temat](7_Rola_wielowarstwowej_ochrony_w_zabezpieczaniu_lokalnych_sieci_komputerowych.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](9_Źródła_struktura_i_ocena_alertów_bezpieczeństwa_w_lokalnych_sieciach_komputerowych.md)

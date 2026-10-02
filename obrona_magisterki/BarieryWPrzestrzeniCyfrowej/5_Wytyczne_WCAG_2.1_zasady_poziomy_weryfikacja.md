@@ -112,3 +112,6 @@ Kryteria WCAG 2.1 są **weryfikowalne i precyzyjne**, co umożliwia **automatycz
 - **Poziomy zgodności:** **A** (musi), **AA** (powinna – wymóg prawny), **AAA** (może).
 - **ARIA** uzupełnia HTML o role, stany i właściwości dla dynamicznych aplikacji.
 - Weryfikacja: narzędzia automatyczne (**WAVE**, W3C Validator) + listy kontrolne + testy z czytnikiem ekranu i z użytkownikami.
+
+---
+[⬅️ Poprzedni temat](4_Technologie_wspomagające_osoby_z_niepełnosprawnościami.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](6_Metody_oceny_jakości_interfejsu_klasyfikacja_typy_metod.md)

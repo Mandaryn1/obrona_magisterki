@@ -77,3 +77,6 @@
 - **OWASP Top 10** = lista **dziesięciu najpoważniejszych kategorii ryzyka bezpieczeństwa aplikacji webowych**, uaktualniana co kilka lat (2021, **2025**), podstawa świadomości i testów zgodności.
 - Na czele: **Broken Access Control**; dalej m.in. **błędna konfiguracja, łańcuch dostaw, błędy kryptograficzne, wstrzykiwanie, niebezpieczny projekt, błędy uwierzytelniania**, integralność, logowanie i obsługa wyjątków.
 - Środki: walidacja wejścia, parametryzowane zapytania, uwierzytelnianie/autoryzacja, szyfrowanie, bezpieczna konfiguracja, skanowanie (SAST/DAST/zależności/obrazy), SBOM, logowanie i monitoring, WAF, DevSecOps.
+
+---
+[⬅️ Poprzedni temat](14_Data_minimization_minimalizacja_danych.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](../AlgorytmyKryptograficzne/AlgorytmyKryptograficzne_tytul.md)

@@ -87,4 +87,4 @@ Wszystkie uczelnie wyższe i instytuty naukowe mają dostęp do Scopusa na podst
 Scopus jest neutralny w doborze źródeł, opiera się na ocenie niezależnych ekspertów z różnych dziedzin recenzowane, wysokiej jakości, czy czasopismo przestrzega standardów wydawniczych.
 
 ---
-[⬅️ Poprzedni temat](4_Wskaźniki_bibliometryczne_Lista_Filadelfijska.md) | [Powrót do spisu treści](../../README.md) | [Następny temat ➡️](6_Narzędzia_AI_w_pracy_naukowca.md)
+[⬅️ Poprzedni temat](4_Wskaźniki_bibliometryczne_Lista_Filadelfijska.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](6_Narzędzia_AI_w_pracy_naukowca.md)

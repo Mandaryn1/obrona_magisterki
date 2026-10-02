@@ -59,3 +59,6 @@ Obok pojemności występuje **indukcyjność pasożytnicza** (ścieżki, wyprowa
 - Powstaje na PCB, w kablach, w tranzystorach (np. pojemność Millera), cewkach i złączach.
 - Powoduje **opóźnienia (RC) i ograniczenie prędkości** (np. magistrali I²C), **przesłuchy**, zniekształcenia, **straty energii** ($CV^2f$), błędy czujników i niestabilność wzmacniaczy.
 - Ograniczamy ją odpowiednim **projektem PCB** (krótkie ścieżki, odstępy, masa, ekranowanie), **małymi rezystancjami** w torze sygnału, terminacją i odsprzęganiem.
+
+---
+[⬅️ Poprzedni temat](6_UART_i_USRT.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](8_Cechy_sensora_inteligentnego.md)

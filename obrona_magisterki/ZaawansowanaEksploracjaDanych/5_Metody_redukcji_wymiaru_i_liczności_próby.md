@@ -151,3 +151,6 @@ Wniosek z wykładu o próbie: **próba musi być reprezentatywna** (losowa i dos
 - Wymiar: **selekcja cech** (filter / wrapper / embedded) albo **konstrukcja cech** (PCA).
 - **PCA**: standaryzacja → macierz kowariancji → wektory i wartości własne → wybór $k$ składowych (90–95% wariancji, Kaiser $\lambda>1$, osypisko) → projekcja. Składowe są ortogonalne, wariancja składowej = wartość własna.
 - Liczność: próbkowanie (proste, systematyczne, warstwowe), selekcja przykładów, klastrowanie, usuwanie duplikatów/odstających.
+
+---
+[⬅️ Poprzedni temat](4_Modele_regresji_Regresja_wielokrotna.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](6_Metody_analizy_skupień.md)

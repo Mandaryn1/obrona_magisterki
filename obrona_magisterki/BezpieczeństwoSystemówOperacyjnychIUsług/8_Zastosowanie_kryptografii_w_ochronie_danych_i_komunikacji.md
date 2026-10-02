@@ -112,3 +112,6 @@ stare algorytmy (DES, RC4, MD5, SHA-1, TLS 1.0), klucze w plikach konfiguracyjny
 - **W spoczynku:** FDE (**BitLocker** – TPM, TPM+PIN, klucz odzyskiwania; **LUKS**; **VeraCrypt**), szyfrowanie plików (EFS) – ochrona przed kradzieżą nośnika; zagrożenia: cold boot, Evil Maid, DMA.
 - **W tranzycie:** **TLS** (handshake, ECDHE, certyfikaty, PFS), SSH, VPN, WPA3; **PKI** (CA, X.509, CRL/OCSP, ACME, CT).
 - **Hasła/integralność:** skróty z solą i KDF, podpisy, **Secure Boot i podpisy kodu**; **klucze:** HSM/TPM/KMS, rotacja, rozdzielenie od danych; **PQC** – przygotowanie na komputery kwantowe.
+
+---
+[⬅️ Poprzedni temat](7_Zapobieganie_i_wykrywanie_zagrożeń_w_systemach_operacyjnych.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](9_Najczęstsze_ataki_na_aplikacje_webowe_i_mechanizmy_ich_ograniczania.md)

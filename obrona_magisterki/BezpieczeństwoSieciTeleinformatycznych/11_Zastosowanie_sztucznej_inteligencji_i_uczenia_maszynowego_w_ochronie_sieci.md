@@ -119,3 +119,6 @@ Metryki: **precyzja, czułość (recall), F1, FPR, AUC**; dla IDS kluczowy jest 
 - **AI/ML** uzupełniają tradycyjne środki: **wykrywanie anomalii i zero-day** (nienadzorowane: autoenkodery, isolation forest; NBA/NDR), **redukcja fałszywych alarmów i alert fatigue**, **automatyczna reakcja (SOAR)**, UEBA i adaptacyjne uwierzytelnianie, wykrywanie malware/phishingu/DGA/tunelowania, priorytetyzacja podatności (EPSS), threat hunting i predykcja, ochrona IoT (edge ML), asystenci LLM w SOC.
 - **Ograniczenia:** fałszywe alarmy i dryf danych, brak wyjaśnialności, **zatruwanie i ataki adwersarialne**, AI po stronie atakujących (deepfake'i, malware adaptacyjne), prywatność i regulacje (AI Act), potrzeba nadzoru człowieka.
 - Zasada: **hybrydowe podejście, człowiek w pętli, dobre dane, ciągłe dostrajanie i testy odporności**.
+
+---
+[⬅️ Poprzedni temat](10_Etapy_i_metody_testowania_bezpieczeństwa_sieci_teleinformatycznych.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](../BezpieczeństwoSystemówOperacyjnychIUsług/BezpieczeństwoSystemówOperacyjnychIUsług_tytul.md)

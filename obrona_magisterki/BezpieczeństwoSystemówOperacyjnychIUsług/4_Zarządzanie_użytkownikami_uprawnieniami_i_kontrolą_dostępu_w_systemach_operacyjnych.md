@@ -101,3 +101,6 @@ Model *właściciel–grupa–inni* uzupełniają **POSIX ACL**: `setfacl -m u:j
 - Windows: **konta lokalne/domenowe, SID i token, UAC, DACL i SACL w NTFS, GPO i lokalne zasady zabezpieczeń (hasła, lockout), `net`, AppLocker**; unikać pracy na koncie administratora.
 - Linux: **UID/GID, `/etc/passwd`, `/etc/shadow`, `/etc/group`, `sudo`**, prawa **rwx** (4-2-1; np. 764), SUID/SGID/sticky, **POSIX ACL** (`setfacl`/`getfacl`); root wyłączony dla SSH.
 - Zasady: **najmniejsze uprawnienia, role/grupy, przeglądy i audyt, cykl życia kont**, MFA, kontrola kont usługowych.
+
+---
+[⬅️ Poprzedni temat](3_Jądro_systemu_separacja_przestrzeni_użytkownika_i_ochrona_pamięci.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](5_Modele_kontroli_dostępu_DAC_MAC_i_RBAC.md)

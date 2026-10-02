@@ -100,3 +100,6 @@ Podpis dowodzi tylko, że sygnatariusz posiada klucz prywatny pasujący do klucz
 - **Podpis cyfrowy** = skrót dokumentu zaszyfrowany kluczem prywatnym (w ujęciu RSA) i weryfikowalny kluczem publicznym; zapewnia **autentyczność, integralność i niezaprzeczalność**, nie poufność.
 - **Szyfrowanie** – kluczem publicznym **odbiorcy**, cel: **poufność**; **podpis** – kluczem prywatnym **nadawcy**, cel: **uwierzytelnienie i niezaprzeczalność**.
 - Praktyka: podpis skrótu (RSA-PSS, ECDSA, Ed25519), certyfikaty (PKI), znakowanie czasem; prawnie – kwalifikowany podpis elektroniczny.
+
+---
+[⬅️ Poprzedni temat](10_Porównanie_RSA_i_ElGamala.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](12_Funkcje_skrótu.md)

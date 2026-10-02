@@ -47,3 +47,6 @@
 | **MDM / BYOD** | zarządzanie urządzeniami mobilnymi / własne urządzenia pracowników |
 | **TIP / STIX / TAXII / MISP** | platforma i standardy wymiany informacji o zagrożeniach |
 | **ST&E** | testy i ocena bezpieczeństwa (Security Test & Evaluation) |
+
+---
+[⬅️ Poprzedni temat](OchronaSieciDostępowych_tytul.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](1_Podstawowe_zagrożenia_w_lokalnych_sieciach_komputerowych.md)

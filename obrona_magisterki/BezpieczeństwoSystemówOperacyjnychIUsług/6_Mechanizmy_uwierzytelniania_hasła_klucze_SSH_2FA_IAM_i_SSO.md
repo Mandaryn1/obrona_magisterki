@@ -110,3 +110,6 @@ Kerberos + LDAP, często z AD: `krb5-user`, `/etc/krb5.conf` (adres KDC), `realm
 
 - Uwierzytelnianie: **wiem / mam / jestem**; hasła (silne, unikalne, KDF, ochrona przed brute force: Fail2Ban, lockout), **klucze SSH** (bez haseł, bez roota), **MFA** (TOTP, FIDO2, PAM, Windows Hello+TPM) – najważniejsza obrona przed przejęciem haseł.
 - **IAM** (AD/Entra ID, LDAP/Kerberos/SSSD; SAML, OAuth 2.0, OIDC) centralizuje tożsamości; **SSO** (Kerberos TGT 10 h, tokeny) – wygoda i audyt, ale koncentracja ryzyka → MFA, HA, monitoring.
+
+---
+[⬅️ Poprzedni temat](5_Modele_kontroli_dostępu_DAC_MAC_i_RBAC.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](7_Zapobieganie_i_wykrywanie_zagrożeń_w_systemach_operacyjnych.md)

@@ -95,3 +95,6 @@ Zapobieganie nieuprawnionemu dostępowi wymaga **kilku warstw** (obrona w głąb
 | systemowa i aplikacyjna | utwardzanie, aktualizacje, **AppLocker**, AV/EDR, WAF, szyfrowanie |
 | nadzór | logi, SIEM, audyt, reagowanie na incydenty |
 | ludzie | szkolenia i procedury |
+
+---
+[⬅️ Poprzedni temat](8_Monitorowanie_ruchu_sieciowego_w_wykrywaniu_nieprawidłowości_i_incydentów.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️️](10_Segmentacja_sieci_minimalizacja_uprawnień_inspekcja_ruchu_i_kontrola_dostępu.md)

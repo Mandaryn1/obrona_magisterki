@@ -97,3 +97,6 @@ Wykład (Zapory/IDS, slajd 30–31) wymienia: spoofing, sniffing, MITM (**ARP po
 - Podstawowa klasyfikacja (wykład): ataki na **dostępność** (DoS/DDoS, flood), **poufność** (sniffing, MITM, podsłuch), **integralność** (IP spoofing, DNS i ARP poisoning).
 - Dodatkowo: pasywne vs aktywne, według warstwy OSI, według etapu ataku (APT), według sprawcy, według techniki (malware, socjotechnika, hasła, aplikacje webowe).
 - Znajomość klasyfikacji pozwala dobrać **warstwową obronę** i narzędzia detekcji.
+
+---
+[⬅️ Poprzedni temat](3_Analiza_protokołów_i_usług_sieciowych_w_ocenie_bezpieczeństwa.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](5_Metody_detekcji_i_obrony_przed_atakami_w_warstwie_II_modelu_OSI.md)

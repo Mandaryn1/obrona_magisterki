@@ -55,3 +55,6 @@ Otwarty publiczny bucket w chmurze (jedna linia konfiguracji lub przełącznik w
 - **Tak** – chmura wymaga innego podejścia: współdzielona odpowiedzialność, współdzielona infrastruktura, dynamiczne zasoby, rozmyty perymetr, zarządzanie przez API, ograniczona widoczność, nowe zagrożenia.
 - Zasady podstawowe (CIA, najmniejsze uprawnienia, obrona w głąb) pozostają, lecz **ich realizacja jest inna** (IAM, automatyzacja, Zero Trust, szyfrowanie, DevSecOps).
 - Bezpieczeństwo trzeba projektować **od początku** i obejmować **wszystkie warstwy** (holistycznie).
+
+---
+[⬅️ Poprzedni temat](3_Modele_chmur_komputerowych.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](5_Model_chmury_w_którym_dostawca_odpowiada_za_infrastrukturę_i_platformę.md)

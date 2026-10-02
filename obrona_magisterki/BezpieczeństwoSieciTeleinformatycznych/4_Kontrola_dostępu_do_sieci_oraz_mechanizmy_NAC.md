@@ -116,3 +116,6 @@ NAC realizuje zasadę **najmniejszych uprawnień**, wspiera **segmentację**, **
 - **NAC** = egzekwowanie dostępu do sieci wg tożsamości, typu i **postury** urządzenia: uwierzytelnianie (**802.1X**, MAB, WebAuth), autoryzacja (VLAN, dACL, SGT), profilowanie, **ocena postury i kwarantanna**, goście i BYOD, rozliczalność, **CoA**.
 - 802.1X: **supplicant – authenticator – serwer RADIUS**, metody **EAP** (EAP-TLS najsilniejsza).
 - Wdrażać etapowo, z PKI, segmentacją ról, redundancją AAA, monitoringiem i integracją z SIEM; uwaga na MAB, MITM EAP i brak MACsec.
+
+---
+[⬅️ Poprzedni temat](3_Zabezpieczanie_styku_sieci_teleinformatycznej_z_sieciami_zewnętrznymi.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](5_Technologie_uwierzytelniania_i_autoryzacji_RADIUS_TACACS_plus_oraz_ISE.md)

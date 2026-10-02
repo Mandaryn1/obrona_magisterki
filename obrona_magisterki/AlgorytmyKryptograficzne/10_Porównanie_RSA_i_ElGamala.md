@@ -84,3 +84,6 @@ ElGamal opisuje też **schemat podpisu** (inny algorytm niż szyfrowanie); z nie
 - **RSA:** podstawa – **faktoryzacja** (problem RSA); szyfrowanie $c=m^e\bmod n$; podstawowa wersja deterministyczna.
 - **ElGamal:** podstawa – **logarytm dyskretny** (DDH); szyfrowanie $(g^k,\ m\,y^k)$; **probabilistyczny**, szyfrogram 2× większy; podstawa DSA/ECDSA/ECIES.
 - Oba: wolne, wymagają długich kluczy i paddingu/wzmocnień, **łamane przez Shora** – w praktyce zastępowane przez ECC, a w przyszłości przez algorytmy postkwantowe.
+
+---
+[⬅️ Poprzedni temat](9_Bezpieczeństwo_kryptosystemu_RSA.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](11_Podpis_elektroniczny.md)

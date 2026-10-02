@@ -98,3 +98,6 @@ Dla tych samych danych: $\bar{x} = 9{,}18$, $s = 6{,}22$; wartość 30 ma $z = 3
 - Metody oparte na kwartylach są odporne; średnia i odchylenie standardowe – nie.
 - W wielu wymiarach: odległość Mahalanobisa, klastrowanie (DBSCAN), LOF, Isolation Forest.
 - Zawsze: sprawdzić, czy to błąd, zanim usuniemy obserwację.
+
+---
+[⬅️ Poprzedni temat](0_Wstep.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](2_Metody_estymacji_gęstości_rozkładu_prawdopodobieństwa.md)

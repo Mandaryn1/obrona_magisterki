@@ -108,3 +108,6 @@ Add-ADGroupMember -Identity "Dział_HR" -Members jan
 - **MAC** – polityka centralna i etykiety (Bell-LaPadula – poufność, Biba – integralność); **SELinux, AppArmor, Windows MIC**; silny, lecz złożony.
 - **RBAC** – uprawnienia przypisane do ról/grup (grupy AD, `/etc/group`, `sudo`); skalowalny i łatwy do audytu; zagrożenie – eksplozja ról.
 - Zwykle stosowane **razem** (DAC + MAC + RBAC).
+
+---
+[⬅️ Poprzedni temat](4_Zarządzanie_użytkownikami_uprawnieniami_i_kontrolą_dostępu_w_systemach_operacyjnych.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](6_Mechanizmy_uwierzytelniania_hasła_klucze_SSH_2FA_IAM_i_SSO.md)

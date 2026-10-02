@@ -175,3 +175,6 @@ print(model.summary())      # współczynniki, t, p, R^2, R^2_adj, F, tablica
 - Zmienne jakościowe → zmienne sztuczne ($m-1$); wybór zmiennych: forward, backward, stepwise, najlepsze podzbiory, Lasso.
 - Alternatywa dla MNK: spadek gradientowy (SGD).
 - Pokrewne: szeregi czasowe (trend + sezonowość), regresja logistyczna (klasyfikacja, MLE).
+
+---
+[⬅️️ Poprzedni temat](3_Wnioskowanie_statystyczne_ANOVA_MANOVA.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](5_Metody_redukcji_wymiaru_i_liczności_próby.md)

@@ -122,3 +122,6 @@ $$P_i=\sum_{k=1}^{s}w_k\,p_{ik}$$
 - Wagi = **znormalizowany główny wektor własny** macierzy ($\mathbf{A}\mathbf{w}=\lambda_{\max}\mathbf{w}$, $\sum w=1$); w praktyce przybliża się je normalizacją kolumn lub **średnią geometryczną wierszy**.
 - Spójność ocen sprawdza się wskaźnikami $CI=\frac{\lambda_{\max}-n}{n-1}$ i $CR=CI/RI$; akceptowalne $CR<0{,}1$.
 - Końcowy ranking: $P_i=\sum_k w_kp_{ik}$.
+
+---
+[⬅️ Poprzedni temat](2_Metoda_leksykograficzna.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](4_Warianty_optymalne_w_sensie_Pareto.md)

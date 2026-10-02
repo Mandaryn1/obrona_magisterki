@@ -94,3 +94,6 @@ Interfejs może być *dostępny*, ale niewygodny (zła użyteczność), lub *uż
 - **Użyteczność** = łatwość nauki, efektywność, zapamiętywalność, mało błędów, satysfakcja (5 cech Nielsena); zła użyteczność prowadzi do zniechęcenia i porzucenia systemu.
 - **Dostępność** = element użyteczności: możliwość korzystania przez najszersze grono, niezależnie od człowieka, sprzętu/oprogramowania i otoczenia.
 - Główne ograniczenia człowieka: **wzrokowe, słuchowe, motoryczne, poznawcze**; każde wymaga innych rozwiązań projektowych.
+
+---
+[⬅️ Poprzedni temat](2_Ergonomia_interfejsów_oprogramowania.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](4_Technologie_wspomagające_osoby_z_niepełnosprawnościami.md)

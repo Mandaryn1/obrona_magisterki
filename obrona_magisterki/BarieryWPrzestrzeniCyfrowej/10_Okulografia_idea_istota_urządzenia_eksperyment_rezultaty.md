@@ -203,3 +203,6 @@ Sprawdza m.in.: czytelność elementów, przyczyny **rozproszenia uwagi**, przyc
 - **Urządzenia:** zdalne, nagłowne, na wieży; parametry (Hz, dokładność °); oprogramowanie Tobii Studio, iMotions; wideo-eyetracking: IR + glint + środek źrenicy.
 - **Eksperyment:** cel i hipotezy → projekt (bodźce, osie czasu, **realistyczne zadania**) → pilotaż → zgoda i **kalibracja** (5/9/16 pkt) → rejestracja → analiza.
 - **Rezultaty:** **ścieżki fiksacji, mapy cieplne, focus map, klastry, AOI** + metryki (liczba i czas fiksacji, sakady, długość ścieżki, źrenica); przykłady: grupowanie przycisków, etykiety nad polami (½ fiksacji), BIP, kierowcy, gra „Lublin", przestrzenie do nauki.
+
+---
+[⬅️ Poprzedni temat](9_Ocena_heurystyczna_heurystyki_Nielsena-Molicha.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](Dodatkowe_Persony_UCD_Prototypowanie_Raport_z_badań.md)

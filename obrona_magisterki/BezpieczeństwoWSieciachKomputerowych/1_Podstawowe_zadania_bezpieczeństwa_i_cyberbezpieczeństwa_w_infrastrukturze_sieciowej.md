@@ -82,3 +82,6 @@ Zasada: **każda warstwa zapewnia niezależną ochronę** – jeśli jedna zosta
 - Cel: zapewnić **CIA** (+ uwierzytelnianie, rozliczalność, niezaprzeczalność) infrastruktury sieciowej.
 - Zadania: inwentaryzacja, analiza ryzyka, ochrona perymetru, segmentacja, kontrola dostępu, szyfrowanie transmisji, utwardzanie, zarządzanie podatnościami, monitoring (IDS/IPS, SIEM), reagowanie, ciągłość działania, zgodność, edukacja, ochrona fizyczna.
 - Realizacja przez **obronę w głąb** i kontrole **zapobiegawcze, wykrywające, korygujące**.
+
+---
+[⬅️ Poprzedni temat](0_Wstep.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](2_Rola_systemów_Windows_i_Linux_w_analizie_bezpieczeństwa_sieci.md)

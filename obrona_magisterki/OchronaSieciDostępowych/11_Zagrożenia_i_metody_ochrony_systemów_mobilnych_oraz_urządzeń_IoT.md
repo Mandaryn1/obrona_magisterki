@@ -169,3 +169,6 @@ automatyczne aktualizacje; **natychmiastowa zmiana domyślnych haseł** (min. 12
 
 - **Systemy mobilne:** zagrożenia – utrata/kradzież, malware, niezaufane sieci, phishing, BYOD; ochrona – **MDM** (konfiguracja, monitoring, aktualizacje, zdalne wymazanie, szyfrowanie), **NAC z oceną postury**, patching agentowy, polityki BYOD, MTD.
 - **IoT:** zagrożenia – ograniczone zasoby, domyślne hasła, brak aktualizacji, **botnety (Mirai)**, prywatność, IIoT/medyczne; ochrona – **lekka kryptografia, TPM/TEE i secure boot, uwierzytelnianie urządzeń, bezpieczne protokoły (TLS/DTLS, WPA3), segmentacja VLAN i Zero Trust, monitoring i IDS, bezpieczne OTA, polityka end-of-life**, regulacje (ETSI 303 645, CRA, RODO).
+
+---
+[⬅️ Poprzedni temat](10_Systemy_zarządzania_bezpieczeństwem_informacji_w_ochronie_sieci_lokalnych.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](../BezpieczeństwoSieciTeleinformatycznych/BezpieczeństwoSieciTeleinformatycznych_tytul.md)

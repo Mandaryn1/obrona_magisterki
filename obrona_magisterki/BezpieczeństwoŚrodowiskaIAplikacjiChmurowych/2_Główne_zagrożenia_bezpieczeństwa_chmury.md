@@ -54,3 +54,6 @@ Organizacja **Cloud Security Alliance (CSA)** publikuje cykliczne zestawienie *T
 - Dla chmury charakterystyczne są **błędy konfiguracji** i **tożsamość** jako najsłabsze ogniwo.
 - Ryzyka zarządzania: zależność od dostawcy, utrata kontroli nad danymi, nieautoryzowany dostęp.
 - Ochrona: obrona w głąb (tożsamość, szyfrowanie, segmentacja, monitoring, kopie zapasowe).
+
+---
+[⬅️ Poprzedni temat](1_Cechy_chmury_obliczeniowej_wg_NIST.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](3_Modele_chmur_komputerowych.md)

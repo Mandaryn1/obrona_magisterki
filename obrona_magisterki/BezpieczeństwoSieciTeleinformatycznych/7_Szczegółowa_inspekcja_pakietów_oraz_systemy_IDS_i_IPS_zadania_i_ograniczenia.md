@@ -164,3 +164,6 @@ Dobre praktyki: **ciągłe dostrajanie**, **whitelisting**, integracja z SIEM/SO
 - **DPI** analizuje ładunek i protokół aplikacyjny (L7): wykrywa SQLi, XSS, exploity, C2, malware; wyzwania: ruch szyfrowany (inspekcja TLS), wydajność, prywatność.
 - **IDS** (pasywny, NIDS/HIDS, sygnatury/anomalie/hybryda) – alerty i logi; **IPS** (inline, NIPS/HIPS) – blokada w czasie rzeczywistym; „IDS wykrywa – IPS reaguje".
 - **Ograniczenia:** fałszywe alarmy i alert fatigue, zero-day, szyfrowanie, wydajność i skalowalność, SPOF IPS, fragmentacja polityk; środki: dostrajanie, SOAR, inspekcja TLS, bypass, HA, integracja z SIEM i threat intelligence.
+
+---
+[⬅️ Poprzedni temat](6_Rodzaje_firewalli_oraz_zasady_tworzenia_polityk_i_reguł_bezpieczeństwa.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](8_Adaptacyjne_urządzenia_zabezpieczające_i_ich_rola_w_sieciach_korporacyjnych.md)

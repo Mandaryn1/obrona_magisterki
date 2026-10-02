@@ -123,3 +123,6 @@ $$z=\frac{R_i-R_j}{\sqrt{m(m+1)/(6n)}}$$
 - 2 modele, wiele zbiorów: **Wilcoxon**, test znaków.
 - $>2$ modeli, wiele zbiorów: **Friedman** (+ Iman-Davenport), post-hoc **Nemenyi**.
 - Poza testami: porównanie miar jakości w walidacji krzyżowej, kosztu, interpretowalności i złożoności.
+
+---
+[⬅️ Poprzedni temat](7_Systemy_rekomendacji.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](9_Ocena_jakości_modeli_klasyfikacyjnych.md)

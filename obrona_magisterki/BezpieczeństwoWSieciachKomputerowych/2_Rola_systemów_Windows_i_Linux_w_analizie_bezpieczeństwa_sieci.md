@@ -73,3 +73,6 @@ netsh advfirewall show allprofiles
 - Systemy Windows i Linux są jednocześnie **chronionymi zasobami** (utwardzanie, łatanie) i **platformami/źródłem danych** do analizy bezpieczeństwa sieci (narzędzia, logi, zapory hostowe).
 - Windows: AD, GPO, Event Log (4624/4625), Defender Firewall, AppLocker; Linux: iptables/nftables, auditd, SELinux, fail2ban, narzędzia analityczne.
 - Skuteczna analiza wymaga **korelacji** logów hosta z ruchem sieciowym.
+
+---
+[⬅️ Poprzedni temat](1_Podstawowe_zadania_bezpieczeństwa_i_cyberbezpieczeństwa_w_infrastrukturze_sieciowej.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️️](3_Analiza_protokołów_i_usług_sieciowych_w_ocenie_bezpieczeństwa.md)

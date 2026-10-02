@@ -76,3 +76,6 @@ MAC **nie szyfruje** wiadomości (nie zapewnia poufności) i **nie zapewnia niez
 - **MAC** = tag $\text{MAC}_k(m)$ liczony ze **wspólnym kluczem tajnym**; zapewnia **integralność i autentyczność** (wobec stron znających klucz), **bez niezaprzeczalności** i bez poufności.
 - Najczęstsze: **HMAC-SHA-256**, CMAC, Poly1305/GMAC (w AEAD).
 - **Podpis cyfrowy**: asymetryczny, publicznie weryfikowalny, daje **niezaprzeczalność**, ale jest wolniejszy; MAC – szybki, symetryczny, tylko między stronami z wspólnym kluczem.
+
+---
+[⬅️ Poprzedni temat](12_Funkcje_skrótu.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](14_Kryptografia_krzywych_eliptycznych.md)

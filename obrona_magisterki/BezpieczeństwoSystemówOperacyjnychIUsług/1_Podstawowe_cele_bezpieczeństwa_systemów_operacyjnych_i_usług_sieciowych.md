@@ -76,3 +76,6 @@ Usługi zarządzane są plikami konfiguracyjnymi (port, lokalizacja zasobów, au
 - Cele: **poufność, integralność, dostępność, uwierzytelnienie** (+ autoryzacja, rozliczalność); realizują je **uprawnienia i kontrola dostępu, szyfrowanie, aktualizacje, monitoring i audyt**.
 - Podstawowa strategia: **utwardzanie** (minimalizacja usług, najmniejsze uprawnienia, kontrola dostępu, monitoring, aktualizacje) i redukcja **powierzchni ataku**.
 - Usługi sieciowe = otwarte porty = wektory ataku; wymagają bezpiecznej konfiguracji, szyfrowania, zapór i monitoringu.
+
+---
+[⬅️ Poprzedni temat](0_Wstep.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](2_Architektura_systemu_operacyjnego_z_punktu_widzenia_bezpieczeństwa.md)

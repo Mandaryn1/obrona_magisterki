@@ -103,3 +103,6 @@ $$C_i=P_i\oplus E_k(\text{nonce}\,\|\,\text{licznik}_i)$$
 
 - Tryby pracy pozwalają szyfrować **dowolnie długie dane** blokowym szyfrem i dają **bezpieczeństwo semantyczne** (ECB go nie ma).
 - **ECB** – bloki niezależnie (ujawnia wzorce, nie używać); **CBC** – łańcuchowanie z losowym IV, padding, ryzyko padding oracle; **CFB/OFB/CTR** – szyfr blokowy jako strumieniowy; **CTR** – równoległy, nonce unikalny; **GCM** – CTR + GHASH = **AEAD** (poufność + integralność), standard w TLS, ale nonce nie wolno powtarzać.
+
+---
+[⬅️ Poprzedni temat](5_Szyfry_klasyczne_a_nowoczesne_algorytmy_kryptograficzne.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](7_Rola_klucza_w_kryptografii_symetrycznej_i_asymetrycznej.md)

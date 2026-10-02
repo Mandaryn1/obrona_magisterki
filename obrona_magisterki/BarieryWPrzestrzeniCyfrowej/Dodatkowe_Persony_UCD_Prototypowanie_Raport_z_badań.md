@@ -135,3 +135,6 @@ Prototyp = kompromis (koszt vs jakość, niska vs wysoka dokładność); **szero
 ## Powiązania
 
 UCD i prototypy powstają **przed** badaniami z tematów 6–10; persony służą do doboru uczestników; wyniki testów (SUS, eyetracking) wracają do kolejnych iteracji projektu.
+
+---
+[⬅️ Poprzedni temat](10_Okulografia_idea_istota_urządzenia_eksperyment_rezultaty.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](../BezpieczeństwoŚrodowiskaIAplikacjiChmurowych/BezpieczeństwoŚrodowiskaIAplikacjiChmurowych_tytul.md)

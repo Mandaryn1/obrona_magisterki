@@ -136,3 +136,6 @@ Testy penetracyjne (black/white/gray box; co najmniej raz w roku i po zmianach),
 
 - Główne ataki: **SQL Injection** (obrona: zapytania parametryzowane, walidacja, ORM, najmniejsze uprawnienia bazy), **XSS** (kodowanie wyjścia, CSP, frameworki), **CSRF** (tokeny, SameSite), **ataki na sesje** (HttpOnly/Secure, timeouty, regeneracja ID), a także Broken Access Control, SSRF, command injection, path traversal.
 - Warstwy: bezpieczny kod, **WAF**, **TLS**, bezpieczne kontenery, testy (pentest, fuzzing), monitoring (SIEM) – zgodnie z **OWASP Top 10** (2021/2025).
+
+---
+[⬅️ Poprzedni temat](8_Zastosowanie_kryptografii_w_ochronie_danych_i_komunikacji.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](10_Bezpieczeństwo_podstawowych_usług_sieci_lokalnej_DHCP_DNS_NAT_HTTP_FTP.md)

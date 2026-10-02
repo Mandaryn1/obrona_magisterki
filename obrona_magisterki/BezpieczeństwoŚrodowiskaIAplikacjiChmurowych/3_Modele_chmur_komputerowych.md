@@ -59,3 +59,6 @@ Zależy od: **wrażliwości danych** (klasyfikacja), **wymagań prawnych** (RODO
 - **Modele usług:** IaaS (klient zarządza prawie wszystkim powyżej wirtualizacji), PaaS (klient – aplikacje i dane), SaaS (klient – dostęp, konfiguracja, zgodność).
 - **Modele wdrożenia:** public, private, hybrid, community.
 - Im wyższy poziom usługi (IaaS → PaaS → SaaS), tym **mniejsza kontrola, ale i mniejsza odpowiedzialność** klienta za techniczną stronę bezpieczeństwa.
+
+---
+[⬅️ Poprzedni temat](2_Główne_zagrożenia_bezpieczeństwa_chmury.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](4_Czy_bezpieczeństwo_chmury_wymaga_innego_podejścia.md)

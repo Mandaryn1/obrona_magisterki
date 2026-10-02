@@ -52,3 +52,6 @@
 | **HIDS / EDR / SIEM** | hostowy IDS / wykrywanie i reagowanie na punktach końcowych / korelacja logów |
 | **CVE / CWE / CVSS / NVD** | identyfikator podatności / słabości / ocena dotkliwości / baza NIST |
 | **ATT&CK / TTP / IOC** | baza taktyk i technik MITRE / taktyki-techniki-procedury / wskaźniki włamania |
+
+---
+[⬅️ Poprzedni temat](BezpieczeństwoSystemówOperacyjnychIUsług_tytul.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](1_Podstawowe_cele_bezpieczeństwa_systemów_operacyjnych_i_usług_sieciowych.md)

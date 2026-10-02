@@ -108,3 +108,6 @@ SIEM: korelacja, agregacja, forensics, retencja (zob. temat 3). **Cisco ISE** (k
 - Podstawowy zestaw: **sniffery** (Wireshark, tcpdump), **skanery** (Nmap/Zenmap, SuperScan), **analiza przepływów** (NetFlow/sFlow), **IDS/IPS i NSM**, **SIEM/SOAR**, **skanery podatności**, **kontrola integralności** (Tripwire), narzędzia **CLI** (ping, arp, netstat, tracert, nslookup, netcat, hping).
 - Dobór zależy od pytania (zawartość ruchu, inwentaryzacja, anomalie, ataki, korelacja, podatności).
 - Stosować legalnie i etycznie; łączyć narzędzia w ramach monitoringu i procesu reagowania.
+
+---
+[⬅️ Poprzedni temat](3_Znaczenie_monitorowania_sieci_lokalnej_w_wykrywaniu_i_analizie_incydentów.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](5_Zasady_projektowania_bezpiecznej_infrastruktury_sieci_lokalnej_i_zabezpieczanie_urządzeń.md)

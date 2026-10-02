@@ -83,3 +83,6 @@ Zależności:
 - **Interfejs** – dokładnie opisany punkt styku (mechanika, elektryka, czasy, znaczenie sygnałów).
 - **Protokół** – reguły wymiany informacji (format, kolejność, adresacja, potwierdzenia, błędy).
 - Razem tworzą system komunikacji: magistrala to „droga", interfejs – „zasady połączenia z drogą", protokół – „język i etykieta rozmowy".
+
+---
+[⬅️ Poprzedni temat](1_Zagadnienie_Internetu_Rzeczy.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](3_Mikrokontroler_i_mikroprocesor.md)

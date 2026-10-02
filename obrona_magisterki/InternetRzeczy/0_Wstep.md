@@ -46,3 +46,6 @@ Elementy: **sensory** (pomiar), **mikrokontroler** (przetwarzanie, sterowanie), 
 3. Co jest „mózgiem" węzła – **mikrokontroler vs mikroprocesor** (3), architektury **CISC** (4) i **RISC** (5).
 4. Czym węzeł „czuje" i „działa" – **sensory inteligentne** (8), **aktuatory** (9), sterowanie mocą przez **PWM** (10).
 5. Zjawiska fizyczne wpływające na działanie układów – **pojemność pasożytnicza** (7).
+
+---
+[⬅️ Poprzedni temat](InternetRzeczy_tytul.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](1_Zagadnienie_Internetu_Rzeczy.md)

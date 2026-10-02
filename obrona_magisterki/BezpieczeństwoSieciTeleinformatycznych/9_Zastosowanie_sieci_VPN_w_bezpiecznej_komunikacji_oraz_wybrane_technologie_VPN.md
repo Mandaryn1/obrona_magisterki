@@ -131,3 +131,6 @@ Dobre praktyki: **MFA dla wszystkich użytkowników VPN**, **zakaz haseł wyłą
 - **VPN** = szyfrowany tunel przez sieć publiczną: **poufność, integralność, uwierzytelnienie**; zastosowania: **remote access**, **site-to-site**, B2B, chmura hybrydowa, praca w niezaufanych sieciach.
 - **Technologie:** **IPsec** (AH/ESP, tryby tunelowy/transportowy, IKEv2, SA, certyfikaty/PSK) – standard enterprise; **SSL/TLS VPN** (443, AnyConnect) – dostęp zdalny; **OpenVPN** (TLS, UDP 1194, TUN/TAP); **WireGuard** (Curve25519, ChaCha20-Poly1305, mały kod, wysoka wydajność); też L2TP/IPsec, GRE, MPLS VPN, SD-WAN, ZTNA; **PPTP – nie używać**.
 - Współpraca z **zaporą i NAT** (NAT-T, polityka dla ruchu z tunelu); zagrożenia: podatności bram VPN, słabe uwierzytelnianie, przestarzała kryptografia, split tunneling – środki: aktualizacje, **MFA**, silne algorytmy, najmniejsze uprawnienia, monitoring.
+
+---
+[⬅️ Poprzedni temat](8_Adaptacyjne_urządzenia_zabezpieczające_i_ich_rola_w_sieciach_korporacyjnych.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](10_Etapy_i_metody_testowania_bezpieczeństwa_sieci_teleinformatycznych.md)

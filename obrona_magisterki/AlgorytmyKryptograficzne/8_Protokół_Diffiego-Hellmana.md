@@ -89,3 +89,6 @@ Czysty DH **nie uwierzytelnia stron**. Aktywny przeciwnik Mallory:
 - **DH** pozwala przez otwarty kanał uzgodnić wspólny sekret: $A=g^a$, $B=g^b$, $K=g^{ab}\bmod p$.
 - Bezpieczeństwo: trudność **logarytmu dyskretnego** (CDH/DDH) – podsłuch nie wystarczy do wyliczenia klucza.
 - **Brak uwierzytelniania → MITM**; trzeba podpisów/certyfikatów; wersje **efemeryczne** dają forward secrecy; ECDH – krótsze klucze.
+
+---
+[⬅️ Poprzedni temat](7_Rola_klucza_w_kryptografii_symetrycznej_i_asymetrycznej.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](9_Bezpieczeństwo_kryptosystemu_RSA.md)

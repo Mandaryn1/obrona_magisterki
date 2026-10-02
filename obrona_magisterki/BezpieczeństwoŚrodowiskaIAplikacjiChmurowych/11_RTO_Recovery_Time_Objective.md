@@ -85,3 +85,6 @@ RTO/RPO to część **dostępności** (A w CIA) i reagowania na incydenty: atak 
 - **RTO** = maksymalny dopuszczalny **czas niedostępności** po awarii (od awarii do przywrócenia działania).
 - **RPO** – ile danych można stracić; **RTO** – jak długo można nie działać.
 - Zależy od **BIA/SLA**; osiąga się je przez redundancję, automatyzację, plany i **testy DR**; krótsze RTO = większy koszt.
+
+---
+[⬅️ Poprzedni temat](10_RPO_Recovery_Point_Objective.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](12_VPC_Virtual_Private_Cloud_w_bezpieczeństwie_chmury.md)

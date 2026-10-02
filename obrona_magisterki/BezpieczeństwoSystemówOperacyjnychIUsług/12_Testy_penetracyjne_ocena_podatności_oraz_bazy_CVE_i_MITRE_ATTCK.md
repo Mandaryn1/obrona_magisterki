@@ -111,3 +111,6 @@ Raport: streszczenie dla kierownictwa + część techniczna; **ustalenia z dowod
 - **Test penetracyjny** = autoryzowana symulacja ataku (etyczny hacking); metodyki **PTES, NIST SP 800-115, OSSTMM, ISSAF, ATT&CK, OWASP WSTG**; fazy planowanie–odkrywanie–atak–raportowanie; ścisły **zakres i zgoda**.
 - **Ocena podatności**: rozpoznanie pasywne/aktywne, skanery (uwierzytelnione/nieuwierzytelnione…), **weryfikacja fałszywych alarmów**, priorytetyzacja wg krytyczności i prawdopodobieństwa wykorzystania.
 - **Bazy:** **CVE** (identyfikatory), **NVD** (oceny), **CVSS** (0–10), **CWE** (słabości), **CAPEC** (wzorce ataków), KEV/EPSS; **MITRE ATT&CK** – taktyki i techniki przeciwnika (14 taktyk Enterprise) – używane w testach, detekcji, threat huntingu i analizie incydentów.
+
+---
+[⬅️ Poprzedni temat](11_Proces_reagowania_na_incydenty_i_podstawy_analizy_powłamaniowej.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](../PrzygotowanieIPublikowanieArtykułówNaukowych/PrzygotowanieIPublikowanieArtykułówNaukowych_tytul.md)

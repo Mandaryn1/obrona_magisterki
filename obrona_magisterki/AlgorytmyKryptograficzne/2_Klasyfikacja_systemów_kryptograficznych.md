@@ -74,3 +74,6 @@ szyfrowanie, uwierzytelnianie (MAC, podpis), **AEAD** (szyfrowanie z uwierzyteln
 - **Symetryczne** – jeden wspólny tajny klucz, szybkie, problem dystrybucji kluczy (AES, ChaCha20); **asymetryczne** – para kluczy, wolne, rozwiązują dystrybucję i podpisy (RSA, ECC, ElGamal).
 - **Blokowe** – bloki stałej długości + tryb pracy (AES); **strumieniowe** – szyfrowanie bit/bajt strumieniem klucza (ChaCha20).
 - W praktyce stosuje się **systemy hybrydowe**: asymetria do kluczy/podpisów, symetria do danych.
+
+---
+[⬅️ Poprzedni temat](1_Kryptografia_i_kryptoanaliza_cele_mechanizmów_kryptograficznych.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️️](3_Zasada_Kerckhoffsa.md)

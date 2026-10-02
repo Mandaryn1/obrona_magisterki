@@ -94,3 +94,6 @@ słabe hasła, brak MFA, wycieki kluczy (np. w repozytoriach), nadmierne uprawni
 - **IAM** = identyfikacja, uwierzytelnianie, autoryzacja, zarządzanie użytkownikami i audyt dostępu; **fundament bezpieczeństwa chmury**.
 - W chmurze obsługuje **federację, SSO** (SAML, OAuth 2.0, OIDC) i **różne typy tożsamości** (ludzie, aplikacje, usługi).
 - Zasady: **najmniejsze uprawnienia, separacja obowiązków, regularne przeglądy dostępu**; uzupełnione **MFA, RBAC/ABAC, zarządzaniem sesjami, kluczami i audytem**.
+
+---
+[⬅️ Poprzedni temat](5_Model_chmury_w_którym_dostawca_odpowiada_za_infrastrukturę_i_platformę.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️️](7_MFA_w_kontekście_chmury.md)

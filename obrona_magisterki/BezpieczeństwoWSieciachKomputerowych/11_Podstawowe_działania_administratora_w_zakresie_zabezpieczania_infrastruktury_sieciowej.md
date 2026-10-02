@@ -128,3 +128,6 @@ zamknięte szafy, kontrola dostępu do serwerowni, monitoring, zasilanie i klima
 
 - Administrator: **inwentaryzuje, utwardza, łata, segmentuje, kontroluje dostęp, szyfruje, monitoruje, wykonuje kopie, reaguje na incydenty i szkoli** – w ramach ciągłego cyklu PDCA.
 - Podstawa: **najmniejsze uprawnienia, domyślna odmowa, minimalna powierzchnia ataku, obrona w głąb** oraz audyt i doskonalenie.
+
+---
+[⬅️ Poprzedni temat](10_Segmentacja_sieci_minimalizacja_uprawnień_inspekcja_ruchu_i_kontrola_dostępu.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](12_Praktyczne_znaczenie_Wireshark_nmap_i_systemowych_narzędzi_diagnostycznych.md)

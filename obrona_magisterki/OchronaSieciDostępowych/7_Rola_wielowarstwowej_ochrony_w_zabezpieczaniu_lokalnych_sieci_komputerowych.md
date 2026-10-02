@@ -99,3 +99,6 @@ dobór kontroli w oparciu o **analizę ryzyka**, **niezależność i różnorodn
 - **Ochrona wielowarstwowa (defense in depth)** – wiele niezależnych warstw kontroli; awaria jednej nie oznacza kompromitacji całości.
 - Warstwy: **polityki/ludzie → fizyczna → perymetr → sieć wewnętrzna (segmentacja) → dostęp (802.1X, port security) → host → aplikacje → dane**, plus **tożsamość** i **monitoring/reagowanie** przekrojowo.
 - Zatrzymuje wieloetapowe ataki, ogranicza ruch boczny i skutki, kompensuje błędy pojedynczych zabezpieczeń; wymaga równowagi kosztu, wydajności i złożoności.
+
+---
+[⬅️ Poprzedni temat](6_Zagrożenia_komunikacji_bezprzewodowej_i_sposoby_jej_zabezpieczania.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](8_Audyt_bezpieczeństwa_testy_penetracyjne_i_ocena_podatności.md)

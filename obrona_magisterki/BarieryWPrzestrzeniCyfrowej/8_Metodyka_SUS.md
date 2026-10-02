@@ -84,3 +84,6 @@ Wynik systemu = **średnia z wyników wszystkich uczestników**.
 - Wzór: $SUS=\big(\sum_{nieparz.}(S_i-1)+\sum_{parz.}(5-S_i)\big)\cdot2{,}5$ → wynik **0–100**.
 - Średnia dla 500 systemów = **68**; dwa czynniki: użyteczność (8 pozycji) i możliwość nauczenia (Q4, Q10).
 - Szybka metoda oceny satysfakcji po wykonaniu scenariusza; uzupełnia metryki wydajnościowe i testy.
+
+---
+[⬅️ Poprzedni temat](7_Techniki_oceny_jakości_interfejsów_z_udziałem_i_bez_udziału_użytkowników.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](9_Ocena_heurystyczna_heurystyki_Nielsena-Molicha.md)

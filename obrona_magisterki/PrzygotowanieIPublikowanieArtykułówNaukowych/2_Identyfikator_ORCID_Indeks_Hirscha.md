@@ -46,4 +46,4 @@ Po opublikowaniu swoich prac w wolnym dostępie można policzyć cytowania za po
 - zjawisko cytowania negatywnego – cytowanie nie musi oznaczać uznania dla tekstu naukowego lub badacza, może oznaczać krytykę.
 
 ---
-[⬅️ Poprzedni temat](1_Struktura_publikacji_naukowych_schemat_IMRaD.md) | [Powrót do spisu treści](../../README.md) | [Następny temat ➡️](3_Rodzaje_artykułów_naukowych.md)
+[⬅️ Poprzedni temat](1_Struktura_publikacji_naukowych_schemat_IMRaD.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](3_Rodzaje_artykułów_naukowych.md)

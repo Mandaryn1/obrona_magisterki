@@ -114,3 +114,6 @@ Przykład: konfiguracja serwera przez plik konfiguracyjny (np. **Nginx** – wyk
 
 - **DHCP:** zagrożenia rogue DHCP i starvation → **DHCP snooping**, port security; **DNS:** poisoning, amplifikacja, tunelowanie → **DNSSEC, wyłączenie otwartej rekursji, filtrowanie, DoT/DoH**; **NAT:** nie jest zaporą – ryzyka port forwarding/UPnP → zapora stanowa; **HTTP:** HTTPS+HSTS, nagłówki, WAF, utwardzony serwer; **FTP:** jawny → **SFTP/FTPS**, Telnet → **SSH**, SNMPv3, wyłączenie SMBv1.
 - Dla każdej usługi: minimalna ekspozycja, szyfrowanie, uwierzytelnianie, najmniejsze uprawnienia, aktualizacje, logowanie.
+
+---
+[⬅️ Poprzedni temat](9_Najczęstsze_ataki_na_aplikacje_webowe_i_mechanizmy_ich_ograniczania.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](11_Proces_reagowania_na_incydenty_i_podstawy_analizy_powłamaniowej.md)

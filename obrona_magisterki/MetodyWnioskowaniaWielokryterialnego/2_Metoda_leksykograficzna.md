@@ -95,3 +95,6 @@ i maksymalizujemy $f_{k+1}$ na $D_{k+1}$. Ostatnie zadanie ($k=s$) daje rozwiąz
 - Odpowiada porządkowi słownikowemu; brak kompensacji i wag.
 - Wersja z tolerancją (współczynniki odstępstwa $d_k$) łagodzi surowość metody.
 - Rozwiązanie jest Pareto-optymalne, ale wynik zależy wyłącznie od kolejności i bardzo wrażliwy na drobne różnice na kryteriach najważniejszych.
+
+---
+[⬅️ Poprzedni temat](1_Główne_zadania_normalizacji_wartości_kryteriów_optymalizacji.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](3_Wyznaczanie_wag_ważności_kryteriów_w_metodzie_AHP.md)

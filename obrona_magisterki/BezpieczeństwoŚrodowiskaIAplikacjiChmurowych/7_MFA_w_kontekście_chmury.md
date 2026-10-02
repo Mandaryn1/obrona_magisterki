@@ -57,3 +57,6 @@ Przeciwdziałanie: **metody odporne na phishing (FIDO2)**, dopasowanie numeru, *
 - W chmurze chroni przed skutkami wycieku hasła i przejęciem kont; **obowiązkowe dla administratorów i kont uprzywilejowanych**.
 - **SMS/e-mail słabsze** niż aplikacje i tokeny sprzętowe; trzeba zapewnić **procedury awaryjne**.
 - Można je zapewnić przez dostawcę chmury lub zewnętrzne rozwiązania.
+
+---
+[⬅️ Poprzedni temat](6_IAM_w_bezpieczeństwie_chmurowym.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](8_Mechanizmy_RBAC_i_ABAC.md)

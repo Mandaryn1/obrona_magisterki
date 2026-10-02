@@ -149,3 +149,6 @@ Dla $x \in \mathbb{R}^d$ stosuje się:
 - Estymator jądrowy: $\hat f_h(x) = \frac{1}{nh}\sum K\big(\frac{x-X_i}{h}\big)$; **jądro mało ważne, $h$ kluczowe**.
 - $h$ dobiera się minimalizując MISE (metody: przybliżona, podstawień, cross-validation).
 - Modyfikacja $h$ pozwala dopasować wygładzenie do lokalnej gęstości.
+
+---
+[⬅️ Poprzedni temat](1_Metody_identyfikacji_obserwacji_odstających.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](3_Wnioskowanie_statystyczne_ANOVA_MANOVA.md)

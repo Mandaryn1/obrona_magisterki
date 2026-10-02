@@ -116,3 +116,6 @@ analiza wymagań → dobór rozwiązania → projekt architektury (punkty monito
 - Do identyfikacji ataków służą: **analizatory pakietów** (Wireshark, tcpdump), **NIDS/NIPS** (Snort, Suricata), **NSM** (Zeek), **HIDS/HIPS** (OSSEC/Wazuh), **analiza przepływów** (NetFlow/sFlow), **zapory/WAF**, **SIEM/SOAR**, skanery.
 - Metody detekcji: **sygnaturowa, anomalii, hybrydowa**; **IDS wykrywa, IPS blokuje**.
 - Główne wyzwania: szyfrowanie, fałszywe alarmy, wydajność, zero-day.
+
+---
+[⬅️ Poprzedni temat](6_Metody_detekcji_i_obrony_przed_atakami_w_warstwie_III_modelu_OSI.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](8_Monitorowanie_ruchu_sieciowego_w_wykrywaniu_nieprawidłowości_i_incydentów.md)

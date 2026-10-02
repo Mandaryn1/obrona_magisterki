@@ -160,3 +160,6 @@ Z kursu Cisco i W3–W5:
 - **Metodyki:** **NIST SP 800-115, PTES (7 faz), OSSTMM, ISSAF, MITRE ATT&CK, OWASP WSTG**; środowiska: infrastruktura, aplikacje, chmura, fizyczne, socjotechniczne; perspektywy: **unknown/partially known/known environment**.
 - **Etapy:** **planowanie** (zakres, RoE, SOW/MSA/NDA, zgody, zgodność) → **odkrywanie** (rozpoznanie pasywne i aktywne, skanowanie podatności) → **atak** (eksploatacja, eskalacja, ruch boczny, persistence) → **raportowanie** (analiza, CVSS/CVE/CWE, priorytety, rekomendacje, retest).
 - **Metody:** pentest, skanowanie sieci i podatności, łamanie haseł, przegląd logów, kontrola integralności, testy zapór/IPS/VPN/segmentacji/Wi-Fi, socjotechnika, ST&E, ćwiczenia red/blue/white/purple team.
+
+---
+[⬅️ Poprzedni temat](9_Zastosowanie_sieci_VPN_w_bezpiecznej_komunikacji_oraz_wybrane_technologie_VPN.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](11_Zastosowanie_sztucznej_inteligencji_i_uczenia_maszynowego_w_ochronie_sieci.md)

@@ -151,3 +151,6 @@ Ochrona danych osobowych; **środki techniczne i organizacyjne adekwatne do ryzy
 - **NIS2** – dyrektywa UE: środki zarządzania ryzykiem (art. 21), **zgłaszanie incydentów 24 h/72 h/1 mies.**, odpowiedzialność zarządu, kary; w Polsce wdrożona nowelizacją KSC (**w życie 3.04.2026**; wpis do wykazu do 3.10.2026, dostosowanie do 3.04.2027).
 - Inne: **NIST CSF** (Identify–Protect–Detect–Respond–Recover; 2.0 + Govern), **CIS Controls**, **PCI DSS**, **RODO**, ISO 27005/22301/27017, DORA, IEC 62443, SOC 2.
 - Standardy uzupełniają się i wspólnie budują podejście oparte na ryzyku.
+
+---
+[⬅️ Poprzedni temat](1_Ataki_polegające_na_rozpoznaniu_uzyskaniu_dostępu_oraz_inżynierii_społecznej.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](3_Zabezpieczanie_styku_sieci_teleinformatycznej_z_sieciami_zewnętrznymi.md)

@@ -86,3 +86,6 @@ Konstrukcje: **Merkle–Damgård** (MD5, SHA-1, SHA-2: blok po bloku z funkcją 
 - Bezpieczeństwo = **odporność na odwracanie ($2^n$), na drugi przeciwobraz ($2^n$) i na kolizje ($2^{n/2}$, atak urodzinowy)**.
 - Aktualnie: **SHA-256/384/512, SHA-3, BLAKE2/3**; **MD5 i SHA-1 złamane**.
 - Zastosowania: integralność, podpisy, HMAC, hasła (z solą i KDF), blockchain, zobowiązania.
+
+---
+[⬅️ Poprzedni temat](11_Podpis_elektroniczny.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](13_Kody_MAC_i_porównanie_z_podpisem_cyfrowym.md)

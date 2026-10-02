@@ -81,3 +81,6 @@ Ponad **90% ruchu** jest szyfrowane (wykład, slajd 27): IDS/IPS nie widzą zawa
 - Ocena bezpieczeństwa: **inwentaryzacja usług → analiza ruchu → przegląd konfiguracji i wersji → mapowanie podatności → rekomendacje**.
 - Protokoły historyczne (Telnet, FTP, HTTP, SNMPv1/2c, SMBv1, ARP, DHCP, DNS) są **niebezpieczne z założenia** – zastępować bezpiecznymi (SSH, SFTP, HTTPS, SNMPv3, SMB 3) lub chronić mechanizmami sieciowymi.
 - TCP/UDP/ICMP mają charakterystyczne ataki (SYN flood, amplifikacja, tunelowanie, hijacking) – znajomość protokołu pozwala pisać reguły zapory i sygnatury IDS.
+
+---
+[⬅️ Poprzedni temat](2_Rola_systemów_Windows_i_Linux_w_analizie_bezpieczeństwa_sieci.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](4_Klasyfikacja_najważniejszych_rodzajów_ataków_sieciowych.md)

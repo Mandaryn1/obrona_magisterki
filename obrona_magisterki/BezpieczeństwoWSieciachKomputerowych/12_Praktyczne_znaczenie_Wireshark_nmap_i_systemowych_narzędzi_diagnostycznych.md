@@ -109,3 +109,6 @@ Dostępne „od ręki" na każdym systemie – podstawa **diagnostyki i wstępne
 - **nmap** – inwentaryzacja hostów i usług, audyt powierzchni ataku, weryfikacja zapory; wykrywany przez IDS jako rozpoznanie.
 - **Narzędzia systemowe** (ping, traceroute, ip/ipconfig, ss/netstat, arp, dig/nslookup, logi) – szybka diagnostyka i wstępna analiza incydentu bez dodatkowego oprogramowania.
 - Używać **wyłącznie za zgodą właściciela sieci**; łączyć narzędzia z monitoringiem (SIEM, NetFlow, IDS).
+
+---
+[⬅️ Poprzedni temat](11_Podstawowe_działania_administratora_w_zakresie_zabezpieczania_infrastruktury_sieciowej.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](../OchronaSieciDostępowych/OchronaSieciDostępowych_tytul.md)

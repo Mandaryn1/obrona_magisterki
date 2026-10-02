@@ -112,3 +112,6 @@ Efekt: incydent ograniczony do **jednej stacji**, a nie całej organizacji (inac
 - Cztery uzupełniające się mechanizmy: **segmentacja** (gdzie można dotrzeć), **minimalne uprawnienia** (co można zrobić), **inspekcja** (co płynie), **kontrola dostępu** (kto wchodzi).
 - Wspólna zasada: **domyślna odmowa i biała lista** + założenie naruszenia (**Zero Trust**) → ograniczenie ruchu bocznego i skali szkód.
 - Wdrożenie: strefy (DMZ, aplikacje, dane, zarządzanie), mikrosegmentacja, least privilege/PAM, zapory stanowe i NGFW/IPS, 802.1X i MFA, monitoring.
+
+---
+[⬅️ Poprzedni temat](9_Metody_zapobiegania_nieuprawnionemu_dostępowi_do_zasobów_sprzętowych_i_programowych.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](11_Podstawowe_działania_administratora_w_zakresie_zabezpieczania_infrastruktury_sieciowej.md)

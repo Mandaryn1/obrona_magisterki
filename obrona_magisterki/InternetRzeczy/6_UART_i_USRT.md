@@ -95,3 +95,6 @@ Moduł **USART** (np. Intel 8251, USART w AVR i STM32) potrafi pracować **w obu
 - **UART** – transmisja szeregowa **asynchroniczna**: bez linii zegara, znak oprawiony bitem START i STOP (opcjonalnie parzystość), z uzgodnioną prędkością (baud rate); prosty, ale z narzutem; popularny: 8N1.
 - **USRT** – transmisja **synchroniczna**: zegar wspólny/odtwarzany, dane w blokach z synchronizacją SYNC/flagami, mały narzut i duża przepływność, większa złożoność.
 - **USART** obsługuje oba tryby (w praktyce najczęściej spotykany moduł w mikrokontrolerach).
+
+---
+[⬅️ Poprzedni temat](5_Architektura_RISC.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](7_Pojemność_pasożytnicza.md)

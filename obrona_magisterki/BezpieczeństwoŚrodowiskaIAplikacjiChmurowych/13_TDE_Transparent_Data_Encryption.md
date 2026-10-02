@@ -83,3 +83,6 @@ W wykładzie (slajdy 221, 310): **TDE do całych tabel/plików bazy** (np. **EDB
 - **TDE** = automatyczne, przezroczyste dla aplikacji szyfrowanie plików bazy danych (dane w spoczynku), z kluczem chronionym w KMS/HSM.
 - Chroni przed kradzieżą nośnika/kopii/snapshotu, **nie** przed uprawnionym dostępem i atakami na poziomie aplikacji.
 - Uzupełnia się o RBAC, szyfrowanie kolumnowe, TLS i audyt; wymaga dobrego zarządzania kluczami.
+
+---
+[⬅️ Poprzedni temat](12_VPC_Virtual_Private_Cloud_w_bezpieczeństwie_chmury.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](14_Data_minimization_minimalizacja_danych.md)

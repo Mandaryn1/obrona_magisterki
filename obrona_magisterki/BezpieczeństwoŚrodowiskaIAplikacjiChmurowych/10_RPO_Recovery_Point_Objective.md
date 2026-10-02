@@ -83,3 +83,6 @@ Baza danych zamówień: backup pełny raz dziennie o 2:00 (CronJob w Kubernetes)
 - **RPO** = maksymalny dopuszczalny **czas utraty danych** (jak „stare" mogą być odtworzone dane).
 - Określa **częstotliwość kopii/replikacji**; niższe RPO = wyższy koszt.
 - Wartość ustala **BIA**; komplementarne do **RTO** (czas przywrócenia działania).
+
+---
+[⬅️ Poprzedni temat](9_Szyfrowanie_danych_w_spoczynku_i_w_tranzycie.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](11_RTO_Recovery_Time_Objective.md)

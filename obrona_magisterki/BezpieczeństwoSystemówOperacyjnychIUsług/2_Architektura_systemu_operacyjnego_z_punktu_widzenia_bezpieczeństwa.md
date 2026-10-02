@@ -88,3 +88,6 @@
 - Bezpieczny OS opiera się na **izolacji trybu jądra i użytkownika**, **monitorze odwołań** pośredniczącym w dostępie, **procesach z własnymi przestrzeniami adresowymi**, **systemie plików z uprawnieniami**, **zaufanym rozruchu (UEFI Secure Boot + TPM)** oraz małym TCB.
 - Windows: HAL, jądro, NT Executive (SRM, LSASS), NTFS (ACL, ADS), rejestr, usługi, AD/GPO; Linux: monolityczne jądro z LSM, „wszystko jest plikiem", prawa plików, PAM, SELinux/AppArmor, logi w `/var/log`.
 - Każdy komponent (autostart, usługi, sterowniki, ADS, rejestr) to także potencjalny element **utrwalania zagrożeń**.
+
+---
+[⬅️ Poprzedni temat](1_Podstawowe_cele_bezpieczeństwa_systemów_operacyjnych_i_usług_sieciowych.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](3_Jądro_systemu_separacja_przestrzeni_użytkownika_i_ochrona_pamięci.md)

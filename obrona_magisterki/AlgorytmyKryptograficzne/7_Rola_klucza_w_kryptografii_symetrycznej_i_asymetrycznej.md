@@ -92,3 +92,6 @@ Klucze asymetryczne muszą być **znacznie dłuższe** przy tym samym poziomie b
 - **Symetryczna:** jeden wspólny klucz tajny, szybko, ale **problem dystrybucji** i $\frac{n(n-1)}{2}$ kluczy.
 - **Asymetryczna:** para (publiczny + prywatny); rozwiązuje **dystrybucję, skalowalność, podpisy i niezaprzeczalność**; wolniejsza, wymaga PKI.
 - W praktyce **hybrydowo**: asymetria do uzgodnienia klucza i podpisów, symetria do danych.
+
+---
+[⬅️ Poprzedni temat](6_Tryby_pracy_szyfrów_blokowych.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](8_Protokół_Diffiego-Hellmana.md)

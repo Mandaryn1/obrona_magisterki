@@ -70,3 +70,6 @@ Wniosek: dla oprogramowania **tańsze i skuteczniejsze jest projektowanie ergono
 - Ergonomia = nauka i praktyka dopasowania systemów do człowieka (dobrostan + wydajność systemu); trzy obszary: **fizyczna, poznawcza, organizacyjna**; dla interfejsów kluczowa jest **poznawcza**.
 - Typy: **korekcyjna** (naprawianie istniejących układów) i **koncepcyjna** (zasady od etapu projektu).
 - Interfejs = punkt styku i wspólny „język" komunikujących się jednostek; interfejs użytkownika = punkt interakcji człowiek–komputer (HCI).
+
+---
+[⬅️ Poprzedni temat](1_Projektowanie_uniwersalne_idea_przepisy_prawne_zasady.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](3_Użyteczność_i_dostępność_interfejsu_oprogramowania.md)

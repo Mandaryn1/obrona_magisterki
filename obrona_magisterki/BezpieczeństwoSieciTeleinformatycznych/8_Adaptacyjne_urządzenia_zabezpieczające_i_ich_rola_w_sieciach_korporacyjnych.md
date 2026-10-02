@@ -139,3 +139,6 @@ utwardzenie urządzenia i **zarządzanie tylko z sieci zarządzania (MFA)**, **s
 - **Cisco ASA (Adaptive Security Appliance)** – korporacyjne urządzenie: **zapora stanowa + VPN (IPsec, AnyConnect) + inspekcja aplikacji + HA/klastrowanie**, z **Firepower/FTD** – IPS i antymalware; „adaptacyjność" = **Adaptive Security Algorithm** (stany połączeń, poziomy zaufania 0–100).
 - Szerzej: **adaptacyjna architektura bezpieczeństwa** (zapobiegaj – wykrywaj – reaguj – przewiduj), **NGFW/UTM** z AI, threat intelligence, integracją (Fortinet Security Fabric) i polityką kontekstową.
 - W sieci korporacyjnej: **ochrona perymetru, segmentacja, koncentrator VPN, IPS/malware, kontrola aplikacji, integracja tożsamości, źródło logów** – przy zapewnieniu HA i utwardzenia.
+
+---
+[⬅️ Poprzedni temat](7_Szczegółowa_inspekcja_pakietów_oraz_systemy_IDS_i_IPS_zadania_i_ograniczenia.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](9_Zastosowanie_sieci_VPN_w_bezpiecznej_komunikacji_oraz_wybrane_technologie_VPN.md)

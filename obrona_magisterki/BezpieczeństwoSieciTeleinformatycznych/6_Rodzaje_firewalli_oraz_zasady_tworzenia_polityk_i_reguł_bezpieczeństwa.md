@@ -157,3 +157,6 @@ ip access-list extended INTERNET-IN
 - **Rodzaje:** filtrujące pakiety (L3–4), **stanowe** (tabela stanów, dynamiczne reguły), obwodowe, **aplikacyjne/proxy i WAF** (L7: SQLi, XSS…), **NGFW** (IPS, kontrola aplikacji, antymalware, inspekcja TLS, tożsamość), **UTM**, hostowe; wykonania: Cisco ASA, Palo Alto, Fortinet, pfSense, iptables/nftables, Windows Firewall.
 - **Polityka → reguły:** domyślna odmowa, najmniejsze uprawnienia, kolejność first-match, ingress i egress, anti-spoofing, obiekty i dokumentacja, zarządzanie zmianami, regularny przegląd i audyt, logowanie do SIEM, utwardzenie i HA, zgodność z normami.
 - Wyzwania: fragmentacja polityk (zarządzanie cyklem życia, Panorama/FortiManager), wydajność i inspekcja TLS.
+
+---
+[⬅️ Poprzedni temat](5_Technologie_uwierzytelniania_i_autoryzacji_RADIUS_TACACS_plus_oraz_ISE.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](7_Szczegółowa_inspekcja_pakietów_oraz_systemy_IDS_i_IPS_zadania_i_ograniczenia.md)

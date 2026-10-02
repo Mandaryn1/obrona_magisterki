@@ -136,3 +136,6 @@ $$WUP=\frac{1}{n_a}\sum_{i=1}^{n_a}\frac{1}{s_i}\sum_{j=1}^{s_i}\frac{1}{q_{ij}}
 - **Z użytkownikami:** testowanie (scenariusze), test Kruga, **okulografia**, clicktracking, opinie (ankiety, wywiady), obserwacja, analiza logów.
 - **Bez użytkowników (eksperci):** **wędrówka poznawcza** (uproszczona – 4 pytania w skali 1–5; rozwinięta – szerszy zespół), **ocena heurystyczna**, **inspekcja standardów** (listy kontrolne, WCAG), **lista LUT**, **WUP**.
 - Testowanie z użytkownikami jest najbardziej efektywne, ale kosztowne – **metody eksperckie** wcześnie wychwytują część problemów i obniżają koszty późniejszych testów.
+
+---
+[⬅️ Poprzedni temat](6_Metody_oceny_jakości_interfejsu_klasyfikacja_typy_metod.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](8_Metodyka_SUS.md)

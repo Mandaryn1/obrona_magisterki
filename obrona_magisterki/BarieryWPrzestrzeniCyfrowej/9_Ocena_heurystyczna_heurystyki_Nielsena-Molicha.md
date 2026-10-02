@@ -73,3 +73,6 @@ Heurystyki są **ogólne**; **listy kontrolne** (LUT, WCAG, inspekcja standardó
 - Ocena heurystyczna = **eksperci niezależnie** sprawdzają interfejs względem zestawu zasad (heurystyk), notują odchylenia, oceniają ich istotność, scalają listy i tworzą raport.
 - **10 heurystyk Nielsena-Molicha:** status systemu, zgodność z rzeczywistością, kontrola i swoboda, spójność, zapobieganie błędom, rozpoznawanie zamiast zapamiętywania, elastyczność i efektywność, estetyka i minimalizm, obsługa błędów, pomoc i dokumentacja.
 - Jeden ekspert wykrywa ok. 35% problemów; metoda tania i wczesna, ale subiektywna – uzupełnia testy z użytkownikami.
+
+---
+[⬅️ Poprzedni temat](8_Metodyka_SUS.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](10_Okulografia_idea_istota_urządzenia_eksperyment_rezultaty.md)

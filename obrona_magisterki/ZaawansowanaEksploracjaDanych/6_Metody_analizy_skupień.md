@@ -182,3 +182,6 @@ Dla odróżnienia – **analiza dyskryminacji** klasyfikuje obiekty do **z góry
 - **Hierarchiczne**: aglomeracja (single/complete/average/Ward), dendrogram, nie trzeba $K$.
 - **DBSCAN**: $\varepsilon$ + `min_samples`; punkty rdzeniowe/brzegowe/szum; dowolne kształty i odporność na outliery.
 - Przed klasteryzacją: standaryzacja zmiennych, ewentualnie PCA.
+
+---
+[⬅️ Poprzedni temat](5_Metody_redukcji_wymiaru_i_liczności_próby.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](7_Systemy_rekomendacji.md)

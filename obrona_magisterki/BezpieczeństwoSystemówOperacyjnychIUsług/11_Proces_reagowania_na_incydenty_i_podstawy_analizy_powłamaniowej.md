@@ -112,3 +112,6 @@ Statyczna (strings, hashe, PE/ELF) i **dynamiczna w izolowanym środowisku** (wy
 - **Proces IR:** **przygotowanie → wykrywanie i analiza → ograniczanie, usuwanie, odtworzenie → działania po incydencie**; obowiązki: rejestr incydentów, automatyczne powiadomienia, procedury, post-mortem (wykład MBK1).
 - **Forensics:** zabezpieczenie dowodów (kopie, hashe, łańcuch dowodowy, kolejność ulotności), analiza **logów, pamięci, procesów, utrwalenia, systemu plików**, **oś czasu**, IOC, zakres szkód; mapowanie na ATT&CK.
 - Wymogi prawne: **RODO 72 h**, NIS2 24 h/72 h; wnioski → udoskonalenie zabezpieczeń.
+
+---
+[⬅️ Poprzedni temat](10_Bezpieczeństwo_podstawowych_usług_sieci_lokalnej_DHCP_DNS_NAT_HTTP_FTP.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](12_Testy_penetracyjne_ocena_podatności_oraz_bazy_CVE_i_MITRE_ATTCK.md)

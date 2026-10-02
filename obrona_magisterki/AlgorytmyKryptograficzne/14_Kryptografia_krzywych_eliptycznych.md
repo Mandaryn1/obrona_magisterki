@@ -103,3 +103,6 @@ Najlepszy znany atak na ECDLP jest **wykładniczy**, a na faktoryzację/DLP w $\
 - **ECC** korzysta z grupy punktów krzywej eliptycznej; mnożenie punktu przez skalar $Q=kP$ jest łatwe, a odwrócenie (**ECDLP**) – trudne (atak wykładniczy).
 - Daje te same funkcje co RSA/DH (**ECDH, ECDSA/EdDSA, ECIES**) przy **znacznie krótszych kluczach** (256 b. ≈ RSA 3072), szybkości i mniejszym zużyciu zasobów – idealna dla IoT, urządzeń mobilnych, TLS.
 - Wady: złożoność implementacji, kwestie zaufania do krzywych, wrażliwość na losowość ECDSA; **nie jest odporna na komputery kwantowe**.
+
+---
+[⬅️ Poprzedni temat](13_Kody_MAC_i_porównanie_z_podpisem_cyfrowym.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](15_Komputery_kwantowe_a_kryptografia_kwantowa_i_postkwantowa.md)

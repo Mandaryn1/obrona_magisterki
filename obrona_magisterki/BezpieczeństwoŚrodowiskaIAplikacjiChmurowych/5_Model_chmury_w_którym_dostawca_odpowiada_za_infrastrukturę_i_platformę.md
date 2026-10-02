@@ -53,3 +53,6 @@ Aplikacja Spring Boot na Azure App Service: **dostawca** łata system operacyjny
 - Odpowiedź: **PaaS** – dostawca: infrastruktura i platforma; klient: aplikacje i dane.
 - IaaS – klient odpowiada za OS, aplikacje, dane i sieć; SaaS – dostawca za większość, klient za dostęp i zgodność.
 - Zawsze: **dostawca – infrastruktura fizyczna; klient – dane i aplikacje (oraz tożsamości i konfiguracja)**.
+
+---
+[⬅️ Poprzedni temat](4_Czy_bezpieczeństwo_chmury_wymaga_innego_podejścia.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](6_IAM_w_bezpieczeństwie_chmurowym.md)

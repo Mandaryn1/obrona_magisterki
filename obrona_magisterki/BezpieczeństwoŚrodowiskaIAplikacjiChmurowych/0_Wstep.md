@@ -62,3 +62,6 @@ Kluczowe tezy wstępu:
 | **SAST / DAST** | Static / Dynamic Application Security Testing |
 | **SBOM** | Software Bill of Materials |
 | **OWASP** | Open Worldwide Application Security Project |
+
+---
+[⬅️ Poprzedni temat](BezpieczeństwoŚrodowiskaIAplikacjiChmurowych_tytul.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](1_Cechy_chmury_obliczeniowej_wg_NIST.md)

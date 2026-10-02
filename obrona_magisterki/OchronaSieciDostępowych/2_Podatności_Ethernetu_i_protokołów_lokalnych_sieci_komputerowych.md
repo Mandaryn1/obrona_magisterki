@@ -79,3 +79,6 @@
 - **Ethernet** nie zapewnia uwierzytelniania, poufności ani ochrony przed spoofingiem MAC i przepełnieniem CAM; środowisko LAN ufa urządzeniom w segmencie.
 - **Protokoły LAN** (ARP, DHCP, STP, VLAN/DTP, CDP, ICMP, DNS, SMB, SNMP, Telnet/FTP/HTTP) mają znane słabości; źródłem jest **brak uwierzytelniania/szyfrowania** i **niebezpieczne ustawienia domyślne**.
 - Obrona: **wyłączenie zbędnych protokołów**, mechanizmy przełączników (port security, DHCP snooping, DAI, BPDU Guard), **802.1X**, szyfrowane wersje protokołów (SSH, HTTPS, SNMPv3, SMB 3), segmentacja, audyt konfiguracji.
+
+---
+[⬅️ Poprzedni temat](1_Podstawowe_zagrożenia_w_lokalnych_sieciach_komputerowych.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](3_Znaczenie_monitorowania_sieci_lokalnej_w_wykrywaniu_i_analizie_incydentów.md)

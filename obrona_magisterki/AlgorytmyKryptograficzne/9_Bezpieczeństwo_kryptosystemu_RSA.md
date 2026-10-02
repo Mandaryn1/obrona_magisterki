@@ -90,3 +90,6 @@ Komputer **kwantowy** z algorytmem **Shora** rozłożyłby $n$ w czasie wielomia
 - **RSA:** $n=pq$, $\varphi(n)=(p-1)(q-1)$, $ed\equiv1\bmod\varphi(n)$; $c=m^e\bmod n$, $m=c^d\bmod n$.
 - **Liczby pierwsze** tworzą tajną zapadkę; **arytmetyka modularna** (twierdzenie Eulera, szybkie potęgowanie, odwrotność modularna) zapewnia poprawność i wydajność; bezpieczeństwo = **trudność faktoryzacji** (problem RSA).
 - Wymaga kluczy ≥ 2048 bitów, losowych liczb pierwszych i **paddingu (OAEP/PSS)**; zagrożony przez komputery kwantowe (Shor).
+
+---
+[⬅️ Poprzedni temat](8_Protokół_Diffiego-Hellmana.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](10_Porównanie_RSA_i_ElGamala.md)

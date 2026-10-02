@@ -117,3 +117,6 @@ W praktyce stosuje się **oba**: RADIUS dla użytkowników (802.1X/VPN) i TACACS
 - **RADIUS** (UDP, IETF) – dostęp **użytkowników** do sieci (802.1X, Wi-Fi, VPN); szyfruje tylko hasło; atrybuty autoryzacji (VLAN, ACL).
 - **TACACS+** (TCP 49, Cisco/RFC 8907) – **administracja urządzeń**; rozdzielone AAA, **szyfruje całość**, **autoryzacja poleceń**.
 - **Cisco ISE** – platforma polityk tożsamości: **RADIUS + TACACS+**, NAC, profilowanie, posture, goście/BYOD, TrustSec (SGT), pxGrid; węzły PAN/MnT/PSN; alternatywy: ClearPass, NPS, FreeRADIUS.
+
+---
+[⬅️ Poprzedni temat](4_Kontrola_dostępu_do_sieci_oraz_mechanizmy_NAC.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](6_Rodzaje_firewalli_oraz_zasady_tworzenia_polityk_i_reguł_bezpieczeństwa.md)

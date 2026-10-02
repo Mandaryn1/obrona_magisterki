@@ -74,3 +74,6 @@ Dla kryteriów $K_1, K_2$ i dowolnych decyzji $x_1, x_2\in D$:
 - Kryteria i wagi odzwierciedlają **preferencje decydenta**, a nie obiektywną rzeczywistość – nie ma rozwiązania „obiektywnie najlepszego”, jest najlepsze **w sensie przyjętych preferencji**.
 - Dobra praktyka: (1) sformułować cele i kryteria, (2) zbudować macierz decyzyjną, (3) **wyeliminować warianty zdominowane** (zostawić zbiór Pareto), (4) znormalizować kryteria, (5) wyznaczyć wagi, (6) wybrać metodę agregacji, (7) **analiza wrażliwości** (czy ranking jest stabilny przy zmianie wag/progów).
 - Porównywanie decyzji bywa wrażliwe na **progi nierozróżnialności**: różnica wartości kryterium poniżej progu nie zmienia preferencji (np. $D_1$ lepsza od $D_2$, gdy kryterium jest większe o $p\%$; $D_3$ gorsza od $D_2$, gdy mniejsze o $q\%$; progi $p$ i $q$ mogą być różne – brak symetrii).
+
+---
+[⬅️ Poprzedni temat](MetodyWnioskowaniaWielokryterialnego_tytul.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](1_Główne_zadania_normalizacji_wartości_kryteriów_optymalizacji.md)

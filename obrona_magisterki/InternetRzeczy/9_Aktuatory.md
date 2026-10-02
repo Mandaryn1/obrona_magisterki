@@ -84,3 +84,6 @@ W technologii **MEMS** i w robotyce element może pełnić obie role (np. elemen
 - Klasyfikacje: według energii (elektryczne, pneumatyczne, hydrauliczne, piezo, termiczne), rodzaju ruchu (obrotowe, liniowe, dwustanowe, ciągłe).
 - W IoT najczęściej: silniki DC/BLDC/krokowe, serwa, przekaźniki, elektrozawory, LED, buzzery – sterowane przez **drivery** (MOSFET, mostek H) i **PWM**.
 - Wymagają dopasowania mocy, ochrony (dioda zwrotna, separacja) i często sprzężenia zwrotnego (PID).
+
+---
+[⬅️ Poprzedni temat](8_Cechy_sensora_inteligentnego.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](10_Modulacja_szerokości_impulsów_PWM.md)

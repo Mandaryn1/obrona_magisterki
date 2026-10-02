@@ -167,3 +167,6 @@ Przerwanie łańcucha: MFA (etap 3), filtry poczty i szkolenia (2), minimalizacj
 - **Uzyskanie dostępu:** exploity podatności, ataki na hasła, ataki aplikacyjne, MITM i przejęcie sesji, dostęp fizyczny i bezprzewodowy, łańcuch dostaw, przejęte konta; potem utrwalenie, eskalacja, ruch boczny.
 - **Inżynieria społeczna:** phishing, spear phishing, whaling, vishing, smishing, pretexting, baiting, tailgating; obrona – filtry poczty (SPF/DKIM/DMARC), sandbox, filtrowanie DNS, **szkolenia i symulacje**.
 - Obrona warstwowa: minimalna ekspozycja, MFA, aktualizacje, IPS/IDS, segmentacja, monitoring, świadomość użytkowników.
+
+---
+[⬅️ Poprzedni temat](0_Wstep.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](2_Standardy_i_dobre_praktyki_bezpieczeństwa_ISO_27001_NIS2_i_inne_normy.md)

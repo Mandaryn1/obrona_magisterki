@@ -127,3 +127,6 @@ Organizacja musi wiedzieć, **jaki sprzęt uzyskuje dostęp do sieci, gdzie się
 - Urządzenia pośredniczące: **AAA/SSH, utwardzanie, 802.1X, port security, DHCP snooping, DAI, BPDU Guard, aktualizacje, zarządzanie konfiguracją**.
 - Urządzenia końcowe: **inwentaryzacja aktywów, bazowe konfiguracje, patch management (agentowy/bezagentowy/pasywny), AV/EDR, szyfrowanie, MFA, NAC z oceną postury, MDM**.
 - Spójne **polityki i CIS Controls** zapewniają kompletność.
+
+---
+[⬅️ Poprzedni temat](4_Narzędzia_do_monitorowania_i_analizy_ruchu_w_lokalnych_sieciach_komputerowych.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](6_Zagrożenia_komunikacji_bezprzewodowej_i_sposoby_jej_zabezpieczania.md)
