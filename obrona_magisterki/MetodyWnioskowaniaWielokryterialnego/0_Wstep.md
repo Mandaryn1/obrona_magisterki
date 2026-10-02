@@ -19,18 +19,6 @@ Ponieważ kryteria są ze sobą sprzeczne, **zwykle nie istnieje decyzja najleps
 | **dyskretne** | skończony zbiór **wariantów** | wielokryterialna analiza decyzyjna (MCDA/MCDM), wielokryterialne wspomaganie decyzji | AHP, TOPSIS, ELECTRE, PROMETHEE, suma ważona |
 | **ciągłe** | zbiór opisany ograniczeniami (nieskończenie wiele decyzji) | optymalizacja wielokryterialna, polioptymalizacja | programowanie wielokryterialne, ε-ograniczeń, punkt idealny, algorytmy ewolucyjne (NSGA-II) |
 
-### Macierz decyzyjna (przypadek dyskretny)
-
-Warianty $W_1,\dots,W_n$ oceniane według kryteriów $K_1,\dots,K_s$:
-
-| | $K_1$ | $K_2$ | … | $K_s$ |
-| :--- | :-: | :-: | :-: | :-: |
-| $W_1$ | $f_{11}$ | $f_{12}$ | … | $f_{1s}$ |
-| … | … | … | … | … |
-| $W_n$ | $f_{n1}$ | $f_{n2}$ | … | $f_{ns}$ |
-
-Do tego dochodzi **wektor wag** $\mathbf{w}=(w_1,\dots,w_s)$, $w_k\ge0$, $\sum w_k=1$ (jeśli kryteria nie są równoważne).
-
 ## Podstawowe pojęcia
 
 - **Kryterium stymulanta (zysk)** – im więcej, tym lepiej (wydajność, jakość); **destymulanta (koszt)** – im mniej, tym lepiej (cena, czas, zużycie energii); **nominanta** – najlepsza jest wartość pośrednia/nominalna.

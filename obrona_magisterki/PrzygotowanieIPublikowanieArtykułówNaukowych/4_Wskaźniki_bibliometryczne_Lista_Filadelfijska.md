@@ -1,4 +1,6 @@
-# Analiza bibliometryczna
+# Wskaźniki bibliometryczne. Lista Filadelfijska.
+
+## Analiza bibliometryczna
 
 Polega na zastosowaniu różnorakich danych odnoszących się do publikacji naukowych i przytaczanych w tych publikacjach cytatów (również cytatów w dokumentacji patentowej) do oceny wyników działalności naukowej. Jest również wykorzystywana do obserwowania rozwoju nauki, przejawiającego się m.in. przez powstawanie sieci powiązań badawczych, krajowych i międzynarodowych oraz powstawanie nowych, multidyscyplinarnych dziedzin nauki i techniki, a także do identyfikacji rozwoju nauki.
 

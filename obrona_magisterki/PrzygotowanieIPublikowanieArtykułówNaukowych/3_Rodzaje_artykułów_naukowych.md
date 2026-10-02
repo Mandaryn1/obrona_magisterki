@@ -48,4 +48,5 @@ Samopublikowanie to udostępnianie wyników badań bez udziału czasopisma. Taka
 - na platformie społecznościowej (np. ResearchGate) udostępniającej unikalny adres internetowy, którego możemy używać do cytowania naszej pracy
 
 ---
+
 [⬅️ Poprzedni temat](2_Identyfikator_ORCID_Indeks_Hirscha.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](4_Wskaźniki_bibliometryczne_Lista_Filadelfijska.md)

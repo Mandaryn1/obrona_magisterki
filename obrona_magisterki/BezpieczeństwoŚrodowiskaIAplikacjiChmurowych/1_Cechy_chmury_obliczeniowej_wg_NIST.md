@@ -1,40 +1,16 @@
-# Cechy chmury obliczeniowej wg NIST
+# Jakie są cechy chmury obliczeniowej wg NIST?
 
-## Definicja NIST (SP 800-145)
+Według NIST (definicja SP 800-145) chmura obliczeniowa ma **pięć podstawowych cech**:
 
-**NIST (National Institute of Standards and Technology)** definiuje chmurę obliczeniową jako **model umożliwiający wszechobecny, wygodny dostęp sieciowy na żądanie do współdzielonej puli konfigurowalnych zasobów obliczeniowych** (sieci, serwery, magazyny danych, aplikacje, usługi), które można **szybko udostępniać i zwalniać przy minimalnym wysiłku zarządzania lub interakcji z dostawcą usługi**.
+1. **Samoobsługa na żądanie (on-demand self-service):** użytkownik sam, automatycznie, bez udziału człowieka po stronie dostawcy, uruchamia zasoby (moc obliczeniową, pamięć, sieć).
+2. **Szeroki dostęp sieciowy (broad network access):** usługi są dostępne przez sieć (Internet) za pomocą standardowych mechanizmów, z różnych urządzeń: laptopów, telefonów, tabletów.
+3. **Pula zasobów (resource pooling):** zasoby dostawcy są współdzielone przez wielu klientów (model **multi-tenant**), dynamicznie przydzielane i zwalniane według zapotrzebowania. Klient zwykle nie wie i nie kontroluje dokładnej lokalizacji zasobów.
+4. **Elastyczność (rapid elasticity):** zasoby można szybko zwiększać lub zmniejszać, często automatycznie, w zależności od obciążenia. Dla klienta wyglądają na nieograniczone.
+5. **Mierzalność usługi (measured service):** zużycie zasobów jest monitorowane, mierzone i raportowane. Dzięki temu możliwe jest rozliczanie według faktycznego użycia (**pay-as-you-go**), kontrola i optymalizacja kosztów.
 
-Źródło: NIST Special Publication 800-145 *The NIST Definition of Cloud Computing* (2011).
+**Wskazówka do zapamiętania:** samoobsługa, dostęp sieciowy, pula zasobów, elastyczność, pomiar.
 
-*(uzupełnienie)* Definicja NIST ma układ: **5 cech podstawowych + 3 modele usług + 4 modele wdrożenia** (modele – zob. temat 3).
-
-## Pięć istotnych cech chmury wg NIST
-
-| Nr | Cecha (ang.) | Znaczenie | Konsekwencje dla bezpieczeństwa (wg wykładu) |
-| :-: | :--- | :--- | :--- |
-| 1 | **Samoobsługa na żądanie** (*on-demand self-service*) | użytkownik **samodzielnie** uruchamia i zarządza zasobami (moc obliczeniowa, pamięć) bez udziału człowieka po stronie dostawcy | wymaga odpowiednich **kontroli dostępu i monitorowania** (kto może tworzyć zasoby, limity, audyt) |
-| 2 | **Szeroki dostęp do sieci** (*broad network access*) | usługi dostępne przez sieć (Internet), przez standardowe mechanizmy, z różnych urządzeń (laptop, telefon, tablet) | **zwiększa powierzchnię ataku** – potrzebne dodatkowe warstwy zabezpieczeń i **uwierzytelnianie** |
-| 3 | **Pula zasobów** (*resource pooling*) | zasoby dostawcy **współdzielone** przez wielu klientów (**multi-tenancy**), dynamicznie przydzielane; klient zwykle nie zna dokładnej lokalizacji | wymaga **silnej izolacji między klientami** i mechanizmów **szyfrowania** |
-| 4 | **Szybka elastyczność** (*rapid elasticity*) | zasoby można błyskawicznie zwiększać lub zmniejszać (często automatycznie), pozornie w nieograniczonej ilości | zagrożenia mogą się **szybko rozprzestrzeniać**, jeśli nie są kontrolowane → **automatyzacja bezpieczeństwa i monitoring w czasie rzeczywistym** |
-| 5 | **Mierzalna usługa** (*measured service*) | zużycie zasobów jest **mierzone, monitorowane, raportowane** (płatność za użycie – *pay-as-you-go*) | dane metryczne (o użyciu zasobów) mogą zawierać **wrażliwe informacje** – wymagają ochrony i prywatności |
-
-## Dlaczego te cechy są istotne dla bezpieczeństwa
-
-Każda cecha, która jest korzyścią biznesową, tworzy jednocześnie specyficzne ryzyko:
-
-| Korzyść | Ryzyko |
-| :--- | :--- |
-| samoobsługa → szybkość | „shadow IT", niekontrolowane zasoby, wysokie koszty, błędne konfiguracje |
-| dostęp przez sieć → wygoda | ekspozycja usług w Internecie, ataki na API i konta |
-| pula zasobów → niskie koszty | współdzielenie sprzętu, ucieczka z izolacji, wycieki między najemcami |
-| elastyczność → skalowalność | szybkie skalowanie także ataku/nadużycia (np. kryptowalutowe „koparki", wzrost kosztów) |
-| pomiar → rozliczalność | wyciek metadanych o użyciu |
-
-## Powiązane pojęcia *(uzupełnienie)*
-
-- **Multi-tenancy (wielodostępność)** – wielu klientów na tej samej infrastrukturze; wymaga logicznej izolacji (hypervisor, kontenery, sieć, szyfrowanie).
-- **Provisioning** – szybkie przydzielanie zasobów; **Infrastructure as Code (IaC)** automatyzuje je (i błędy konfiguracji też).
-- Dodatkowe cechy omawiane w literaturze (ISO/IEC 22123): m.in. **wielodostępność** jako cecha chmury.
+Definicja NIST wyróżnia ponadto **3 modele usług** (IaaS, PaaS, SaaS) i **4 modele wdrożenia** (publiczna, prywatna, hybrydowa, społeczności), o które często pytają w następnych pytaniach.
 
 ## Podsumowanie
 

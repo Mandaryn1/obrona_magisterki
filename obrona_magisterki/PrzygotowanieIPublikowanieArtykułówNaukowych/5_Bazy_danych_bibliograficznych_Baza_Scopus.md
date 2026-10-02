@@ -1,4 +1,4 @@
-# Bazy danych bibliograficznych
+# Bazy danych bibliograficznych. Baza Scopus.
 
 Uporządkowany zbiór opisów bibliograficznych dokumentów dobranych według określonych kryteriów, którego celem jest informowanie o istnieniu tych dokumentów, na ogół bez względu na miejsce ich przechowywania.
 

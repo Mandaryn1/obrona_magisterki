@@ -59,7 +59,6 @@ Zbiór notatek przygotowanych na egzamin dyplomowy (obronę magisterską).
     8. [Metodyka SUS.](./obrona_magisterki/BarieryWPrzestrzeniCyfrowej/8_Metodyka_SUS.md)
     9. [Ocena heurystyczna – heurystyki Nielsena-Molicha.](./obrona_magisterki/BarieryWPrzestrzeniCyfrowej/9_Ocena_heurystyczna_heurystyki_Nielsena-Molicha.md)
     10. [Okulografia – idea, istota, urządzenia, eksperyment, rezultaty.](./obrona_magisterki/BarieryWPrzestrzeniCyfrowej/10_Okulografia_idea_istota_urządzenia_eksperyment_rezultaty.md)
-    - [Materiały dodatkowe: persony, UCD, prototypowanie, raport z badań](./obrona_magisterki/BarieryWPrzestrzeniCyfrowej/Dodatkowe_Persony_UCD_Prototypowanie_Raport_z_badań.md)
 
 - [Bezpieczeństwo środowiska i aplikacji chmurowych](./obrona_magisterki/BezpieczeństwoŚrodowiskaIAplikacjiChmurowych/BezpieczeństwoŚrodowiskaIAplikacjiChmurowych_tytul.md)
 

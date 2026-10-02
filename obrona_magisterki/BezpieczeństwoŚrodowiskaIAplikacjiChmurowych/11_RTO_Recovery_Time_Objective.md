@@ -1,84 +1,21 @@
-# RTO (Recovery Time Objective)
+# Czym jest RTO (Recovery Time Objective)?
 
-## Definicja
+**RTO (Recovery Time Objective)** to **maksymalny dopuszczalny czas niedostępności** usługi lub systemu po awarii, czyli ile czasu może minąć od awarii do pełnego przywrócenia działania. Wyrażamy go w jednostkach czasu.
 
-**RTO (Recovery Time Objective – docelowy czas odtworzenia)** to **maksymalny akceptowalny czas, w którym usługa/system może być niedostępny** po awarii lub incydencie – czas od wystąpienia awarii do **przywrócenia działania** na uzgodnionym poziomie.
+**Przykład:** jeśli RTO wynosi 4 godziny, a awaria nastąpiła o 10:00, to system musi działać ponownie najpóźniej o 14:00.
 
-- RTO = **4 godziny** → system musi być uruchomiony ponownie w ciągu 4 h od awarii.
-- RTO = **15 minut** → wymaga automatycznego przełączenia (failover).
-- RTO ≈ **0** → ciągła dostępność (wiele aktywnych lokalizacji).
+**Od czego zależy RTO:** od **szybkości odtwarzania**. Obejmuje wykrycie awarii, decyzję, przywrócenie danych i uruchomienie usług. Skracają go:
 
-Wykład (slajd 26): **istotne jest zrozumienie RPO i RTO dla różnych systemów** w ramach backupu i *disaster recovery* (ciągłość biznesowa).
+- **automatyzacja** (automatyczne przełączanie, infrastruktura jako kod),
+- **redundancja** (zapasowe zasoby w innej strefie lub regionie, tryb active-active lub warm/hot standby),
+- **wcześniej przygotowane i przetestowane procedury** odtwarzania,
+- szybkie łącza i gotowe obrazy systemów.
 
-## RTO a RPO
+Im krótsze RTO, tym droższe rozwiązanie.
 
-| | **RPO** | **RTO** |
-| :--- | :--- | :--- |
-| Dotyczy | **utraty danych** | **przestoju (czasu niedostępności)** |
-| Mierzone | wstecz od awarii | w przód od awarii |
-| Pytanie | *ile danych możemy stracić?* | *jak długo możemy nie działać?* |
-| Wpływa na | **częstotliwość backupów/replikacji** | **architekturę odtwarzania, automatyzację, redundancję** |
-| Jednostka | czas (minuty, godziny) | czas (minuty, godziny) |
+**Znaczenie w chmurze:** RTO wraz z RPO wyznacza strategię **disaster recovery**. Wybiera się ją według krytyczności usługi, od taniej, ale wolnej (backup and restore), przez pilot light i warm standby, po drogą, ale prawie natychmiastową (multi-site active-active).
 
-```
- ostatnia kopia          awaria                       usługa przywrócona
-      │◀────── RPO ──────▶│◀────────── RTO ───────────▶│
-      │   utrata danych   │      przestój usługi       │
-```
-
-## Co składa się na czas odtworzenia
-
-RTO obejmuje cały proces, nie tylko „kliknięcie przywróć":
-
-1. **wykrycie awarii** (monitoring, alerty),
-2. **decyzja** i eskalacja (kto ogłasza DR),
-3. **przywrócenie** infrastruktury i danych (uruchomienie środowiska, odtworzenie backupu, przełączenie ruchu/DNS),
-4. **weryfikacja** i testy,
-5. **uruchomienie dla użytkowników**.
-
-*(uzupełnienie)* Powiązane: **MTD/MAO** (Maximum Tolerable Downtime) – maksymalny czas, jaki biznes może wytrzymać; **WRT** (Work Recovery Time) – czas przywrócenia pracy po technicznym odtworzeniu; zależność: **RTO + WRT ≤ MTD**.
-
-## Od czego zależy RTO
-
-Wynika z **BIA** (Business Impact Analysis): koszt godziny przestoju, straty wizerunkowe, wymagania prawne i umowne (**SLA**).
-
-| System | Przykładowe RTO |
-| :--- | :--- |
-| płatności, bankowość, sterowanie krytyczne | sekundy–minuty |
-| sklep internetowy, API produktowe | minuty–1 godzina |
-| wewnętrzny system księgowy | 4–8 godzin |
-| archiwum, środowisko testowe | doby |
-
-## Jak skracać RTO
-
-| Strategia (DR w chmurze) | RTO | Opis |
-| :--- | :--- | :--- |
-| **Backup & restore** | godziny–doby | odtworzenie z kopii do nowego środowiska (najtańsze) |
-| **Pilot light** | dziesiątki minut–godziny | minimalna, uśpiona kopia kluczowych komponentów |
-| **Warm standby** | minuty | pomniejszone, działające środowisko; skalowane po awarii |
-| **Active–active (multi-site/multi-region)** | ≈ 0 | pełna redundancja, ruch rozdzielany; awaria jednej lokalizacji niezauważalna |
-
-Techniki obniżania RTO:
-
-- **automatyzacja odtwarzania** – Infrastructure as Code (Terraform), obrazy kontenerów, **orkiestracja** (Kubernetes: `replicas: 3`, probes, automatyczny restart), *runbooki* (np. DRR – *disaster recovery runbook* z wykładu, slajd 242),
-- **redundancja i wysoka dostępność** – wiele stref dostępności (multi-AZ), **load balancing**, automatyczny **failover**,
-- szybkie przywracanie (snapshoty, repliki gotowe do awansu),
-- **monitoring i alerty** skracające czas wykrycia,
-- **regularne testy DR** (ćwiczenia, *chaos engineering* – slajdy 242, 237),
-- gotowa dokumentacja i przeszkolony zespół.
-
-Niższe RTO = **wyższy koszt** (redundancja, automatyzacja).
-
-## Przykład
-
-Serwis katalogu produktów (Spring Boot + PostgreSQL) w Kubernetes. Wymagania: **RPO = 5 min, RTO = 30 min**.
-
-- RPO 5 min → archiwizacja WAL/replikacja co kilka minut,
-- RTO 30 min → gotowy manifest/IaC, automatyczne przywrócenie klastra (Velero), warm standby w drugim regionie, automatyczny failover DNS, runbook testowany co kwartał.
-
-## Zależności z bezpieczeństwem
-
-RTO/RPO to część **dostępności** (A w CIA) i reagowania na incydenty: atak **ransomware**, **DDoS** lub błędna konfiguracja mogą wymusić DR. Kopie zapasowe powinny być **szyfrowane i niezmienne**, a plan DR **testowany**.
+**Różnica względem RPO:** RTO dotyczy **czasu niedostępności** (jak długo czekamy na przywrócenie), a RPO **utraty danych** (ile danych możemy stracić).
 
 ## Podsumowanie
 

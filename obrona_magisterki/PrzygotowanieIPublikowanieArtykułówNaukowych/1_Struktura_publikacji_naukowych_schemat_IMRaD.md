@@ -1,4 +1,6 @@
-# Schemat prezentacji artykułu **IMRaD** (Introduction, Methods, Resultsand Discussion)
+# Struktura publikacji naukowych, schemat IMRaD.
+
+## Schemat prezentacji artykułu **IMRaD** (Introduction, Methods, Resultsand Discussion)
 
 Ułatwia organizację tekstu i jasne przekazywanie nowej wiedzy, jest wymagany w instrukcjach czasopism, wymusza:
 

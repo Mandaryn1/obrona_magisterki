@@ -1,72 +1,30 @@
 # Ocena heurystyczna – heurystyki Nielsena-Molicha
 
-## Ocena heurystyczna
+**Ocena heurystyczna** to metoda **ekspercka, bez udziału użytkowników**. Kilku ekspertów **niezależnie od siebie** sprawdza interfejs pod kątem zgodności z zestawem zasad dobrego projektowania, czyli **heurystyk**. Heurystyki wynikają z doświadczenia, zdrowego rozsądku, dobrych praktyk i fizycznych właściwości człowieka. Ocena wskazuje odchylenia od tych zasad, czyli potencjalne problemy użyteczności.
 
-**Ocena heurystyczna** (*heuristic evaluation*) – metoda **ekspercka (bez udziału użytkowników)**: **eksperci oceniają oprogramowanie, wykorzystując standardowy zestaw zasad dobrego interfejsu – heurystyk**.
+**Przebieg:**
 
-**Heurystyka** – zbiór **optymalnych (quasi-optymalnych) zasad** wynikających z:
+1. **Planowanie:** wybór heurystyk i kontekstu, przygotowanie scenariuszy i ekspertów.
+2. **Realizacja:** każdy ekspert niezależnie wykonuje zadania, zapisuje odchylenia od zasad i ocenia ich istotność.
+3. **Analiza:** scalenie list problemów.
+4. **Raport:** opis problemów, ich waga i rekomendacje poprawy.
 
-- **doświadczenia**,
-- **zdrowego rozsądku**,
-- **dobrych praktyk**,
-- **fizycznych właściwości człowieka**.
+Jeden ekspert wykrywa tylko ok. **35%** problemów, dlatego potrzeba kilku (zwykle 3–5). Metodę można stosować już na wczesnym etapie projektu, co obniża koszt późniejszych testów z użytkownikami.
 
-Heurystyka uwzględnia **kontekst użycia** oprogramowania. Ocena wskazuje **odchylenia od zasad**, czyli potencjalne problemy użyteczności.
+**10 heurystyk Nielsena-Molicha:**
 
-### Etapy oceny heurystycznej
+1. **Widoczny status systemu:** system na bieżąco informuje o swoim stanie.
+2. **Zgodność systemu z rzeczywistością:** język i konwencje zrozumiałe dla użytkownika, naturalny porządek informacji.
+3. **Kontrola i swoboda użytkownika:** łatwy powrót, cofnięcie i anulowanie działania.
+4. **Spójność i standardy:** te same słowa, symbole i zachowania w całym systemie.
+5. **Zapobieganie błędom:** projekt chroni przed pomyłkami, a nie tylko je obsługuje.
+6. **Rozpoznawanie zamiast zapamiętywania:** potrzebne informacje są widoczne na ekranie.
+7. **Elastyczność i efektywność:** skróty i przyspieszenia dla doświadczonych użytkowników.
+8. **Estetyka i minimalizm:** brak zbędnych elementów.
+9. **Pomoc w rozpoznawaniu i naprawie błędów:** komunikaty proste, bez kodów, wskazujące problem i rozwiązanie.
+10. **Pomoc i dokumentacja:** interfejs samowyjaśniający się, a pomoc łatwo dostępna.
 
-1. **Planowanie** – wybór heurystyki i kontekstu użycia, **zaznajomienie ekspertów**, opracowanie **scenariuszy**.
-2. **Realizacja badań** – eksperci **niezależnie od siebie** wykonują zadania i odnotowują **wszystkie odchylenia** od zasad heurystyki; **oceniają istotność** problemów.
-3. **Analiza wyników** – **scalenie list** problemów opracowanych przez ekspertów, oszacowanie stopy wykrytych problemów.
-4. **Raport** (problemy, ich waga, rekomendacje poprawy).
-
-### Efektywność
-
-- **Jeden ekspert wykrywa ok. 35%** problemów – dlatego potrzebnych jest kilku niezależnych ekspertów (*uzupełnienie*: zwykle **3–5**; każdy kolejny dodaje coraz mniej).
-- Badanie na **wczesnych etapach projektowania** daje informację zwrotną i **zmniejsza liczbę problemów przed testami z użytkownikami**, a więc **obniża koszty** tych testów.
-
-*(uzupełnienie)* **Skala dotkliwości problemów** (Nielsen, 0–4): 0 – nie jest to problem; 1 – kosmetyczny; 2 – mały; 3 – duży (priorytet wysoki); 4 – katastrofalny (obowiązkowo naprawić). W materiałach lekcyjnych stosuje się też skalę 1–5 (lista LUT) i klasyfikację: **krytyczne / istotne / małoistotne**.
-
-## Heurystyki Nielsena-Molicha
-
-Opracowane na podstawie badań statystycznych dotyczących **prawidłowej interakcji człowiek–maszyna** o możliwie najszerszym spektrum zastosowań. **Lista 10 zaleceń**, których spełnienie jest oceniane przez ekspertów (*Molich i Nielsen, 1990; Nielsen, 1994*).
-
-| Nr | Heurystyka | Treść |
-| :-: | :--- | :--- |
-| **1** | **Widoczny status systemu** | system **zawsze informuje** użytkownika o swoim stanie za pomocą stosownych, zrozumiałych elementów i **odpowiednio szybko**, bez zbędnych opóźnień |
-| **2** | **Zgodność pomiędzy systemem a rzeczywistością** | język i **terminologia** zrozumiałe dla użytkownika; informacje w **logicznym, naturalnym porządku**; zrozumiałe konwencje multimedialne (metafory graficzne) |
-| **3** | **Kontrola i swoboda działań użytkownika** | prosta możliwość **powrotu** do poprzedniego położenia (nawigacja, błędny wybór); „ucieczka" nie wymaga długiego dialogu, jasno oznaczona i łatwo dostępna |
-| **4** | **Zachowanie jednakowych konwencji w obrębie serwisu** (spójność) | te same słowa, symbole i elementy graficzne w całym oprogramowaniu; bez nietypowych elementów graficznych/behawioralnych; najlepiej **konwencje platformy** |
-| **5** | **Zapobieganie błędom** | dialog zaprojektowany tak, by **zapobiegać błędom**; twórcy powinni **chronić** użytkownika i aplikację przed popełnieniem błędów, a nie tylko je obsługiwać |
-| **6** | **Rozpoznawanie, a nie zapamiętywanie** | użytkownik **nie musi pamiętać** informacji przy przechodzeniu między częściami aplikacji; potrzebne dane i instrukcje **widoczne na ekranie** – nie obciążać pamięci krótkotrwałej |
-| **7** | **Elastyczność i efektywność** | doświadczeni użytkownicy mają **przyspieszony dostęp** do funkcji (skróty); możliwość wyboru najbardziej odpowiedniego sposobu wykonania zadania spośród wielu |
-| **8** | **Estetyka i minimalizm interfejsu** | brak elementów **zbędnych** w danym momencie, utrudniających zrozumienie; interfejs zgodny z powszechnymi kanonami estetyki |
-| **9** | **Właściwa obsługa błędów** | komunikaty **proste i zwięzłe**, wskazujące **typ problemu** i **sposób rozwiązania**; **bez kodów błędów** |
-| **10** | **Pomoc i dokumentacja** | interfejs **samowyjaśniający się** (używalny bez dokumentacji), a jednocześnie z pomocą i dokumentacją w zakresie niezbędnych zadań; dostęp **prosty i intuicyjny**, niezajmujący więcej czasu niż to konieczne |
-
-### Przykłady naruszeń *(uzupełnienie)*
-
-| Heurystyka | Naruszenie | Poprawa |
-| :--- | :--- | :--- |
-| 1 | brak wskaźnika postępu po kliknięciu „Wyślij" | pasek postępu, komunikat „Wysyłanie…" |
-| 3 | brak „Anuluj"/„Cofnij" | przycisk wstecz, „Cofnij usunięcie" |
-| 4 | raz „Zapisz", raz „Zatwierdź" dla tej samej akcji | jednolite nazewnictwo |
-| 5 | pole „Data" przyjmuje dowolny tekst | selektor daty, maska, walidacja na bieżąco |
-| 9 | „Błąd 0x80070005" | „Nie masz uprawnień do zapisu w tym folderze. Wybierz inną lokalizację." |
-
-## Listy kontrolne a heurystyki
-
-Heurystyki są **ogólne**; **listy kontrolne** (LUT, WCAG, inspekcja standardów) są **bardziej szczegółowe** i formalne (pytania tak/nie lub skala) – zob. temat 7. Ocena heurystyczna daje więcej problemów „nieoczywistych", lista kontrolna – bardziej powtarzalna.
-
-## Zalety i wady
-
-| Zalety | Wady |
-| :--- | :--- |
-| szybka i **tania**, bez rekrutacji użytkowników | **subiektywizm** ekspertów; wynik zależy od ich kompetencji |
-| możliwa na **wczesnym etapie** (szkice, prototypy) | jeden ekspert wykrywa tylko ok. 35% problemów – potrzebnych kilku |
-| wskazuje **konkretne naruszenia zasad** i sposób poprawy | **fałszywe alarmy** (problemy, których użytkownicy nie doświadczają) |
-| zmniejsza koszt późniejszych testów | nie wykrywa problemów wynikających z kontekstu użycia i zachowań, które znają tylko użytkownicy |
-| powtarzalna, dobrze opisana procedura | nie zastępuje testów z użytkownikami; ogólnikowa |
+**Zalety:** szybka, tania, bez rekrutacji użytkowników, wskazuje konkretne naruszenia i sposób poprawy. **Wady:** subiektywizm ekspertów, możliwe fałszywe alarmy i pomijanie problemów, które widzą tylko użytkownicy. Dlatego uzupełnia, a nie zastępuje testy z użytkownikami.
 
 ## Podsumowanie
 

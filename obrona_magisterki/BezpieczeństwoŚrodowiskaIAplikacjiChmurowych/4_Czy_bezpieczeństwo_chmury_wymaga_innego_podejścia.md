@@ -1,54 +1,19 @@
-# Czy do bezpieczeństwa chmury trzeba podchodzić inaczej niż do standardowych metod bezpieczeństwa IT?
+# Czy i ewentualnie dlaczego (tak lub nie) do bezpieczeństwa chmury musimy podchodzić inaczej niż w przypadku standardowych metod bezpieczeństwa IT?
 
-## Odpowiedź
+**Tak.** Podstawowe cele bezpieczeństwa (poufność, integralność, dostępność) i wiele zasad pozostają te same, ale chmura zmienia warunki, więc samo przeniesienie tradycyjnych metod nie wystarcza.
 
-**TAK.** Cele bezpieczeństwa (poufność, integralność, dostępność – CIA) i zasady (obrona w głąb, najmniejsze uprawnienia) pozostają takie same, ale **bezpieczeństwo chmury różni się znacząco od tradycyjnego bezpieczeństwa IT** (slajd 4) ze względu na:
+**Dlaczego trzeba podejść inaczej:**
 
-1. **współdzielenie infrastruktury**,
-2. **dynamiczną naturę zasobów**,
-3. **nowe modele zagrożeń**.
+- **Model współdzielonej odpowiedzialności.** Dostawca odpowiada za bezpieczeństwo samej chmury (infrastruktura, sprzęt, wirtualizacja), a klient za to, co w niej umieszcza (dane, konta, konfigurację, aplikacje). Zakres zależy od modelu: IaaS, PaaS lub SaaS. W tradycyjnym IT organizacja odpowiada za wszystko.
+- **Brak kontroli nad infrastrukturą fizyczną.** Nie mamy wpływu na sprzęt, sieć i lokalizację danych. Trzeba polegać na umowach, certyfikatach i audytach dostawcy.
+- **Współdzielenie zasobów (multi-tenancy).** Wielu klientów korzysta z tej samej infrastruktury, więc potrzebna jest silna izolacja, szyfrowanie i segmentacja.
+- **Dynamiczność i skala.** Zasoby powstają i znikają automatycznie, więc ręczne zabezpieczanie nie nadąża. Potrzebna jest automatyzacja, **infrastruktura jako kod** i ciągły monitoring.
+- **Rozmyty perymetr.** Nie ma jednej granicy sieci chroniącej wnętrze, bo dostęp jest przez Internet i API. Dlatego tożsamość staje się nowym perymetrem: **IAM, MFA i podejście Zero Trust** (nie ufamy nikomu domyślnie).
+- **Duże znaczenie konfiguracji.** Większość incydentów wynika z błędów konfiguracji (np. publiczny magazyn danych), a nie z ataków na samą chmurę.
+- **Nowa powierzchnia ataku.** API, interfejsy zarządzania, kontenery, funkcje serverless.
+- **Zgodność i prawo.** Lokalizacja danych, RODO, uzależnienie od dostawcy (vendor lock-in).
 
-Chmura **nie jest po prostu innym miejscem uruchamiania aplikacji**, ale **fundamentalnie różnym modelem obliczeniowym z unikalnymi wyzwaniami bezpieczeństwa** (slajd 5).
-
-## Dlaczego podejście musi być inne
-
-| Aspekt | Tradycyjne IT (on-premises) | Chmura |
-| :--- | :--- | :--- |
-| **Odpowiedzialność** | organizacja odpowiada za **całość** (od zasilania serwerowni po aplikacje) | **model współdzielonej odpowiedzialności** dostawcy i klienta (temat 5); klient musi wiedzieć, co jest po jego stronie |
-| **Infrastruktura** | **dedykowana** organizacji | **współdzielona** (multi-tenancy) – potrzebna izolacja klientów, szyfrowanie |
-| **Granica sieci (perymetr)** | wyraźny obwód (firewall wokół firmy) | granica „rozmyta": usługi dostępne z Internetu, praca zdalna, wiele dostawców → **tożsamość jest nowym perymetrem**, podejście **Zero Trust** |
-| **Zasoby** | statyczne, wolno zmieniane | **dynamiczne**, efemeryczne (kontenery, funkcje, autoskalowanie) – konieczna **automatyzacja** i monitoring w czasie rzeczywistym |
-| **Zarządzanie** | zmiany przez zespół IT, formalne procedury | wszystko to **API i kod (IaC)** – jedna błędna konfiguracja lub wyciek klucza ma natychmiastowy, globalny skutek |
-| **Widoczność i kontrola** | pełny dostęp do sprzętu i logów | **ograniczony** dostęp do infrastruktury dostawcy; audyt wymaga współpracy z dostawcą (slajd 37) |
-| **Główne ryzyka** | włamanie do sieci, malware, awarie sprzętu | **błędna konfiguracja**, przejęte konta, ataki na API, zależność od dostawcy, utrata kontroli nad danymi |
-| **Dostęp do zasobów** | w sieci lokalnej | **szeroki dostęp sieciowy** – większa powierzchnia ataku |
-| **Zgodność z prawem** | dane w znanej lokalizacji | **lokalizacja danych**, transfery międzynarodowe (RODO), wiele jurysdykcji |
-| **Skalowanie ataków i kosztów** | ograniczone sprzętem | łatwe skalowanie = także **skalowanie nadużyć** (koszty, DDoS) |
-| **Tożsamości** | użytkownicy | użytkownicy + **aplikacje, usługi, funkcje** (każda mikrousługa może wymagać własnej tożsamości – slajd 14) |
-| **Moment projektowania** | często „dołożenie" zabezpieczeń | bezpieczeństwo **od samego początku** projektowania (security by design) |
-
-## Co pozostaje takie samo
-
-- cele **CIA**, klasyfikacja danych, zarządzanie ryzykiem, zgodność (ISO 27001, SOC 2, PCI DSS, RODO),
-- obrona w głąb (**defense in depth**), najmniejsze uprawnienia, szyfrowanie, monitoring, kopie zapasowe, reagowanie na incydenty,
-- potrzeba procedur i audytu.
-
-## Nowe elementy podejścia do chmury
-
-- **Model współdzielonej odpowiedzialności** i znajomość podziału (IaaS/PaaS/SaaS).
-- **IAM jako fundament** (federacja, SSO, MFA, najmniejsze uprawnienia, tożsamości usług) – temat 6.
-- **Bezpieczeństwo jako kod:** IaC + skanowanie, **policy-as-code**, DevSecOps (SAST/DAST, skanowanie obrazów, SBOM) – slajd 216.
-- **Zero Trust:** „nigdy nie ufaj, zawsze weryfikuj", minimalny dostęp, zakładanie naruszenia (slajd 238).
-- **Segmentacja i mikrosegmentacja** (VPC, security groups, NetworkPolicies) – temat 12.
-- **Zarządzanie kluczami** (KMS/HSM), szyfrowanie wszystkiego (w spoczynku, w tranzycie, w użyciu) – temat 9.
-- **Ciągłe monitorowanie** i automatyczna reakcja (SIEM, alerty) zamiast okresowych kontroli.
-- **Bezpieczeństwo API i kontenerów** jako nowe powierzchnie ataku.
-- Zgodność z regulacjami i **audyt w warunkach ograniczonego dostępu** do infrastruktury.
-- Zarządzanie ryzykiem **dostawcy** (vendor lock-in, SLA, certyfikaty dostawcy).
-
-## Przykład
-
-Otwarty publiczny bucket w chmurze (jedna linia konfiguracji lub przełącznik w konsoli) może ujawnić miliony rekordów w ciągu minut – w tradycyjnym IT taki wyciek wymagałby wielu naruszeń warstw sieciowych. Dlatego w chmurze **konfiguracja jest nową „powierzchnią ataku"** i wymaga automatycznego skanowania i polityk.
+**Wniosek:** tradycyjne mechanizmy (szyfrowanie, kontrola dostępu, kopie zapasowe, monitoring) nadal obowiązują, ale trzeba je dostosować do modelu współdzielonej odpowiedzialności, automatyzacji i bezpieczeństwa opartego na tożsamości.
 
 ## Podsumowanie
 

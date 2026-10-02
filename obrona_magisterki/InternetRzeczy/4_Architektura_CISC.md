@@ -1,58 +1,22 @@
-# CISC (Complex Instruction Set Computer)
+# Wyjaśnij, co oznacza skrót CISC. Krótko opisz ten termin.
 
 ## Rozwinięcie skrótu
 
 **CISC** – *Complex Instruction Set Computer*, czyli **komputer o złożonej (rozbudowanej) liście rozkazów**. To architektura (ISA) procesora, w której lista instrukcji zawiera **dużo rozkazów, w tym złożonych**, wykonujących w jednym rozkazie wiele elementarnych operacji.
 
-## Idea i geneza
+**Cechy:**
 
-Powstała w latach 60. i 70. XX w., gdy:
+- **Dużo instrukcji** (setki), o zmiennej długości i różnym czasie wykonania (wiele cykli zegara).
+- **Wiele trybów adresowania** i możliwość operowania bezpośrednio na pamięci.
+- **Zwarty kod programu**, bo jedna instrukcja zastępuje kilka prostszych. Oszczędza to pamięć i upraszcza pisanie kompilatorów oraz programów w asemblerze.
+- **Złożona jednostka sterująca**, często zrealizowana przez **mikroprogram**, co wymaga więcej tranzystorów i zwiększa pobór energii.
+- Trudniejsze jest **potokowanie** (pipelining) z powodu różnej długości i czasu instrukcji.
 
-- pamięć była **droga i wolna** – krótkie programy (mało rozkazów) oszczędzały pamięć i liczbę odwołań do niej,
-- **kompilatory były prymitywne** – programiści pisali w asemblerze, więc procesor miał realizować „wysokopoziomowe" operacje jednym rozkazem,
-- dążono do zmniejszenia tzw. **luki semantycznej** między językami wysokiego poziomu a sprzętem.
+**Przykłady:** rodzina **x86 i x86-64** (Intel, AMD), Motorola 68000, a także część mikrokontrolerów (np. 8051).
 
-Rozwiązanie: **jeden rozkaz = wiele elementarnych kroków**, np. „pobierz dwa argumenty z pamięci, dodaj, zapisz wynik w pamięci" albo kopiowanie całych bloków danych.
+**Uwaga:** współczesne procesory x86 są wewnętrznie podobne do RISC. Złożone instrukcje są **rozkładane na proste mikrooperacje**, które wykonuje szybki rdzeń.
 
-## Cechy architektury CISC
-
-| Cecha | Opis |
-| :--- | :--- |
-| **Duża liczba rozkazów** | setki instrukcji, w tym specjalizowane (łańcuchowe, BCD, wielokrotne) |
-| **Złożone rozkazy** | jeden rozkaz wykonuje operację wieloetapową (np. `MOVS`, `LOOP`, `MUL`, `DIV`) |
-| **Rozkazy o zmiennej długości** | np. w x86 od 1 do 15 bajtów |
-| **Wiele trybów adresowania** | bezpośrednie, pośrednie, indeksowe, bazowe, z przesunięciem itd. |
-| **Operacje „pamięć–pamięć"** | rozkazy arytmetyczne mogą bezpośrednio używać operandów z pamięci |
-| **Mało rejestrów ogólnego przeznaczenia** | historycznie kilka–kilkanaście, więcej odwołań do pamięci |
-| **Mikroprogramowanie** | sterowanie rozkazami za pomocą mikrokodu (pamięć mikrorozkazów) |
-| **Wiele cykli na rozkaz** | czas wykonania różny dla różnych rozkazów (kilka–kilkadziesiąt cykli) |
-| **Trudniejsze potokowanie** | zmienna długość i czas wykonania komplikują potok |
-
-## Zalety i wady
-
-| Zalety | Wady |
-| :--- | :--- |
-| **zwarty kod** – krótszy program, mniej pamięci | złożona i **kosztowna realizacja sprzętowa** (duży rdzeń, większe zużycie energii) |
-| wygodne programowanie w asemblerze (potężne rozkazy) | wiele rzadko używanych rozkazów (niewielka część listy odpowiada za większość wykonywanego kodu) |
-| mniej odwołań do pamięci instrukcji | **zmienny czas wykonania** utrudnia potokowanie i szybkie zegary |
-| zgodność wsteczna (stare oprogramowanie nadal działa – x86) | trudne zrównoleglenie na poziomie instrukcji, wolniejsza ewolucja |
-| mniejszy wysiłek kompilatora (rozkazy bliskie konstrukcjom języków) | mikrokod wolniejszy od logiki „zadrutowanej" |
-
-## Przykłady procesorów CISC
-
-- **Intel x86 / x86-64** (8086 … Core, AMD Ryzen) – najważniejszy współcześnie przykład,
-- Motorola 68000 (68k), IBM System/360, DEC VAX,
-- Intel **8051** (mikrokontroler; klasyczna lista rozkazów CISC), Zilog Z80, MOS 6502.
-
-## CISC dzisiaj
-
-Współczesne procesory x86 są **hybrydami**: zewnętrznie przyjmują rozkazy CISC, ale wewnątrz **dekodują je na proste mikrooperacje (µops)** wykonywane przez rdzeń przypominający RISC (potok, superskalarność, wykonywanie poza kolejnością). Dzięki temu zachowują zgodność z ogromnym zasobem oprogramowania i jednocześnie osiągają wysoką wydajność.
-
-## Równanie wydajności
-
-$$T_{prog}=N_{instr}\cdot CPI\cdot T_{zegara}=\frac{N_{instr}\cdot CPI}{f}$$
-
-CISC dąży do **zmniejszenia liczby instrukcji $N_{instr}$** (złożone rozkazy), kosztem **większego $CPI$** (średnia liczba cykli na rozkaz). RISC postępuje odwrotnie (zob. temat 5).
+**Przeciwieństwo** to architektura **RISC**: mało prostych instrukcji o stałej długości, wykonywanych zwykle w jednym cyklu.
 
 ## Podsumowanie
 

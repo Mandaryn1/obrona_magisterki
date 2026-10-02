@@ -1,4 +1,4 @@
-# Profil Naukowca
+# Identyfikator ORCID. Indeks Hirscha.
 
 ## ORCID – Open Researcher and Contributor ID
 

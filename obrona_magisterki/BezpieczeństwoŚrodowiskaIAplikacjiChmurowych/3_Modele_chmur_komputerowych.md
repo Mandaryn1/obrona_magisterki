@@ -1,58 +1,23 @@
-# Modele chmur komputerowych
+# Jakie znasz modele chmur komputerowych?
 
-Modele chmury dzieli się według dwóch kryteriów: **modelu usług** (co dostawca dostarcza) i **modelu wdrożenia** (kto i dla kogo udostępnia chmurę).
+Chmury komputerowe klasyfikuje się na dwa sposoby: według **modeli usług** i według **modeli wdrożenia** (definicja NIST).
 
-## Modele usług (IaaS, PaaS, SaaS)
+**Modele usług (co dostaje klient):**
 
-Każdy model usług wymaga **innych strategii bezpieczeństwa i narzędzi monitorowania**; zrozumienie podziału odpowiedzialności jest kluczowe dla planowania bezpieczeństwa i audytów.
+- **IaaS (Infrastructure as a Service):** klient dostaje infrastrukturę, czyli maszyny wirtualne, sieć i pamięć masową. Sam zarządza systemem operacyjnym, aplikacjami i danymi. Przykłady: AWS EC2, Azure Virtual Machines.
+- **PaaS (Platform as a Service):** dostawca zapewnia platformę (system, środowisko uruchomieniowe, bazy danych). Klient zajmuje się aplikacjami i danymi. Przykłady: Google App Engine, Azure App Service, Heroku.
+- **SaaS (Software as a Service):** gotowa aplikacja dostępna przez przeglądarkę, a klient tylko z niej korzysta. Przykłady: Microsoft 365, Gmail, Salesforce.
 
-| Model | Co dostarcza dostawca | Kontrola klienta | Odpowiedzialność za bezpieczeństwo (wg wykładu) | Przykłady |
-| :--- | :--- | :--- | :--- | :--- |
-| **IaaS** – Infrastructure as a Service | podstawowe zasoby obliczeniowe: **maszyny wirtualne, sieć, magazyn danych** | **największa** (system operacyjny, oprogramowanie pośredniczące, aplikacje, dane) | klient odpowiada za **większość zabezpieczeń** | AWS EC2, Azure Virtual Machines, Google Compute Engine, DigitalOcean |
-| **PaaS** – Platform as a Service | **środowisko do tworzenia i uruchamiania aplikacji** (runtime, bazy, middleware) | nad **aplikacją i danymi**, nie nad infrastrukturą | dostawca – infrastruktura i platforma; klient – **aplikacje i dane** | Azure App Service, Google App Engine, Heroku, AWS Elastic Beanstalk, Cloud Foundry |
-| **SaaS** – Software as a Service | **gotowa aplikacja** udostępniana przez Internet | **najmniejsza** (konfiguracja, użytkownicy, dane) | dostawca – większość aspektów; klient – **zarządzanie dostępem i zgodność z politykami** | Microsoft 365, Google Workspace, Salesforce, Dropbox |
+Im bliżej SaaS, tym więcej odpowiedzialności ma dostawca, a im bliżej IaaS, tym więcej klient.
 
-*(uzupełnienie)* Rozszerzenia: **FaaS/serverless** (np. AWS Lambda, Azure Functions – klient dostarcza tylko kod funkcji), **CaaS** (Containers as a Service – np. Kubernetes zarządzany: EKS, AKS, GKE), **DBaaS**, **XaaS**.
+**Modele wdrożenia (kto korzysta i kto zarządza):**
 
-### Stos warstw (kto zarządza)
+- **Chmura publiczna:** udostępniana wielu klientom przez dostawcę (AWS, Azure, Google Cloud). Jest tania i skalowalna, ale z mniejszą kontrolą.
+- **Chmura prywatna:** zasoby przeznaczone dla jednej organizacji, we własnym centrum danych lub u dostawcy. Daje większą kontrolę i bezpieczeństwo, ale jest droższa.
+- **Chmura hybrydowa:** połączenie chmury prywatnej i publicznej, np. dane wrażliwe lokalnie, a szczytowe obciążenia w chmurze publicznej.
+- **Chmura społeczności (community):** wspólna dla kilku organizacji o podobnych potrzebach i wymaganiach (np. instytucje publiczne, sektor zdrowia).
 
-```
- warstwa                 on-premises   IaaS     PaaS     SaaS
- ───────────────────────────────────────────────────────────────
- aplikacje                  klient     klient   klient   dostawca
- dane                       klient     klient   klient   klient*
- runtime / middleware       klient     klient   dostawca dostawca
- system operacyjny          klient     klient   dostawca dostawca
- wirtualizacja              klient     dostawca dostawca dostawca
- serwery / magazyny / sieć  klient     dostawca dostawca dostawca
- centrum danych (fizyczne)  klient     dostawca dostawca dostawca
- (* dane i dostęp użytkowników zawsze pozostają odpowiedzialnością klienta)
-```
-
-## Modele wdrożenia
-
-| Model | Opis | Bezpieczeństwo (wg wykładu) |
-| :--- | :--- | :--- |
-| **Public (publiczna)** | zasoby udostępniane **ogółowi** przez dostawcę (AWS, Azure, GCP), współdzielone między klientami | wymaga **silnej izolacji między klientami** i szczególnej uwagi na **bezpieczeństwo danych** |
-| **Private (prywatna)** | **dedykowana jednej organizacji** (w jej centrum danych lub u dostawcy) | większa **kontrola**, ale wymaga **więcej zasobów i ekspertyzy**; organizacja **ponosi pełną odpowiedzialność** za bezpieczeństwo |
-| **Hybrid (hybrydowa)** | połączenie chmury prywatnej i publicznej (np. dane wrażliwe lokalnie, reszta w chmurze) | komplikuje **zarządzanie tożsamością** i **zgodnością (compliance)** – potrzebne **spójne polityki** w obu środowiskach |
-| **Community (społecznościowa)** | współdzielona przez organizacje o **podobnych wymaganiach** (np. sektor publiczny, ochrona zdrowia, administracja) | szczególna uwaga na **zarządzanie dostępem i audyt**, bo zasoby są współdzielone między podmiotami o różnych wymaganiach bezpieczeństwa |
-
-*(uzupełnienie)* **Multi-cloud** – użycie usług **kilku dostawców** (zmniejsza uzależnienie od dostawcy – *vendor lock-in*, ale zwiększa złożoność i ryzyko niespójnych konfiguracji).
-
-## Porównanie z perspektywy bezpieczeństwa
-
-| Kryterium | Public | Private | Hybrid | Community |
-| :--- | :--- | :--- | :--- | :--- |
-| Kontrola klienta | niska–średnia | **wysoka** | zróżnicowana | średnia |
-| Izolacja | logiczna (multi-tenancy) | **fizyczna/dedykowana** | mieszana | częściowa |
-| Koszt i elastyczność | **niski, wysoka** | wysoki, niższa | średni | średni |
-| Główne ryzyko | współdzielenie, błędna konfiguracja | koszty i brak kompetencji | spójność polityk i tożsamości | różne wymagania uczestników |
-| Odpowiedzialność za bezpieczeństwo | **współdzielona** | organizacja w całości | współdzielona/organizacji | wspólna |
-
-## Dobór modelu
-
-Zależy od: **wrażliwości danych** (klasyfikacja), **wymagań prawnych** (RODO, lokalizacja danych), **kosztów**, **kompetencji zespołu**, **potrzeb skalowania**, **wymagań dostępności (RPO/RTO)**.
+Dodatkowo spotyka się **multi-cloud** (usługi od wielu dostawców) oraz modele pochodne, np. **FaaS/serverless** (uruchamianie funkcji bez zarządzania serwerami).
 
 ## Podsumowanie
 

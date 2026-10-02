@@ -1,6 +1,6 @@
 # Etapy procesu badawczego
 
-## Każde badanie naukowe przebiega w czasie i ma swój początek, cel i termin zakończenia – osiągnięcia celu
+**Każde badanie naukowe przebiega w czasie i ma swój początek, cel i termin zakończenia – osiągnięcia celu**
 
 ## Badanie jest procesem następujących kolejno etapów
 
