@@ -1,13 +1,5 @@
 # Bezpieczeństwo w sieciach komputerowych – wprowadzenie
 
-> **Źródła i zastrzeżenie.** Dostarczone materiały pochodzą z przedmiotu **„Mechanizmy bezpieczeństwa komputerowego"** (dr inż. K. Dziedzic, dr M. Barszcz; Politechnika Lubelska) – to inny, szerszy przedmiot. Pokrywa się z listą zagadnień tylko częściowo:
->
-> - **dobrze pokryte:** zapory sieciowe, IDS/IPS, narzędzia do analizy ruchu (Wireshark, tcpdump, Zeek, NetFlow), klasyfikacja ataków (W1, slajd 34; zapory i IDS, slajd 30), SOC/SIEM, segmentacja (W7), obrona w głąb, utwardzanie systemów (W8),
-> - **niepokryte w ogóle:** ataki i obrona w **warstwach II i III** (STP, port security, DHCP snooping, DAI, uRPF, ataki na routing) – tematy 5 i 6 opracowałem z własnej wiedzy,
-> - **pokryte słabo:** rola Windows/Linux w analizie sieci (temat 2), analiza protokołów (temat 3).
->
-> Treści z wykładów oznaczam „**wykład**", resztę ***(uzupełnienie)***. Pozostałe materiały z tego zipa (kontrola dostępu, IAM, TPM, kryptografia i PKI, aplikacje webowe, IoT, ryzyko, chmura) lepiej pasują do przedmiotów *Bezpieczeństwo systemów operacyjnych i usług*, *Bezpieczeństwo sieci teleinformatycznych* i *Ochrona sieci dostępowych* – wykorzystam je tam.
-
 ## Model OSI / TCP-IP – przypomnienie (pod kątem bezpieczeństwa)
 
 | Warstwa OSI | Urządzenia / protokoły | Typowe zagrożenia | Podstawowa obrona |

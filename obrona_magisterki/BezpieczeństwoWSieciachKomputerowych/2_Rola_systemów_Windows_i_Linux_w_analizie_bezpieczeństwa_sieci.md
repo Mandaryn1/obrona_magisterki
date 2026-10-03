@@ -2,21 +2,21 @@
 
 ## Dwie role systemów operacyjnych
 
-1. **System jako element chronionej infrastruktury** – serwery, stacje robocze, routery/zapory programowe; ich konfiguracja, usługi i otwarte porty współtworzą **powierzchnię ataku**; muszą być **utwardzone** (wykład W8: usuwanie zbędnych usług, domyślne konfiguracje → utwardzone ustawienia, minimalna powierzchnia ataku).
-2. **System jako platforma i źródło danych do analizy** – na nim uruchamia się narzędzia (skanery, sniffery, IDS), a on sam generuje **logi i telemetrię**, bez których nie da się wykryć ani zbadać incydentu.
+Windows i Linux pełnią w analizie bezpieczeństwa sieci dwie role. 
+1. Są **narzędziem analityka**, czyli platformą do monitorowania, skanowania i badania ruchu. 
+2. Są też **źródłem danych**: hosty generują logi i zdarzenia, a ich konfiguracja wpływa na bezpieczeństwo całej sieci.
 
 ## Linux
 
 **Zastosowania w analizie bezpieczeństwa:**
 
-- platforma narzędzi: **Kali Linux, Parrot, Security Onion, REMnux**; **Wireshark, tcpdump, nmap, Snort/Suricata, Zeek** (wykład: Zapory/IDS, slajdy 26, 33),
-- **zapora jądra:** **iptables / nftables** (stanowa filtracja przez *conntrack*, NAT), firewalld/ufw (wykład, slajd 25),
-- bramy, routery, VPN (WireGuard, OpenVPN, strongSwan), serwery DNS/DHCP/proxy, kontenery i chmura,
-- narzędzia „w terminalu": skryptowanie (bash, Python), potoki (`grep | awk | sort`), automatyzacja,
-- logi: `/var/log/auth.log` (Debian) lub `/var/log/secure` (RHEL) – logowania, sudo, SSH; **auditd** (audyt na poziomie jądra: `auditctl -w /etc/passwd -p wa -k passwd_changes`); `journalctl`, `rsyslog` (wykład, MBK1, slajd 49),
-- mechanizmy ochronne: **SELinux/AppArmor** (MAC), `sudo`, **fail2ban** (blokada IP po nieudanych logowaniach, integracja z iptables), OpenSCAP (zgodność z CIS/STIG) – wykład W8.
+- **Narzędzia analityczne:** tcpdump i Wireshark (przechwytywanie ruchu), **Nmap** (skanowanie portów i usług), **Snort/Suricata** (IDS/IPS), **Zeek** (metadane połączeń), dystrybucje Kali i Security Onion.
+- **Zapora:** iptables/nftables, UFW, firewalld.
+- **Logi:** `/var/log` (m.in. `auth.log` lub `secure` z logowaniami i `sudo`), **auditd**, journald.
+- **Ochrona i wykrywanie:** fail2ban (blokada brute force), SELinux/AppArmor, kontrola integralności (AIDE).
+- **Zalety:** otwartość, elastyczność, skryptowanie, wiele darmowych narzędzi. Wymaga większej wiedzy.
 
-**Typowe polecenia diagnostyczne** *(uzupełnienie)*:
+**Typowe polecenia diagnostyczne:**
 
 ```bash
 ip a; ip r; ip neigh          # interfejsy, trasy, tablica ARP/ND
@@ -29,13 +29,14 @@ iptables -L -n -v ; nft list ruleset
 
 ## Windows
 
+**Dominuje na stacjach i w środowiskach domenowych.**
+
 **Zastosowania:**
 
-- dominujący system **stacji roboczych i serwerów korporacyjnych** (Active Directory, Kerberos/NTLM, SMB, RDP, GPO) – główny cel i ogniwo ataków (np. **WannaCry/EternalBlue** wykorzystujący **SMBv1** – wykład, slajd 35),
-- narzędzia: **Wireshark (Npcap)**, **Sysmon** (Sysinternals), **PowerShell**, Windows Defender, **Windows Defender Firewall** (filtracja stanowa, profile sieci: domenowy/prywatny/publiczny, zarządzanie przez GPO), **AppLocker** (biała lista aplikacji) – wykład W8,
-- logi: **Dziennik zdarzeń Security** (`eventvwr.msc`): **4624** (udane logowanie), **4625** (nieudane), **4670** (zmiana uprawnień), **4663** (dostęp do pliku) – wykład, MBK1, slajd 49; typy logowania (2 – interaktywne, 3 – sieciowe, 10 – RDP),
-- polityki: **Account Lockout Policy** (blokada konta po N nieudanych próbach – ochrona przed brute force), **Credential Guard/VBS**, BitLocker + TPM,
-- **GPO** i Active Directory do centralnego egzekwowania zasad bezpieczeństwa.
+- **Dzienniki zdarzeń (Event Log):** logowania udane (**4624**) i nieudane (**4625**), zmiany uprawnień (**4670**), dostęp do plików (**4663**), uruchomienia procesów.
+- **Narzędzia:** Zapora Windows Defender, Defender/EDR, **AppLocker**, **GPO** (centralna polityka), **Sysmon** (szczegółowa telemetria), Active Directory.
+- **Zarządzanie:** PowerShell, `netstat`, Podgląd zdarzeń.
+- **Zalety:** centralne zarządzanie w domenie, bogate logowanie. Wady: duża powierzchnia ataku i popularność wśród atakujących.
 
 **Typowe polecenia** *(uzupełnienie)*:
 
@@ -47,26 +48,16 @@ arp -a ; ipconfig /all ; nslookup domena
 netsh advfirewall show allprofiles
 ```
 
-## Porównanie
 
-| Aspekt | **Windows** | **Linux** |
-| :--- | :--- | :--- |
-| Rola w sieci | stacje, serwery AD/pliki/aplikacje, klienci | serwery, bramy/zapory, urządzenia sieciowe, chmura, IoT, platformy analityczne |
-| Zapora | Windows Defender Firewall (GPO) | iptables/nftables, firewalld, ufw |
-| Logowanie zdarzeń | Event Log (ID zdarzeń), Sysmon | syslog, journald, auditd |
-| Kontrola dostępu | ACL (NTFS), RBAC, GPO, AD | prawa Unix, ACL, **SELinux/AppArmor**, sudo |
-| Narzędzia analityczne | Wireshark, Sysinternals, PowerShell | tcpdump, nmap, Zeek, Suricata, skrypty |
-| Typowe wektory | SMB, RDP, NTLM relay, pass-the-hash, phishing/makra | SSH brute force, błędna konfiguracja usług, podatne aplikacje webowe, wyciek kluczy |
-| Utwardzanie | AppLocker, Defender, aktualizacje, GPO | minimalizacja pakietów, SELinux, sudo, fail2ban, OpenSCAP |
-| Uwierzytelnianie sieciowe | Kerberos (SSO), NTLM | PAM, Kerberos (SSSD), klucze SSH |
+## Wspólne zastosowania:
 
-## Dlaczego oba są potrzebne w analizie
+- sprawdzanie **otwartych portów i usług** (`netstat`, `ss`),
+- **korelacja logów** z obu systemów w **SIEM**, co pozwala odtworzyć przebieg ataku,
+- wykrywanie brute force, skanowania i ruchu bocznego,
+- weryfikacja konfiguracji (utwardzanie, CIS Benchmarks, aktualizacje),
+- **analiza powłamaniowa** (logi, procesy, zrzuty pamięci).
 
-- **Heterogeniczne środowiska** – analityk musi czytać logi i ruch obu światów (np. Windows jako cel, Linux jako sensor).
-- **Korelacja zdarzeń**: logowanie (4624/4625 w Windows, `auth.log` w Linuksie) + ruch z NIDS + logi zapory → pełny obraz incydentu w **SIEM** (wykład).
-- **Weryfikacja ruchu na hoście**: czy proces (PID) odpowiada za podejrzane połączenie (`ss -p`, `netstat -ano`).
-- **Powierzchnia ataku hosta** wpływa na bezpieczeństwo całej sieci (przejęty host to punkt ruchu bocznego).
-- **Agenci HIDS/HIPS** (OSSEC/Wazuh, Sysmon + EDR) działają na obu platformach i uzupełniają NIDS.
+**Wniosek:** w sieci działają oba systemy, więc analityk musi znać oba. Linux jest typowym środowiskiem narzędzi i serwerów, Windows głównym źródłem zdarzeń ze stacji i domeny.
 
 ## Podsumowanie
 

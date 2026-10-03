@@ -1,130 +1,50 @@
 # Zastosowanie sieci VPN w bezpiecznej komunikacji oraz wybrane technologie VPN
 
-> Z wykładów: slajd *Firewall, NAT i VPN – synergiczne mechanizmy ochrony* (Zapory/IDS, slajd 24: szyfrowanie całego ruchu, poufność i integralność, **site-to-site**, **remote access**, protokoły **IPsec, OpenVPN, WireGuard**), VPN w zabezpieczeniu pracy zdalnej (W1, slajd 55) i VPN w UTM/ASA. Szczegóły techniczne – ***(uzupełnienie)***.
+**VPN (Virtual Private Network)** to **szyfrowany tunel** zestawiany przez sieć publiczną (Internet) między punktami, który zapewnia bezpieczną komunikację, jakby były połączone prywatnym łączem.
 
-## Czym jest VPN
+**Usługi bezpieczeństwa VPN:**
 
-**VPN (Virtual Private Network)** – **wirtualna sieć prywatna** zestawiana **przez sieć publiczną lub współdzieloną** (Internet, sieć operatora), zapewniająca **bezpieczny, szyfrowany „tunel"** między punktami. Wykład: VPN *szyfruje cały ruch między punktami końcowymi, zapewnia poufność i integralność danych*; dostępne wersje **Site-to-Site** (połączenia oddziałów) i **Remote Access** (pracownicy zdalni); protokoły **IPsec, OpenVPN, WireGuard**.
+- **poufność:** szyfrowanie (AES-GCM, ChaCha20),
+- **integralność** i **ochrona przed powtórzeniem** (anti-replay),
+- **uwierzytelnianie** stron (certyfikaty, klucze, PSK, MFA),
+- **enkapsulacja:** pakiet wewnętrzny jest opakowany w zewnętrzny.
 
-## Cele i usługi bezpieczeństwa
+**Zastosowania:**
 
-| Własność | Realizacja |
-| :--- | :--- |
-| **Poufność** | szyfrowanie (np. AES-GCM, ChaCha20) |
-| **Integralność** | MAC/AEAD, sumy kontrolne |
-| **Uwierzytelnienie stron** | certyfikaty, klucze, PSK, MFA |
-| **Ochrona przed powtórzeniem (anti-replay)** | numery sekwencyjne |
-| **Enkapsulacja (tunelowanie)** | pakiet wewnętrzny „opakowany" w zewnętrzny (może przenosić prywatną adresację) |
+- **dostęp zdalny pracowników (remote access)** do zasobów firmy,
+- **połączenie oddziałów (site-to-site)** zamiast łączy dzierżawionych,
+- komunikacja z partnerami i dostawcami (B2B),
+- **chmura hybrydowa:** bezpieczne łącze do VPC/VNet,
+- praca w niezaufanych sieciach (hotspoty),
+- zdalna administracja urządzeniami.
 
-## Zastosowania
+**Rodzaje:** remote access (client-to-site), site-to-site, host-to-host, **full tunnel** (cały ruch przez VPN) i **split tunnel** (tylko ruch do zasobów firmowych, mniejsze obciążenie, ale ryzyko obejścia kontroli), VPN dostawcy (MPLS L3VPN, bez szyfrowania) oraz overlay SD-WAN.
 
-1. **Dostęp zdalny pracowników** (praca zdalna, hybrydowa – W1: *„VPN, secure Wi-Fi, device security"*) do zasobów firmowych.
-2. **Połączenie oddziałów (site-to-site)** zamiast kosztownych łączy dzierżawionych.
-3. **Połączenia z partnerami i dostawcami (B2B/extranet)**.
-4. **Chmura hybrydowa** – bezpieczne łącze do VPC/VNet (wykład: VPN i gatewaye – bezpieczne połączenia między środowiskiem lokalnym a chmurowym).
-5. **Ochrona w niezaufanych sieciach** (hotspoty, hotele).
-6. **Zarządzanie urządzeniami** (administracja zdalna, OOB), IoT/OT.
-7. **Segmentacja i separacja ruchu** (VPN jako wydzielona sieć logiczna).
-8. **Prywatność** (ukrycie ruchu przed operatorem/ISP; VPN konsumenckie – inny model zaufania).
+**Wybrane technologie:**
 
-## Rodzaje VPN
+- **IPsec** (warstwa 3), standard dla site-to-site i enterprise:
+  - **ESP** (szyfrowanie, integralność, uwierzytelnienie), AH (tylko uwierzytelnienie, rzadko),
+  - tryb **tunelowy** (cały pakiet w nowym) i **transportowy** (tylko ładunek),
+  - **IKE** (negocjacja i wymiana kluczy; IKEv2 jest zalecany, UDP 500/4500 i NAT-T), **SA** (powiązanie bezpieczeństwa), **PFS**,
+  - uwierzytelnianie **certyfikatami** lub PSK.
+- **SSL/TLS VPN** (np. Cisco AnyConnect): przez port 443, łatwo przechodzi przez zapory, dostęp granularny do aplikacji. Typowy wybór dla zdalnego dostępu.
+- **OpenVPN:** open source, oparty na TLS, UDP 1194 lub TCP, tryby TUN (L3) i TAP (L2), elastyczny, ale wolniejszy.
+- **WireGuard:** nowoczesny i minimalistyczny (ok. 4 tys. linii kodu), **Curve25519, ChaCha20-Poly1305**, uwierzytelnianie kluczami publicznymi, szybki i prosty (mobilne i IoT), mniej funkcji enterprise.
+- Inne: **L2TP/IPsec**, SSTP, GRE (bez szyfrowania, zwykle z IPsec), **MPLS VPN** (izolacja bez szyfrowania). **PPTP jest złamany i nie należy go używać.**
+- Alternatywa dla VPN: **ZTNA** (dostęp do konkretnych aplikacji po weryfikacji tożsamości i postury).
 
-| Typ | Opis |
-| :--- | :--- |
-| **Remote Access (Client-to-Site)** | pojedynczy użytkownik/urządzenie z klientem VPN łączy się z bramą w firmie |
-| **Site-to-Site** | stałe tunele między bramami lokalizacji; transparentne dla hostów |
-| **Host-to-Host** | tunel bezpośrednio między dwoma hostami |
-| **Full tunnel / Split tunnel** | cały ruch przez VPN / tylko ruch do zasobów firmowych (split – mniejsze obciążenie, ale ryzyko obejścia kontroli) |
-| **Warstwa 3 / warstwa 2** | tunelowanie IP / ramek Ethernet (rozciągnięcie LAN, np. L2TP, VXLAN, OpenVPN TAP) |
-| **VPN dostawcy (provider-provisioned)** | **MPLS L3VPN/L2VPN** – izolacja klientów w sieci operatora |
-| **Overlay SD-WAN** | automatycznie zestawiane tunele IPsec między oddziałami z centralnym sterowaniem |
+**Współpraca z zaporą i NAT:** ruch z tunelu powinien przechodzić przez zaporę jak każdy inny (osobna strefa VPN), IPsec wymaga NAT-T, a NGFW/UTM często zawierają bramę VPN.
 
-## Wybrane technologie VPN
+**Zagrożenia i dobre praktyki:**
 
-### 1. IPsec (Internet Protocol Security)
+- **luki w bramach VPN** (częsty cel ataków): szybkie aktualizacje, ograniczenie ekspozycji zarządzania, IPS,
+- słabe hasła i PSK: **certyfikaty, MFA**, blokady,
+- przestarzałe algorytmy (PPTP, 3DES, słabe grupy DH): **IKEv2, AES-GCM, SHA-2, PFS**,
+- przejęte urządzenie klienta: ocena postury (NAC), EDR,
+- zbyt szeroki dostęp po zalogowaniu: **najmniejsze uprawnienia**, segmentacja,
+- brak widoczności: logi do SIEM.
 
-**Zestaw protokołów** zapewniających bezpieczeństwo **warstwy 3** (RFC 4301 i in.); standard dla site-to-site i remote access.
-
-| Element | Opis |
-| :--- | :--- |
-| **AH (Authentication Header)** | uwierzytelnienie i integralność (bez szyfrowania); nie przechodzi przez NAT – rzadko używany |
-| **ESP (Encapsulating Security Payload)** | **szyfrowanie + integralność + uwierzytelnienie**; najczęściej używany |
-| **Tryb tunelowy (tunnel)** | cały oryginalny pakiet IP enkapsulowany (nowy nagłówek IP) – site-to-site, bramy |
-| **Tryb transportowy (transport)** | chroniona tylko dane (ładunek) – host-to-host |
-| **SA (Security Association)** | jednokierunkowe powiązanie parametrów (algorytmy, klucze, czas życia); parametry w **SPI** |
-| **IKE (Internet Key Exchange)** | **negocjacja SA i uzgadnianie kluczy** (UDP 500, **NAT-T UDP 4500**) |
-| **IKEv1** | **Faza 1** (ISAKMP SA – kanał zarządzania; tryb główny/agresywny) i **Faza 2** (IPsec SA – tryb szybki) |
-| **IKEv2** | prostszy, szybszy, MOBIKE (mobilność), wbudowane EAP, odporniejszy – **zalecany** |
-| **Uwierzytelnienie** | **certyfikaty (PKI)** lub **PSK (klucz wstępnie współdzielony)**; w remote access także EAP/XAUTH/MFA |
-| **Algorytmy** | AES-128/256 (zalecane **AES-GCM**), SHA-2, wymiana kluczy **DH grupa ≥ 14 / ECDH (19, 20, 21)**, **PFS** (Perfect Forward Secrecy) |
-| **Typy konfiguracji** | policy-based (selektory ruchu) lub **route-based (VTI)** |
-| **Rozszerzenia** | **GRE over IPsec**, **DMVPN** (dynamiczne tunele spoke-to-spoke), **FlexVPN**, **GETVPN** |
-| **Zalety** | standard, wsparcie sprzętowe (ASIC), wydajność, interoperacyjność |
-| **Wady** | złożona konfiguracja, problemy z NAT/firewall (NAT-T), wiele opcji → błędy (słabe PSK, przestarzałe algorytmy) |
-
-### 2. SSL/TLS VPN
-
-Wykorzystują **TLS** (HTTPS, port 443), więc łatwo przechodzą przez zapory i NAT. Dwie odmiany: **clientless** (portal WWW) i **z klientem** (np. **Cisco AnyConnect/Secure Client**, Fortinet FortiClient, GlobalProtect). Zalety: dostęp **granularny do aplikacji**, łatwość, MFA; wady: zależność od klienta/portalu, wydajność. Częsty wybór dla **remote access**.
-
-### 3. OpenVPN
-
-**Open source**, oparty na **TLS** (OpenSSL), transport **UDP 1194** (lub TCP, także 443), tryby **TUN (L3)** i **TAP (L2)**; uwierzytelnianie certyfikatami, hasłami, MFA; konfigurowalny; wielka społeczność. Wykład wymienia go obok IPsec i WireGuard (slajd 24). Wady: większy narzut i opóźnienia niż WireGuard, złożoność konfiguracji, działa w przestrzeni użytkownika.
-
-### 4. WireGuard
-
-**Nowoczesny, minimalistyczny** protokół VPN (od 2020 w jądrze Linux 5.6): ok. **4 tys. linii kodu** (łatwy audyt), **UDP**, **kryptografia „sztywna"**: **Curve25519** (ECDH), **ChaCha20-Poly1305** (AEAD), **BLAKE2s**, **Noise protocol framework**; uwierzytelnienie **kluczami publicznymi** peerów (podobnie do SSH), **cichy** (nie odpowiada nieuwierzytelnionym pakietom), szybki rekonfiguracja i roaming, wysoka wydajność, niski narzut (dobry dla IoT i mobilnych). Ograniczenia: mniej funkcji „enterprise" (brak wbudowanego zarządzania użytkownikami, dynamicznego przydziału adresów – rozwiązuje się narzędziami nad nim), statyczne adresy IP peerów, kwestie prywatności (stały klucz). Wykład: pfSense i inne zapory wspierają.
-
-### 5. Inne technologie
-
-| Technologia | Opis |
-| :--- | :--- |
-| **L2TP/IPsec** | L2TP (tunel L2) + IPsec (szyfrowanie); wsparcie natywne w systemach; starszy |
-| **PPTP** | **przestarzały i złamany** (MS-CHAPv2) – **nie używać** |
-| **SSTP** | Microsoft; PPP przez TLS |
-| **GRE** | prosty tunel enkapsulacji (bez szyfrowania) – zwykle w parze z IPsec |
-| **MPLS VPN (L3VPN/L2VPN)** | usługa operatora: izolacja klientów **bez szyfrowania** (prywatność logiczna, nie kryptograficzna) |
-| **VXLAN, EVPN** | overlay w centrach danych |
-| **SD-WAN** | zarządzane overlaye IPsec/WireGuard z politykami aplikacyjnymi |
-| **ZTNA (Zero Trust Network Access)** | dostęp do **konkretnych aplikacji** po weryfikacji tożsamości i postury (alternatywa dla VPN – wykład W7: *ZTNA – każde połączenie wymaga uwierzytelnienia i autoryzacji*) |
-| **SSH tunnel, Tor** | tunelowanie punktowe, anonimizacja |
-
-## Porównanie głównych technologii
-
-| Cecha | **IPsec (IKEv2)** | **SSL/TLS VPN** | **OpenVPN** | **WireGuard** |
-| :--- | :--- | :--- | :--- | :--- |
-| Warstwa | L3 | L7 (TLS) → L3/aplikacje | L2/L3 (TLS) | L3 |
-| Transport / port | UDP 500/4500, ESP (IP 50) | TCP/UDP 443 | UDP 1194 / TCP | UDP (dowolny) |
-| Uwierzytelnienie | certyfikaty, PSK, EAP | certyfikat + hasło/MFA | certyfikaty, hasła | klucze publiczne |
-| Kryptografia | AES-GCM, SHA-2, DH/ECDH | TLS 1.2/1.3 | TLS + AES/ChaCha | Curve25519, ChaCha20-Poly1305 |
-| Wydajność | wysoka (sprzęt) | średnia | średnia | **bardzo wysoka** |
-| Złożoność | wysoka | niska–średnia | średnia | **niska** |
-| Przechodzenie przez zapory/NAT | NAT-T | **bardzo dobre (443)** | dobre | dobre (UDP) |
-| Typowe użycie | **site-to-site**, enterprise | **remote access** | remote access, elastyczne | nowoczesne wdrożenia, mobilne, IoT |
-
-## VPN a firewall i NAT (wykład, slajd 24)
-
-Współczesna architektura łączy **zaporę, NAT i VPN** jako **synergiczne mechanizmy ochrony**:
-
-- **NAT/PAT** maskuje adresację wewnętrzną (dodatkowa warstwa *obscurity*) – VPN wymaga **NAT-T** (IPsec) lub działa przez TLS,
-- **zapora** egzekwuje politykę **po rozszyfrowaniu** ruchu VPN (ruch z tunelu ma być filtrowany jak każdy inny – strefa VPN) i **inspekcja ruchu szyfrowanego** (wykład, slajd 27) bywa ograniczona,
-- **UTM/NGFW** integrują bramę VPN (IPsec, SSL) z IPS i AV (wykład, slajd 32).
-
-## Zagrożenia i dobre praktyki
-
-| Zagrożenie | Środek zaradczy |
-| :--- | :--- |
-| **luki w urządzeniach VPN (częsty cel exploitów)** | **szybkie aktualizacje**, ograniczenie ekspozycji interfejsu zarządzania, monitoring, **IPS** |
-| **słabe PSK, brute force, credential stuffing** | **certyfikaty/EAP-TLS i MFA**, silne hasła, blokada, rate limiting |
-| **przestarzałe algorytmy i protokoły** (PPTP, 3DES, DH 1024, IKEv1 aggressive) | **IKEv2, AES-GCM, SHA-2, DH ≥ 14/ECDH**, PFS |
-| **przejęte urządzenie klienta** | **ocena postury (NAC)**, EDR, ograniczenie dostępu do niezbędnych zasobów |
-| **split tunneling** | ryzyko obejścia kontroli – świadoma decyzja, DNS i filtrowanie, ZTNA |
-| **zbyt szeroki dostęp po zalogowaniu** | **najmniejsze uprawnienia**, segmentacja (strefa VPN), polityki per użytkownik/grupa (ISE/AD) |
-| **brak widoczności** | logowanie sesji VPN do **SIEM**, alerty (nietypowe lokalizacje) |
-| **DoS na bramę VPN** | anty-DDoS, redundancja, limity |
-| **VPN a zgodność** | szyfrowanie wymagane przez RODO/PCI DSS/NIS2; polityka dostępu zdalnego (kurs Cisco: *polityka zdalnego dostępu*) |
-| **ryzyko VPN konsumenckiego** | zaufanie do dostawcy – nie dla ruchu firmowego |
-
-Dobre praktyki: **MFA dla wszystkich użytkowników VPN**, **zakaz haseł wyłącznie**, krótkie czasy życia sesji, **przegląd kont**, HA bram, projekt adresacji unikający kolizji, dokumentacja, testy (skan portów, pentest bramy – temat 10), rozważenie **ZTNA** dla aplikacji.
+**Wniosek:** do site-to-site zwykle wybiera się IPsec, do zdalnego dostępu SSL VPN lub WireGuard, a niezależnie od technologii liczą się silne uwierzytelnianie (MFA), nowoczesna kryptografia i kontrola dostępu po zalogowaniu.
 
 ## Podsumowanie
 

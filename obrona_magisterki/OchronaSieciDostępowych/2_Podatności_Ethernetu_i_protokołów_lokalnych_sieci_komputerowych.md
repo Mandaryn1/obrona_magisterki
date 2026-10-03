@@ -1,64 +1,43 @@
 # Podatności technologii Ethernet oraz protokołów wykorzystywanych w lokalnych sieciach komputerowych
 
-> Temat nie jest pokryty dostarczonymi materiałami (poprzedni przedmiot dotykał ich jedynie w obszarze ataków L2/L3). Opracowanie z własnej wiedzy ***(uzupełnienie)***.
+Podatności wynikają głównie z tego, że protokoły LAN powstały w czasach, gdy sieć uważano za zaufaną. Brakuje w nich uwierzytelniania i szyfrowania.
 
-## Podatności samej technologii Ethernet
+**Technologia Ethernet (L1/L2):**
 
-| Cecha / podatność | Opis | Skutek |
-| :--- | :--- | :--- |
-| **Brak uwierzytelniania i szyfrowania w L2** | ramka Ethernet nie ma mechanizmów uwierzytelniania nadawcy ani poufności | podsłuch, spoofing |
-| **Adres MAC łatwy do sfałszowania** | MAC jest tylko etykietą ustawialną programowo | **MAC spoofing**, obejście filtrów MAC |
-| **Medium współdzielone / rozgłoszeniowe** | w hubach i Wi-Fi każdy widzi ruch; domeny rozgłoszeniowe | sniffing, burze rozgłoszeniowe |
-| **Tablica CAM przełącznika o skończonym rozmiarze** | po przepełnieniu przełącznik działa jak hub (*fail-open*) | **MAC flooding** → podsłuch |
-| **Brak kontroli dostępu do portu domyślnie** | każde urządzenie podpięte do portu zyskuje dostęp | rogue devices |
-| **Domyślne VLAN 1 / native VLAN** | współdzielone, niebezpieczne ustawienia domyślne | **VLAN hopping** |
-| **Zaufanie w obrębie domeny rozgłoszeniowej** | brak ochrony przed ruchem bocznym w segmencie | ataki wewnętrzne |
-| **Dostęp fizyczny** | gniazda, kable, porty SPAN | podpięcie, podsłuch |
-| **Pętle L2** | bez STP burza rozgłoszeń | DoS |
-| **Brak ochrony przed zakłóceniami i podsłuchem fizycznym** (kable miedziane, TAP) | podsłuch na kablu bez wykrycia | wyciek |
+- brak **uwierzytelniania i szyfrowania** ramek (można podsłuchiwać i podszywać się),
+- **adres MAC łatwo podrobić** (MAC spoofing),
+- ograniczona pamięć **tablicy CAM** przełącznika, co umożliwia **MAC flooding** (przełącznik zaczyna działać jak hub),
+- domyślnie **brak kontroli dostępu do portu** (każdy podpięty host dostaje dostęp),
+- ataki na **VLAN-y** (VLAN 1, VLAN hopping) oraz **pętle L2**,
+- ruch w medium współdzielonym (Wi-Fi) łatwo przechwycić.
 
-## Podatności protokołów LAN
+**Protokoły L2 i pomocnicze:**
 
-### Warstwa 2
+- **ARP:** brak uwierzytelniania, więc możliwe **ARP spoofing/poisoning** i MITM,
+- **STP:** fałszywe BPDU pozwala przejąć rolę root bridge,
+- **DTP, CDP, VTP:** ujawniają informacje lub umożliwiają zmianę konfiguracji.
 
-| Protokół | Słabość | Atak | Obrona |
-| :--- | :--- | :--- | :--- |
-| **ARP** | bezstanowy, brak uwierzytelniania; przyjmuje niezamawiane odpowiedzi | **ARP spoofing/poisoning** → MITM, DoS | **DAI**, statyczne wpisy, segmentacja |
-| **STP/RSTP** | ufa każdemu BPDU | przejęcie roli root bridge, MITM, DoS | **BPDU Guard, Root Guard** |
-| **VLAN / 802.1Q, DTP** | negocjacja trunku, native VLAN | **switch spoofing**, **double tagging** | `switchport mode access`, wyłączenie DTP, osobny native VLAN |
-| **CDP/LLDP** | ujawnianie modelu, wersji, adresów | rozpoznanie (*reconnaissance*) | wyłączenie na portach użytkowników |
-| **VTP** | rozgłaszanie konfiguracji VLAN | zmiana/usunięcie VLAN w sieci | tryb transparent, hasło VTP |
-| **Port Mirroring (SPAN)** | kopia ruchu | nieuprawniony podsłuch | kontrola dostępu do zarządzania |
+**Protokoły L3/L4:**
 
-### Warstwa 3 i 4
+- **DHCP:** brak uwierzytelniania, możliwy **fałszywy serwer** i starvation,
+- **IP:** łatwy **spoofing** adresu źródłowego,
+- **ICMP:** flood, smurf, przekierowania, tunelowanie,
+- **IPv6:** fałszywe Router Advertisement i Neighbor Discovery,
+- **protokoły routingu** (RIP, OSPF) i **HSRP:** bez uwierzytelniania można wstrzykiwać fałszywe trasy,
+- **TCP/UDP:** SYN flood, przejęcie sesji, amplifikacja w UDP.
 
-| Protokół | Słabość | Atak |
-| :--- | :--- | :--- |
-| **DHCP** | brak uwierzytelniania serwera i klienta | **rogue DHCP** (fałszywa brama/DNS), **starvation** |
-| **ICMP** | diagnostyka, redirect | flood, smurf, **ICMP redirect**, tunelowanie |
-| **IP** | źródło łatwe do sfałszowania | **IP spoofing**, amplifikacja |
-| **IPv6 (ND/RA)** | nieuwierzytelnione Router Advertisement | **rogue RA**, MITM w IPv6 (domyślnie włączone w systemach) |
-| **RIP/OSPF/EIGRP** | domyślnie bez uwierzytelnienia | fałszywe trasy |
-| **HSRP/VRRP** | domyślnie bez uwierzytelnienia | przejęcie roli bramy |
-| **TCP** | uzgadnianie 3-etapowe, przewidywalne numery sekwencyjne | **SYN flood**, hijacking |
-| **UDP** | bez połączenia | flood, amplifikacja (DNS, NTP, memcached) |
+**Usługi i protokoły aplikacyjne:**
 
-### Usługi lokalne i protokoły aplikacyjne
+- **Telnet, FTP, HTTP:** dane i hasła jawnym tekstem,
+- **SMBv1:** podatność EternalBlue (WannaCry), **NTLM relay**,
+- **SNMP v1/v2c:** jawne i domyślne community,
+- **DNS:** cache poisoning i amplifikacja,
+- **LLMNR/NBNS:** podszywanie i kradzież skrótów haseł,
+- **RDP:** brute force.
 
-| Protokół | Podatność | Obrona |
-| :--- | :--- | :--- |
-| **DNS** | brak uwierzytelniania, cache poisoning, tunelowanie | DNSSEC, ograniczenie rekursji, filtrowanie |
-| **NetBIOS/LLMNR/mDNS** | rozgłoszeniowe rozpoznawanie nazw – *poisoning* (Responder) i kradzież hashy NTLM | wyłączenie LLMNR/NBT-NS |
-| **SMB (v1)** | EternalBlue (WannaCry), brak szyfrowania | wyłączenie SMBv1, SMB signing/szyfrowanie |
-| **NTLM / SMB relay** | przekazywanie uwierzytelnienia | Kerberos, SMB signing, wyłączenie NTLM |
-| **Telnet, FTP, HTTP, POP3/IMAP/SMTP bez TLS** | dane i hasła jawnym tekstem | SSH, SFTP/FTPS, HTTPS, TLS |
-| **SNMP v1/v2c** | „community string" jawnie (np. `public`) | **SNMPv3** |
-| **RDP** | brute force, podatności | NLA, MFA, VPN, ograniczenie ekspozycji |
-| **TFTP, NTP bez ochrony** | brak uwierzytelniania, amplifikacja | ograniczenia, aktualizacje |
-| **UPnP, WPS (w routerach)** | zdalne otwieranie portów, słaby WPS | wyłączenie |
-| **802.1D / Wi-Fi WEP, WPA** | słabe szyfrowanie | WPA3 (temat 6) |
+**Obrona:** port security, DAI, DHCP snooping, BPDU Guard, **802.1X**, wyłączenie DTP, szyfrowanie (SSH, HTTPS, SNMPv3, MACsec), uwierzytelnianie protokołów routingu, ACL i uRPF, segmentacja VLAN, wyłączenie nieużywanych usług i protokołów.
 
-## Ogólne przyczyny podatności protokołów
+### Ogólne przyczyny podatności protokołów
 
 1. **Historyczne założenie zaufania** (sieci zamknięte),
 2. **brak uwierzytelniania i szyfrowania** w protokołach infrastrukturalnych,
@@ -66,7 +45,7 @@
 4. **błędy konfiguracji** i niezałatane urządzenia,
 5. **kompatybilność wsteczna** (SMBv1, SSLv3, TLS 1.0, SNMPv2c).
 
-## Metody wykrywania podatności protokołów
+### Metody wykrywania podatności protokołów
 
 - skanowanie sieci i usług (**nmap**, skanery podatności: Nessus, OpenVAS) – kurs Cisco, Moduł 2 i 4,
 - analiza ruchu w **Wireshark** (jawne protokoły: Telnet vs SSH – laboratorium Cisco), przegląd konfiguracji przełączników,

@@ -1,43 +1,35 @@
 # Rola wielowarstwowej ochrony w zabezpieczaniu lokalnych sieci komputerowych
 
-> Temat częściowo pokryty: CIS Critical Security Controls (kurs Cisco, Moduł 1), obrona w głąb i Zero Trust (poprzednie wykłady: W1, W7), pięć filarów zarządzania ryzykiem (wykład ryzyko). Resztę opracowałem z własnej wiedzy ***(uzupełnienie)***.
+**Wielowarstwowa ochrona (defense in depth, obrona w głąb)** polega na stosowaniu **wielu niezależnych warstw zabezpieczeń**, tak aby przełamanie jednej nie dawało atakującemu pełnego dostępu. Wynika z założenia, że **żadne pojedyncze zabezpieczenie nie jest doskonałe**, a ataki będą się czasem udawać.
 
-## Idea: obrona w głąb (Defense in Depth)
+**Warstwy (od zewnątrz do danych):**
 
-**Ochrona wielowarstwowa** zakłada, że **żadne pojedyncze zabezpieczenie nie jest niezawodne** – każde można ominąć, błędnie skonfigurować lub zawiedzie. Dlatego stosuje się **wiele niezależnych, uzupełniających się warstw** kontroli; jeśli jedna zostanie przełamana, **pozostałe nadal chronią zasoby** (wykład W1). Pomysł pochodzi z fortyfikacji wojskowych; w IT: nie ma „jednej srebrnej kuli".
+- **polityki i ludzie:** polityki bezpieczeństwa, szkolenia, procedury,
+- **ochrona fizyczna:** kontrola dostępu do pomieszczeń i sprzętu,
+- **perymetr:** zapory, IPS, VPN, DMZ,
+- **sieć i segmentacja:** VLAN-y, podział na strefy, kontrola ruchu między nimi,
+- **dostęp do sieci (L2):** 802.1X/NAC, port security, DHCP snooping, DAI,
+- **host:** aktualizacje, antywirus/EDR, zapora hostowa, utwardzanie,
+- **aplikacje:** bezpieczny kod, WAF,
+- **dane:** szyfrowanie, kontrola dostępu, kopie zapasowe,
 
-Powiązane zasady: **brak pojedynczego punktu awarii**, **różnorodność** zabezpieczeń (różne mechanizmy, nie tylko różni dostawcy tej samej technologii), **założenie naruszenia** (*assume breach* – Zero Trust), **najmniejsze uprawnienia**.
+oraz **przekrojowo:** tożsamość (MFA, najmniejsze uprawnienia) i **monitoring** (logi, IDS, SIEM).
 
-## Warstwy ochrony LAN
+**Rola i znaczenie:**
 
-```
- ┌─ ludzie, polityki, procedury, szkolenia, ISMS ────────────────────────────┐
- │ ┌─ ochrona fizyczna (szafy, gniazda, kontrola wejść) ──────────────────┐  │
- │ │ ┌─ perymetr (NGFW, IPS, proxy, DMZ, VPN) ──────────────────────────┐ │  │
- │ │ │ ┌─ sieć wewnętrzna (segmentacja, ACL, mikrosegmentacja, IDS) ───┐│ │  │
- │ │ │ │ ┌─ dostęp do sieci (802.1X/NAC, port security, DHCP snoop.) ┐ ││ │  │
- │ │ │ │ │ ┌─ host (hardening, EDR, patch, szyfrowanie dysku) ─────┐ │ ││ │  │
- │ │ │ │ │ │ ┌─ aplikacje (WAF, bezpieczny kod) ─────────────────┐ │ │ ││ │  │
- │ │ │ │ │ │ │   DANE  (szyfrowanie, DLP, klasyfikacja, backup)  │ │ │ ││ │  │
- │ │ │ │ │ │ └───────────────────────────────────────────────────┘ │ │ ││ │  │
- └─┴─┴─┴─┴─┴───────────────────────────────────────────────────────┴─┴─┴┴─┴──┘
-        + tożsamość (MFA, IAM, PAM) i monitoring (SIEM/SOC) przekrojowo
-```
+- **Odporność na awarię jednej warstwy:** błąd konfiguracji lub nowa podatność w jednym mechanizmie nie przesądza o kompromitacji.
+- **Różne warstwy zatrzymują różne etapy ataku:** na przykład filtry poczty i szkolenia ograniczają phishing, MFA przejęcie konta, segmentacja ruch boczny, a szyfrowanie i monitoring utrudniają eksfiltrację.
+- **Spowolnienie atakującego i zwiększenie szans wykrycia:** każda przeszkoda daje czas na reakcję.
+- **Ograniczenie skutków** udanego ataku (mniejszy promień rażenia).
+- **Zgodność z zaleceniami:** podejście zalecają standardy, np. CIS Controls (kontrole podstawowe, fundamentalne, organizacyjne) i ISO 27001.
 
-| Warstwa | Przykładowe środki | Co zatrzymuje |
-| :--- | :--- | :--- |
-| **Polityki, ludzie, organizacja** | polityki, ISMS, szkolenia, procedury, zarządzanie ryzykiem, audyty | błędy ludzkie, socjotechnika, brak zasad |
-| **Fizyczna** | zamknięte szafy i serwerownie, kontrola dostępu, CCTV, wyłączone nieużywane gniazda, blokada USB | podpięcie obcych urządzeń, kradzież, sabotaż |
-| **Perymetr** | zapory (stanowe, NGFW), **IPS**, WAF, proxy, DMZ, filtrowanie DNS/poczty, VPN | ataki z zewnątrz, malware, exploity |
-| **Sieć wewnętrzna** | **segmentacja (VLAN, strefy)**, ACL, zapory wewnętrzne, mikrosegmentacja, NIDS, inspekcja ruchu wschód–zachód | **ruch boczny**, rozprzestrzenianie malware |
-| **Dostęp do sieci (warstwa dostępu)** | **802.1X/NAC**, port security, DHCP snooping, DAI, BPDU Guard, WPA3-Enterprise, ocena postury | rogue devices, ataki L2, nieautoryzowany dostęp |
-| **Host / urządzenie końcowe** | hardening, **EDR/AV**, **patch management**, zapora hostowa, szyfrowanie dysku (TPM), whitelisting aplikacji, MDM | malware, exploity, utrata urządzenia |
-| **Aplikacje** | bezpieczny kod, WAF, testy SAST/DAST, ograniczone uprawnienia | SQLi, XSS, ataki aplikacyjne |
-| **Dane** | szyfrowanie (w spoczynku i w tranzycie), **DLP**, klasyfikacja, **kopie zapasowe (offline)** | wyciek, ransomware |
-| **Tożsamość i dostęp (przekrojowo)** | **MFA**, IAM, PAM, RBAC, least privilege, zarządzanie hasłami | przejęcie kont, eskalacja |
-| **Monitoring i reagowanie (przekrojowo)** | **SIEM/SOAR**, NetFlow, IDS, SOC, plan reakcji, forensics | niewykryte ataki, wolna reakcja |
+**Zasady:** warstwy powinny być **niezależne** (różne mechanizmy, ideal: różni dostawcy), uzupełniać się i być spójnie zarządzane.
 
-## Rodzaje kontroli w każdej warstwie
+**Ograniczenia:** większy koszt i złożoność zarządzania, ryzyko błędów konfiguracji i **fałszywe poczucie bezpieczeństwa**. Dlatego warstwy trzeba regularnie testować i aktualizować.
+
+**Wniosek:** ochrona wielowarstwowa nie eliminuje ryzyka, ale znacząco je ogranicza i zwiększa szanse na wykrycie ataku, zanim wyrządzi poważne szkody.
+
+### Rodzaje kontroli w każdej warstwie
 
 - **zapobiegawcze** (preventive) – zapora, 802.1X, MFA, szyfrowanie,
 - **wykrywające** (detective) – IDS, logi, SIEM, monitoring, audyt,
@@ -46,17 +38,7 @@ Powiązane zasady: **brak pojedynczego punktu awarii**, **różnorodność** zab
 
 Z innej perspektywy: **administracyjne** (polityki), **techniczne**, **fizyczne**.
 
-## CIS Critical Security Controls jako warstwowy program (kurs Cisco, Moduł 1)
-
-Dopasowanie do dojrzałości organizacji:
-
-| Poziom | Kontrole |
-| :--- | :--- |
-| **Podstawowe** (małe zasoby) | inwentaryzacja i kontrola sprzętu i oprogramowania, **ciągłe zarządzanie podatnościami**, kontrolowane uprawnienia administracyjne, **bezpieczne konfiguracje**, **analiza logów audytu** |
-| **Fundamentalne** (umiarkowane zasoby) | + zabezpieczenia poczty i przeglądarek, **ochrona przed malware**, **ograniczenie i kontrola portów, protokołów i usług**, odzyskiwanie danych, bezpieczne konfiguracje urządzeń sieciowych, **ochrona granic**, ochrona danych, **kontrola dostępu wg wiedzy koniecznej**, **kontrola dostępu bezprzewodowego**, monitorowanie kont |
-| **Organizacyjne** (duże zasoby) | + program świadomości i szkoleń, bezpieczeństwo aplikacji, **reagowanie na incydenty**, **testy penetracyjne i red team** |
-
-## Dlaczego wielowarstwowość jest niezbędna w LAN
+### Dlaczego wielowarstwowość jest niezbędna w LAN
 
 1. **Ataki są wieloetapowe** (kill chain/APT: rozpoznanie → wejście → utrwalenie → eskalacja → ruch boczny → eksfiltracja) – różne warstwy zatrzymują różne etapy.
 2. **Perymetr nie wystarcza** – urządzenia mobilne, VPN, Wi-Fi, phishing i insiderzy omijają zaporę; zagrożenie **wewnątrz** sieci wymaga kontroli L2/L3, segmentacji, hostowej ochrony.
@@ -65,34 +47,6 @@ Dopasowanie do dojrzałości organizacji:
 5. **Różne klasy zagrożeń** – sieciowe, aplikacyjne, ludzkie, fizyczne – wymagają różnych środków.
 6. **Zgodność z normami** (ISO 27001, NIS2, RODO) oczekuje podejścia warstwowego.
 7. **Wykrywanie i reakcja** – nawet przy najlepszej prewencji trzeba mieć monitoring (wykład ryzyko: *pięć filarów* – identyfikacja ryzyka, środki minimalizujące, polityki, **monitoring i audyty**, edukacja).
-
-## Przykład: scenariusz ataku i warstwy
-
-**Atak:** phishing → pobranie malware na stację → próba ruchu bocznego do serwera plików → eksfiltracja.
-
-| Etap | Warstwa, która może zatrzymać |
-| :--- | :--- |
-| e-mail z linkiem | filtr poczty/SPF-DKIM-DMARC, **szkolenia** |
-| uruchomienie malware | **EDR/AV**, whitelisting aplikacji, brak uprawnień administratora |
-| kontakt z C2 | filtrowanie DNS, **IPS/NGFW**, proxy |
-| ruch boczny (SMB) | **segmentacja**, zapory wewnętrzne, wyłączony SMBv1, least privilege |
-| próba kradzieży haseł | **MFA**, Credential Guard, ochrona przed pass-the-hash |
-| eksfiltracja | **DLP**, monitoring NetFlow, alerty SIEM |
-| szyfrowanie danych (ransomware) | **offline backup**, plan odtworzenia |
-
-## Ograniczenia i pułapki
-
-- **koszt i złożoność** (wiele narzędzi, integracja, zarządzanie polityką),
-- wpływ na **wydajność** (inspekcja DPI, szyfrowanie),
-- **fałszywe poczucie bezpieczeństwa** przy dużej liczbie narzędzi bez ich dostrojenia,
-- **luki między warstwami** (brak integracji, nieobsługiwane przypadki),
-- **warstwy zależne od siebie** (np. wszystkie oparte na jednym uwierzytelnieniu),
-- potrzeba **równowagi z użytecznością**,
-- konieczność **ciągłego utrzymania** (aktualizacje, przeglądy reguł, testy).
-
-## Zasady skutecznego wdrożenia
-
-dobór kontroli w oparciu o **analizę ryzyka**, **niezależność i różnorodność** warstw, integracja z SIEM, **testowanie** (audyty, pentesty, ćwiczenia red/blue team), dokumentacja i polityki, ciągłe doskonalenie (PDCA), edukacja użytkowników.
 
 ## Podsumowanie
 

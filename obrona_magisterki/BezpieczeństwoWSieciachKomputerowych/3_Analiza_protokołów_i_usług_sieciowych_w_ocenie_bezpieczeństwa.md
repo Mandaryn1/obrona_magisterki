@@ -2,19 +2,21 @@
 
 ## Dlaczego analizować protokoły i usługi
 
-Większość protokołów sieciowych powstała, gdy zakładano **zaufanie do uczestników sieci** – bez uwierzytelniania i szyfrowania. Każda **aktywna usługa i otwarty port** zwiększa powierzchnię ataku. Ocena bezpieczeństwa polega na: **(1)** wykryciu, jakie usługi i protokoły działają, **(2)** zrozumieniu ich słabości, **(3)** sprawdzeniu konfiguracji, wersji i poziomu szyfrowania, **(4)** zastąpieniu protokołów niebezpiecznych bezpiecznymi.
+Analiza protokołów i usług polega na sprawdzeniu, jakie protokoły i usługi działają w sieci i czy są bezpieczne. Większość protokołów sieciowych powstała, gdy zakładano **zaufanie do uczestników sieci** – bez uwierzytelniania i szyfrowania. Każda **aktywna usługa i otwarty port** zwiększa powierzchnię ataku. 
 
-Wykład (Zapory/IDS, slajd 30): *zrozumienie podstawowych protokołów jest kluczowe dla konfiguracji skutecznych reguł zapory oraz wykrywania anomalii przez IDS.*
+Ocena bezpieczeństwa polega na: 
+1. wykryciu, jakie usługi i protokoły działają, 
+2. zrozumieniu ich słabości, 
+3. sprawdzeniu konfiguracji, wersji i poziomu szyfrowania, 
+4. zastąpieniu protokołów niebezpiecznych bezpiecznymi.
 
 ## Metoda analizy
 
-| Etap | Działania | Narzędzia |
-| :--- | :--- | :--- |
-| **1. Inwentaryzacja** | wykrycie hostów, portów, usług, wersji | `nmap -sS -sV -O`, masscan, `ss -tulpn` / `netstat -ano` |
-| **2. Przechwycenie i analiza ruchu** | które protokoły płyną w sieci, czy jawne, anomalie | Wireshark, tcpdump, Zeek, NetFlow |
-| **3. Ocena konfiguracji** | wersje protokołów, szyfry, uwierzytelnianie, domyślne hasła, otwarte relaye | skanery podatności (Nessus, OpenVAS), `testssl.sh`, ręczny przegląd |
-| **4. Mapowanie podatności** | CVE, CVSS, publiczne exploity | bazy CVE/NVD |
-| **5. Rekomendacje** | wyłączenie, zastąpienie, ograniczenie regułami zapory | polityka, hardening |
+- **Inwentaryzacja**: które usługi i porty są otwarte (Nmap, netstat/ss).
+- **Analiza ruchu**: jakie protokoły faktycznie przepływają i czy dane idą jawnym tekstem (Wireshark, tcpdump, NetFlow).
+- **Ocena konfiguracji**: szyfrowanie, uwierzytelnianie, wersje, domyślne ustawienia.
+- **Sprawdzenie znanych podatności** (CVE) i poziomu aktualizacji.
+- **Rekomendacje**: wyłączenie, zastąpienie bezpieczniejszą wersją, ograniczenie dostępu.
 
 ## Przegląd protokołów i ich słabości
 
@@ -57,24 +59,22 @@ Wykład (Zapory/IDS, slajd 30): *zrozumienie podstawowych protokołów jest kluc
 
 ## Co analizować w pojedynczym połączeniu
 
-1. **Czy jest szyfrowane?** (HTTP vs HTTPS; w Wireshark treść jawna = ryzyko),
-2. **Jakiej wersji protokołu użyto** (np. TLS 1.0, SMBv1, SNMPv2c),
-3. **Czy strony są uwierzytelnione** (certyfikat serwera, MFA, kerberos),
-4. **Czy ruch jest zgodny z oczekiwanym wzorcem** (nietypowe porty, wolumen, godziny),
-5. **Czy usługa jest potrzebna** i **dostępna tylko dla właściwych segmentów** (reguły zapory).
-
-## Wskaźniki podejrzanego zachowania na poziomie protokołów *(uzupełnienie)*
-
-- skanowanie portów: wiele SYN do różnych portów bez dokończenia połączenia,
-- **beaconing** (regularne połączenia do tej samej domeny – C2), długie zapytania DNS (tunelowanie),
-- ruch na nietypowych portach lub protokół niezgodny z portem (np. SSH na 443),
-- duża liczba odpowiedzi DNS/NTP do ofiary (reflektowana amplifikacja),
-- **gratuitous ARP** i zmiany MAC powiązanego z bramą,
-- nowy serwer DHCP w sieci.
+1. **Czy jest szyfrowane?**: HTTP vs HTTPS; w Wireshark treść jawna = ryzyko,
+2. **Jakiej wersji protokołu użyto**: np. TLS 1.0, SMBv1, SNMPv2c,
+3. **Czy strony są uwierzytelnione**: certyfikat serwera, MFA, kerberos,
+4. **Czy ruch jest zgodny z oczekiwanym wzorcem**: nietypowe porty, wolumen, godziny,
+5. **Czy usługa jest potrzebna** i **dostępna tylko dla właściwych segmentów**: reguły zapory.
 
 ## Wpływ szyfrowania na analizę
 
-Ponad **90% ruchu** jest szyfrowane (wykład, slajd 27): IDS/IPS nie widzą zawartości HTTPS. Rozwiązania: **inspekcja TLS** (proxy MITM z zaufanym certyfikatem CA – uwaga na RODO i prywatność), analiza **metadanych** (SNI, JA3/JA3S, długości i czasy pakietów), analiza na hoście (EDR).
+**Ruch szyfrowany (TLS)**: ponad 90% ruchu jest szyfrowane, co chroni dane, ale utrudnia inspekcję. Analizuje się wtedy metadane (np. fingerprint JA3) albo stosuje inspekcję TLS z uwzględnieniem prywatności.
+
+Zasady:
+
+- stosować tylko niezbędne usługi,
+- zastępować protokoły niezabezpieczone wersjami szyfrowanymi,
+- segmentować i filtrować ruch zaporą,
+- aktualizować i monitorować.
 
 ## Podsumowanie
 
