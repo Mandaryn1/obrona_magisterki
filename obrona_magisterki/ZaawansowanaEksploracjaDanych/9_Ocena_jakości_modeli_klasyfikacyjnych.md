@@ -1,123 +1,49 @@
 # Ocena jakości modeli klasyfikacyjnych
 
-## Cel oceny (ewaluacji)
+## 1. Macierz pomyłek (Confusion Matrix)
 
-Sprawdzenie, czy model spełnia założenia projektowe, **poprawnie uogólnia** wzorce na nowe dane i jak można poprawić jego skuteczność. Polega na porównaniu przewidywań modelu z rzeczywistymi wartościami na **zbiorze testowym** (niewidzianym podczas uczenia).
+* **Podstawa ewaluacji:** Jest to tabela zestawiąca wartości rzeczywiste z wartościami przewidzianymi przez model klasyfikacyjny. Dla klasyfikacji binarnej składa się z 4 pól:
+  * **TP (True Positive):** obserwacje pozytywne, poprawnie zaklasyfikowane jako pozytywne.
+  * **TN (True Negative):** obserwacje negatywne, poprawnie zaklasyfikowane jako negatywne.
+  * **FP (False Positive):** błąd I rodzaju – obserwacje w rzeczywistości negatywne, błędnie uznane za pozytywne.
+  * **FN (False Negative):** błąd II rodzaju – obserwacje w rzeczywistości pozytywne, błędnie uznane za negatywne.
 
-Kryteria oceny modeli eksploracji danych: **łatwość interpretacji** (modele deskrypcyjne), **trafność i wiarygodność predykcji** (predykcyjne), **wydajność i skalowalność**, **przydatność**.
+---
 
-## Rodzaje klasyfikacji
+## 2. Podstawowe metryki jakości klasyfikacji
 
-| Rodzaj | Opis | Przykład |
-| :--- | :--- | :--- |
-| **dwuklasowa (binarna)** | dwie wzajemnie dopełniające się klasy; zwykle „pozytywna” = zjawisko pożądane/poszukiwane | choroba tak/nie, spam/nie-spam |
-| **wieloklasowa** | $\ge3$ klas, każdy obiekt do jednej | rozpoznawanie gatunków, cyfr, twarzy |
-| **wieloetykietowa** | obiekt może należeć do dowolnej liczby klas | obraz zawiera psa i/lub kota |
-| **jednoklasowa** | wykrywanie obiektów jednej klasy, reszta to odstające | wykrywanie oszustw, anomalii |
+* **Dokładność (Accuracy):**  
+  $[\text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}]$  
+  Mierzy udział wszystkich poprawnych predykcji w całkowitej liczbie obserwacji. Może być zwodnicza w przypadku zbiorów o silnej nierównowadze klas (np. gdy 99% danych to klasa negatywna).
+* **Precyzja (Precision):**  
+  $[\text{Precision} = \frac{TP}{TP + FP}]$  
+  Określa, jaki procent obserwacji zaklasyfikowanych jako pozytywne rzeczywiście należy do klasy pozytywnej. Istotna, gdy koszt błędu FP jest wysoki (np. filtr spamu).
+* **Czułość (Recall / Sensitivity):**  
+  $[\text{Recall} = \frac{TP}{TP + FN}]$  
+  Mierzy zdolność modelu do wykrywania rzeczywistych obiektów pozytywnych. Kluczowa w zastosowaniach medycznych i krytycznych, gdzie pomyłka FN jest niebezpieczna (np. niewykrycie choroby).
+* **Swoistość / Specyficzność (Specificity):**  
+  $[\text{Specificity} = \frac{TN}{TN + FP}]$  
+  Mierzy zdolność modelu do poprawnej identyfikacji przypadków negatywnych.
+* **F1-Score:**  
+  $[\text{F1} = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}]$  
+  Średnia harmoniczna precyzji i czułości. Równoważy obie te miary i stanowi najlepszy pojedynczy wskaźnik ogólnej jakości klasyfikacji przy niezbalansowanych danych.
 
-## Macierz pomyłek (confusion matrix)
+---
 
-Dla klasyfikacji binarnej:
+## 3. Ocena modeli na podstawie prawdopodobieństw (ROC i AUC)
 
-| | **Przewidziane: pozytywne** | **Przewidziane: negatywne** |
-| :--- | :-: | :-: |
-| **Rzeczywiste: pozytywne** | **TP** (true positive) | **FN** (false negative) |
-| **Rzeczywiste: negatywne** | **FP** (false positive) | **TN** (true negative) |
+* **Krzywa ROC (Receiver Operating Characteristic):** Wykres przedstawiający relację między czułością (TPR) a wskaźnikiem fałszywych alarmów (FPR = 1 - Specyficzność) dla różnych progów odcięcia prawdopodobieństwa.
+* **Wskaźnik AUC (Area Under Curve):** Pole powierzchni pod krzywą ROC:
+  * $(AUC = 0.5)$ – model działa losowo (brak zdolności predykcyjnej).
+  * $(AUC = 1.0)$ – klasyfikator idealny.
+  * Zaletą AUC jest niezależność od wybranego punktu odcięcia (progu).
 
-- **TP** – poprawnie zaklasyfikowane jako pozytywne,
-- **TN** – poprawnie zaklasyfikowane jako negatywne,
-- **FP** – błędnie jako pozytywne (*błąd I rodzaju, fałszywy alarm*),
-- **FN** – błędnie jako negatywne (*błąd II rodzaju, przeoczenie*).
+---
 
-## Miary jakości (klasyfikacja binarna)
+## 4. Techniki podziału danych do ewaluacji
 
-| Miara | Wzór | Znaczenie |
-| :--- | :--- | :--- |
-| **Dokładność (accuracy, trafność)** | $\dfrac{TP+TN}{TP+TN+FP+FN}$ | odsetek poprawnych klasyfikacji |
-| **Błąd klasyfikacji** | $1-\text{accuracy}=\dfrac{FP+FN}{TP+TN+FP+FN}$ | odsetek błędów |
-| **Precyzja (precision, PPV)** | $\dfrac{TP}{TP+FP}$ | jaka część zaklasyfikowanych jako pozytywne jest naprawdę pozytywna |
-| **Czułość (recall, sensitivity, TPR)** | $\dfrac{TP}{TP+FN}$ | jaka część rzeczywistych pozytywnych została wykryta |
-| **Specyficzność (specificity, TNR)** | $\dfrac{TN}{TN+FP}$ | jaka część rzeczywistych negatywnych została rozpoznana |
-| **Precyzja negatywna (NPV)** | $\dfrac{TN}{TN+FN}$ | trafność przewidywań negatywnych |
-| **F1-score** | $\dfrac{2\cdot P\cdot R}{P+R}$ | **średnia harmoniczna** precyzji i czułości |
-| **FPR** | $\dfrac{FP}{FP+TN}=1-\text{specyficzność}$ | odsetek fałszywych alarmów |
-
-Uogólnienie: $F_\beta=(1+\beta^2)\dfrac{P\cdot R}{\beta^2P+R}$ ($\beta>1$ – większy nacisk na czułość, $\beta<1$ – na precyzję).
-
-Uwagi:
-
-- **Accuracy jest myląca dla klas niezrównoważonych** (np. 99% zdrowych: model „zawsze zdrowy” ma 99% dokładności, a czułość 0). Wtedy stosuje się precyzję, czułość, F1, AUC.
-- **Wysoka precyzja nie oznacza dobrego modelu** – może być przy niskiej czułości (model pomija wiele przypadków). Występuje **kompromis precyzja–czułość** zależny od progu decyzyjnego.
-- Co ważniejsze – zależy od zastosowania: w diagnostyce chorób zwykle **czułość** (nie przeoczyć chorego), w filtrowaniu spamu **precyzja** (nie wyrzucić ważnej poczty).
-
-### Przykład liczbowy
-
-$TP=40,\ FN=10,\ FP=5,\ TN=45$ ($N=100$):
-
-- accuracy $=\frac{85}{100}=0{,}85$, błąd $=0{,}15$,
-- precyzja $=\frac{40}{45}=0{,}889$, czułość $=\frac{40}{50}=0{,}80$, specyficzność $=\frac{45}{50}=0{,}90$,
-- $F_1=\frac{2\cdot0{,}889\cdot0{,}8}{0{,}889+0{,}8}\approx0{,}842$.
-
-## Krzywa ROC i AUC
-
-Klasyfikator probabilistyczny zwraca prawdopodobieństwo; klasa zależy od **progu odcięcia** (domyślnie 0,5).
-
-- **Krzywa ROC** (*Receiver Operating Characteristic*): wykres **czułości (TPR)** względem **FPR** $(=1-\text{specyficzność})$ dla wszystkich możliwych progów,
-- punkt $(0,1)$ – klasyfikator idealny; przekątna – losowy,
-- **AUC** (*Area Under Curve*) – pole pod krzywą ROC: $0{,}5$ – losowy, $1$ – idealny; interpretacja: prawdopodobieństwo, że losowy obiekt pozytywny dostanie wyższy wynik niż losowy negatywny. Nie zależy od progu, mniej wrażliwa na niezrównoważenie klas (dla dużej nierównowagi lepsza bywa krzywa precision–recall).
-
-## Klasyfikacja wieloklasowa
-
-**Macierz pomyłek $K\times K$**: wiersze – klasa prawdziwa, kolumny – przewidywana. Dla klasy $i$:
-
-- $TP_i$ – komórka na przekątnej $(i,i)$,
-- $FP_i$ – suma **kolumny** $i$ z pominięciem $TP_i$,
-- $FN_i$ – suma **wiersza** $i$ z pominięciem $TP_i$,
-- $TN_i$ – reszta macierzy.
-
-Miary dla każdej klasy liczy się „jedna kontra reszta”, a następnie **uśrednia**:
-
-| Uśrednianie | Opis |
-| :--- | :--- |
-| **macro** | średnia arytmetyczna miar klas (każda klasa tak samo ważna) |
-| **weighted** (ważone) | średnia ważona liczebnością klas (**średnia ważona czułości, precyzji, F1**) |
-| **micro** | sumowanie TP, FP, FN po klasach, a potem jedna miara globalna |
-
-Dokładność wieloklasowa $=\dfrac{\sum_i TP_i}{N}$.
-
-## Inne miary
-
-- **Log loss** (entropia krzyżowa): ocenia jakość prawdopodobieństw (kara za pewne, ale błędne predykcje); jest funkcją kosztu regresji logistycznej,
-- **Współczynnik kappa Cohena** $\kappa$: zgodność ponad przypadkową; **MCC** (Matthews) – zrównoważona miara także dla klas niezrównoważonych,
-- **Accuracy zrównoważona** $=\frac{\text{czułość}+\text{specyficzność}}{2}$,
-- macierz kosztów błędów (różne koszty FP i FN).
-
-## Metody ewaluacji (protokoły)
-
-| Metoda | Opis |
-| :--- | :--- |
-| **Hold-out (walidacja na odłożonych danych)** | podział na zbiór treningowy i walidacyjny/testowy, typowo **80% / 20%**; ocena na danych niewidzianych w uczeniu |
-| **k-krotna walidacja krzyżowa (k-fold CV)** | zbiór na $k$ równych części; $k$ razy uczenie na $k-1$ i test na pozostałej; **średnia** wyników; zwykle $k=10$; lepsze wykorzystanie danych, ograniczenie przeuczenia; większe $k$ = większa dokładność, ale i koszt |
-| **Stratyfikowana CV** | zachowuje proporcje klas w foldach (klasy niezrównoważone) |
-| **Leave-one-out** | $k=n$; kosztowna, dla małych zbiorów |
-| **Bootstrap** | losowanie ze zwracaniem |
-
-Walidacja krzyżowa **nie zastępuje** podziału na zbiór treningowy i testowy, tylko go uzupełnia (ostateczny, niezależny zbiór testowy). **Przeuczenie (overfitting)**: model świetny na danych uczących, słaby na nowych – wykrywamy go porównując wyniki na zbiorze uczącym i testowym.
-
-*Uwaga: reguła powrotu do średniej – nietypowe zjawiska z czasem zmierzają do średniej, więc model uczony na danych historycznych może gorzej działać na nowych.*
-
-## Narzędzia (Python)
-
-```python
-from sklearn.metrics import confusion_matrix, classification_report, accuracy_score
-from sklearn.metrics import roc_auc_score
-
-y_pred = clf.predict(X_test)
-print(confusion_matrix(y_test, y_pred))
-print(classification_report(y_test, y_pred))     # precision, recall, F1, support
-print(accuracy_score(y_test, y_pred))
-print(roc_auc_score(y_test, clf.predict_proba(X_test)[:, 1]))   # AUC (binarna)
-```
+* **Prosty podział (Train/Test Split):** Podział danych na zbiór treningowy i testowy (np. 80/20).
+* **$(K)$-krotna walidacja krzyżowa (K-fold Cross-Validation):** Podział zbioru danych na $(k)$ równych części. Model uczony jest $(k)$-krotnie na $(k-1)$ częściach i oceniany na pozostałym 1 podzbiorze. Wynikiem końcowym jest średnia z $(k)$ prób, co zapobiega nadmiernemu dopasowaniu (overfittingowi) i zapewnia stabilną ocenę.
 
 ## Podsumowanie
 

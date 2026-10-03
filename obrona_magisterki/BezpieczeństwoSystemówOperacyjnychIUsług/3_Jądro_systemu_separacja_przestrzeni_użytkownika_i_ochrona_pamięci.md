@@ -1,82 +1,32 @@
 # Jądro systemu, separacja przestrzeni użytkownika i mechanizmy ochrony pamięci
 
-> Wykład: W1 (tryb użytkownika/jądra, pamięć wirtualna, wątki – slajdy 19–20, 36–39), W2 (procesy, fork, rootkity – slajdy 48, 50), W8 (slajd 14: utwardzone jądro – ASLR, PaX, sandboxing). Resztę (mechanizmy sprzętowe i programowe, ataki) opracowałem z własnej wiedzy ***(uzupełnienie)***.
+## 1. Jądro systemu (Kernel)
 
-## Jądro systemu
+* **Definicja:** Rdzeń systemu operacyjnego sprawujący bezpośrednią kontrolę nad sprzętem, przydziałem czasu procesora, pamięcią RAM oraz urządzeniami wejścia/wyjścia.
+* **Tryb pracy (Kernel Mode / Ring 0):** Kod jądra i sterowników wykonuje się z pełnymi uprawnieniami procesora, mając nieograniczony dostęp do całej pamięci fizycznej i instrukcji sprzętowych.
 
-**Jądro (kernel)** – rdzeń OS działający z najwyższymi uprawnieniami; zarządza **procesami** (planista), **pamięcią** (wirtualna, ochrona), **urządzeniami** (sterowniki), **systemem plików** i **siecią**, a także egzekwuje **kontrolę dostępu**. Wykład (W1): jądro kontroluje cały komputer i obsługuje żądania I/O, pamięć i urządzenia peryferyjne; kod w trybie jądra może wykonać dowolną instrukcję i odwołać się do dowolnego adresu pamięci, w jednej wspólnej przestrzeni adresowej – **błąd lub kompromitacja jądra oznacza kompromitację całego systemu.**
+---
 
-## Separacja przestrzeni użytkownika i jądra
+## 2. Separacja przestrzeni (User Space vs Kernel Space)
 
-### Poziomy uprzywilejowania procesora
+* **Tryb Użytkownika (User Mode / Ring 3):** Aplikacje i usługi użytkownika działają w odizolowanym środowisku z ograniczonym dostępem do sprzętu.
+* **Izolacja procesów:** Każdy proces otrzymuje własną prywatną przestrzeń adresową; nie może bezpośrednio odczytywać ani modyfikować pamięci jądra ani innych procesów, co zapobiega awariom i uszkodzeniu danych.
+* **Kontrolowane przełączanie (Wywołania systemowe & Uchwyty):** Aplikacja żądająca zasobu jądra (np. odczytu pliku) wywołuje funkcję API/syscall i korzysta z pośrednich identyfikatorów (*Handles*), co pozwala jądru zweryfikować uprawnienia przed wykonaniem operacji.
 
-Procesor (np. x86) ma **pierścienie ochrony (ring 0–3)**; w praktyce używa się dwóch: **ring 0 – tryb jądra**, **ring 3 – tryb użytkownika** (ARM: EL0–EL3). Instrukcje uprzywilejowane (dostęp do portów I/O, modyfikacja tablic stron, wyłączanie przerwań) działają tylko w trybie jądra.
+---
 
-```
- aplikacja (ring 3)  ──syscall / sysenter / int──▶  jądro (ring 0)  ──▶ sprzęt
-        ▲   próba instrukcji uprzywilejowanej → wyjątek (#GP) → proces zakończony
-        └──────────────── wynik wywołania ◀──────────────────────────────
-```
+## 3. Mechanizmy ochrony pamięci
 
-### Wywołania systemowe (system calls)
+* **Pamięć wirtualna i stronicowanie (Virtual Memory):** Odwzorowanie wirtualnych adresów procesu na fizyczne strony pamięci RAM za pomocą jednostki MMU (Memory Management Unit). Daje procesom iluzję wyłączności i ciągłości pamięci (do 4 GB w systemach 32-bit, do 8 TB w 64-bit).
+* **DEP / NX (Data Execution Prevention / No-Execute):** Sprzętowo-programowa ochrona oznaczająca strony pamięci (np. stos i stertę) jako niewykonywalne (`Non-Executable`). Uniemożliwia to uruchomienie złośliwego kodu (np. *shellcode*) wstrzykniętego przez przepełnienie bufora (*Buffer Overflow*).
+* **ASLR (Address Space Layout Randomization):** Losowa alokacja adresów pamięci dla jądra, stosu, sterty oraz bibliotek (DLL/so) przy każdym uruchomieniu. Atakujący nie jest w stanie przewidzieć stałych adresów funkcji w pamięci, co neutralizuje ataki typu *Return-to-libc* czy *ROP (Return-Oriented Programming)*.
+* **Ochrona stosu (Stack Canaries / Cookie):** Wstawianie losowych wartości przed adresem powrotnym na stosie przed wykonaniem funkcji. Zmiana wartości wskaźnika powoduje natychmiastowe przerwanie procesu przed wykonaniem złośliwego kodu.
 
-Jedyny **kontrolowany punkt wejścia** z trybu użytkownika do jądra. Aplikacja nie ma bezpośredniego dostępu do sprzętu – prosi jądro (np. `open`, `read`, `write`, `fork`, `execve`; w Windows – Win32 API → `ntdll` → `syscall`). Jądro **sprawdza argumenty i uprawnienia** (monitor odwołań), więc **walidacja danych z przestrzeni użytkownika** w jądrze jest krytyczna (błędy → eskalacja uprawnień).
+---
 
-### Izolacja procesów
+## 4. Podsumowanie na obronę
 
-- **każdy proces ma własną wirtualną przestrzeń adresową** (wykład W1: 4 GB w 32-bit; 8 TB w 64-bit wg wykładu), niewidoczną dla innych; **wątki jednego procesu dzielą przestrzeń** – błąd wątku może zniszczyć proces, ale nie inne procesy,
-- komunikacja między procesami tylko przez **IPC** (potoki, gniazda, pamięć współdzielona, komunikaty) pod kontrolą jądra,
-- osobne **tożsamości i uprawnienia** (UID/token) dla procesów,
-- **dodatkowa izolacja (Linux):** **namespaces** (PID, sieć, montowania, użytkownicy…), **cgroups** (limity zasobów), **seccomp** (filtr wywołań systemowych), **capabilities** (podział uprawnień roota), **chroot**, **kontenery**; **(Windows):** **integrity levels**, **AppContainer**, **job objects**, **VBS** (wirtualizacja chroni jądro i sekrety), **Windows Sandbox**; **wirtualizacja (hypervisor)** – najsilniejsza izolacja.
-
-## Ochrona pamięci
-
-### Pamięć wirtualna i MMU *(uzupełnienie)*
-
-**MMU** tłumaczy adresy wirtualne na fizyczne przez **tablice stron** zarządzane przez jądro. Każda strona ma bity uprawnień: **R (odczyt), W (zapis), X (wykonanie), U/S (użytkownik/nadzorca)**. Dostęp niezgodny z uprawnieniami → **błąd strony (page fault / segfault)** → jądro kończy proces. Skutki: proces **nie może czytać ani pisać cudzej pamięci**, a kod użytkownika nie może dotykać pamięci jądra.
-
-### Mechanizmy utrudniające wykorzystanie błędów pamięci
-
-| Mechanizm | Działanie | Atak, któremu przeciwdziała |
-| :--- | :--- | :--- |
-| **NX / XD / DEP** (Data Execution Prevention; zasada **W^X**) | strony danych i stosu **niewykonywalne** | wstrzyknięcie i wykonanie shellcode'u na stosie/stercie |
-| **ASLR** (Address Space Layout Randomization) | **losowy** układ stosu, sterty, bibliotek, kodu (przy PIE) przy każdym uruchomieniu | zgadnięcie adresów w exploitach (ROP/ret2libc); wykład W8: utwardzone jądro oferuje ASLR i PaX |
-| **KASLR** | losowanie adresu jądra | ataki na jądro |
-| **Stack canary** (stack protector) | wartość strażnicza przed adresem powrotu; sprawdzana przy powrocie | przepełnienie bufora na stosie |
-| **PIE / RELRO / FORTIFY_SOURCE** | kod niezależny od adresu; ochrona tablicy GOT; bezpieczne wersje funkcji | nadpisanie GOT, błędy `memcpy` |
-| **CFG / CFI / CET (shadow stack, IBT)** | kontrola przepływu sterowania, sprzętowy stos cieni | **ROP/JOP** (programowanie zorientowane na powroty) |
-| **SMEP / SMAP** | jądro nie wykonuje i nie czyta bezkrytycznie pamięci użytkownika | eskalacja uprawnień przez wskaźnik do przestrzeni użytkownika |
-| **KPTI** (page-table isolation) | oddzielne tablice stron jądra i użytkownika | **Meltdown** |
-| **Guard pages, zero-initialization, bezpieczne alokatory** | ochrona granic i danych | przepełnienia, use-after-free |
-| **Podpisy sterowników i modułów jądra, Secure Boot, PatchGuard/KPP, lockdown** | tylko zaufany kod w jądrze; ochrona struktur jądra | rootkity jądra, ładowanie złośliwego sterownika |
-| **VBS/HVCI (Windows)**, **Credential Guard** | integralność kodu jądra egzekwowana przez hypervisor | kradzież poświadczeń, kod jądra |
-| **Memory tagging (MTE), języki bezpieczne pamięciowo (Rust)** | wykrywanie błędów pamięci, eliminacja klasy błędów | use-after-free, przepełnienia |
-
-### Przykład podatności – przepełnienie bufora *(uzupełnienie)*
-
-```c
-void f(char *input) {
-    char buf[16];
-    strcpy(buf, input);     // brak sprawdzenia długości → nadpisanie sąsiednich danych i adresu powrotu
-}
-```
-
-Bez mechanizmów (NX, ASLR, canary) atakujący nadpisuje adres powrotu i przekierowuje wykonanie. Z mechanizmami musi je obejść (informacja o adresach, ROP) – podnosi to koszt. Obrona kodu: funkcje bezpieczne (`strncpy`/`snprintf`), kompilacja z `-fstack-protector-strong -D_FORTIFY_SOURCE=2 -fPIE -pie -Wl,-z,relro,-z,now`, bezpieczne języki.
-
-## Ataki na jądro i separację
-
-| Atak | Opis |
-| :--- | :--- |
-| **Eskalacja uprawnień (privilege escalation)** | wykorzystanie błędu w jądrze/sterowniku/usłudze SUID, by uzyskać root/SYSTEM |
-| **Rootkit (wykład W2, slajd 50)** | złośliwe oprogramowanie zwiększające uprawnienia i ukrywające się; **zmienia kod jądra i jego moduły**, więc wykrycie jest trudne; większość ataków wymaga uprawnień administratora; metody kontroli: **behawioralne, skanowanie sygnatur, skanowanie różnic, analiza zrzutu pamięci**; usunięcie bywa niemożliwe – często **reinstalacja systemu** |
-| **Złośliwy / podatny sterownik (BYOVD)** | ładowanie podpisanego, ale podatnego sterownika w celu wyłączenia zabezpieczeń |
-| **Ucieczka z kontenera/VM** | błędy izolacji → dostęp do hosta |
-| **Ataki sprzętowe** | Spectre/Meltdown (kanały boczne spekulacji), Rowhammer, DMA przez Thunderbolt/FireWire (obrona: IOMMU) |
-| **Ataki typu cold boot, Evil Maid** | zob. temat 8 |
-
-## Dobre praktyki
-
-aktualizacje jądra i sterowników, **Secure Boot + podpisane moduły**, wyłączenie nieużywanych modułów i sterowników, **sysctl hardening** (`kernel.kptr_restrict`, `kernel.dmesg_restrict`, `kernel.yama.ptrace_scope`, `kernel.randomize_va_space=2`, `kernel.unprivileged_bpf_disabled`), **LSM (SELinux/AppArmor)**, **seccomp/capabilities** dla usług, kontenery bez roota, IOMMU, zasada najmniejszych uprawnień dla sterowników i usług, monitorowanie integralności i ładowania modułów (auditd, EDR).
+> *"Jądro systemu działa w uprzywilejowanym trybie jądra, zarządzając sprzętem, podczas gdy aplikacje są odizolowane w trybie użytkownika i własnych przestrzeniach wirtualnych. Ochrona pamięci opiera się na separacji procesów poprzez MMU, blokowaniu wykonywania kodu z obszarów danych za pomocą DEP/NX, losowaniu adresów w RAM poprzez ASLR oraz zabezpieczeniach stosu przed przepełnieniem bufora."*
 
 ## Podsumowanie
 

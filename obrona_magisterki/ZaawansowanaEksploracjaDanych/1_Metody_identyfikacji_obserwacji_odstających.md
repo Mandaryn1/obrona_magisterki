@@ -1,95 +1,39 @@
-# Metody identyfikacji obserwacji odstających
+# Metody identyfikacji obserwacji odstających. Wymień znane metody i omów jedną z nich
 
-## Czym jest obserwacja odstająca
+## 1. Definicja i znaczenie obserwacji odstających
 
-**Obserwacja odstająca (outlier, anomalia)** to wartość skrajna, leżąca blisko granic zakresu danych albo sprzeczna z ogólnym trendem pozostałych danych.
+* **Obserwacje odstające (outliers):** to skrajne wartości w zbiorze danych, które leżą blisko granic zakresu zmiennej lub są sprzeczne z ogólnym trendem pozostałych danych.
+* **Przyczyny i wpływ:** Mogą wynikać z błędów w zapisie danych lub być poprawnymi pomiarami nietypowych zjawisk. Identyfikacja jest kluczowa, ponieważ statystyki nieodporne (np. średnia arytmetyczna czy odchylenie standardowe) dają przy nich niestabilne i zniekształcone wyniki.
 
-Dlaczego jest to ważne:
+---
 
-- może być **błędem zapisu** (np. różne skale pomiarowe, literówka, błąd czujnika),
-- nawet jeśli jest poprawnym pomiarem, **metody wrażliwe na takie obserwacje dają niestabilne wyniki** (średnia, odchylenie standardowe, regresja, PCA, k-średnich),
-- czasem to właśnie anomalie są celem analizy (wykrywanie oszustw, awarii, włamań).
+## 2. Znane metody identyfikacji
 
-Postępowanie po wykryciu: **zweryfikować źródło** → usunąć (jeśli błąd), zastąpić stałą (np. winsoryzacja, mediana) albo zostawić i użyć metod odpornych.
+* **Metody graficzne:**
+  * Wykres pudełkowy / skrzynkowy (box-plot).
+  * Histogram (wykrywanie pojedynczych, oddalonych słupków).
+  * Dwuwymiarowy wykres rozrzutu (dla analizy wielowymiarowej).
+* **Metody statystyczne / parametryczne:**
+  * Standaryzacja (wartość z-score / reguła 3 sigm) – uznająca za odstające wartości mniejsze od -3 lub większe od 3.
+* **Metody oparte na kwartylach:**
+  * Reguła rozstępu międzykwartylowego (1.5xIQR oraz 3xIQR).
+* **Metody oparte na uczeniu maszynowym:**
+  * Algorytmy analizy skupień (np. DBSCAN, w którym punkty nieprzypisane do żadnej grupy stanowią szum/odstające).
+  * Algorytm Isolation Forest (drzewa izolacyjne).
 
-## Przegląd znanych metod
+---
 
-### Metody graficzne
+## 3. Omówienie wybranej metody: Wykres pudełkowy i reguła IQR
 
-- **histogram** – słupek oddalony od reszty,
-- **wykres skrzynkowy (box plot)** – punkty poza „wąsami”,
-- **wykres rozrzutu** (dla 2 zmiennych) – punkty oddalone od głównej chmury.
-
-### Metody statystyczne
-
-- **reguła $1{,}5\cdot IQR$** (Tukey),
-- **standaryzacja / z-score** (reguła 3 sigm),
-- zmodyfikowany z-score oparty na medianie i MAD (odporny),
-- testy statystyczne: Grubbsa, Dixona (dla rozkładu normalnego),
-- **odległość Mahalanobisa** (przypadek wielowymiarowy, uwzględnia korelacje).
-
-### Metody uczenia maszynowego
-
-- **analiza skupień** – obserwacje daleko od centrów klastrów lub niezaklasyfikowane do żadnego (np. **DBSCAN** oznacza je jako szum),
-- **k najbliższych sąsiadów** – duża odległość do k-tego sąsiada,
-- **LOF (Local Outlier Factor)** – lokalna gęstość porównywana z sąsiadami,
-- **Isolation Forest** – drzewa decyzyjne izolujące punkty; anomalie izolują się szybciej,
-- **One-Class SVM**,
-- analiza reszt modelu regresji (odległość Cooka).
-
-> Metody z wykładu: histogram, wykres skrzynkowy, wykres rozrzutu, standaryzacja (z-score), analiza skupień, Isolation Forest.
-
-## Omówienie: reguła $1{,}5\cdot IQR$ (wykres skrzynkowy)
-
-### Idea
-
-Opiera się na **kwartylach**, więc jest **odporna** na same obserwacje odstające (kwartyle prawie nie reagują na skrajne wartości, w przeciwieństwie do średniej i odchylenia standardowego).
-
-### Wzory
-
-- $Q_1$ – kwartyl dolny (25% obserwacji jest mniejszych), $Q_3$ – kwartyl górny (75%),
-- $IQR = Q_3 - Q_1$ – rozstęp międzykwartylowy; w „pudełku” mieści się 50% środkowych obserwacji.
-
-Granice (ogrodzenia, *fences*):
-
-$$\text{dolna: } Q_1 - 1{,}5\cdot IQR \qquad \text{górna: } Q_3 + 1{,}5\cdot IQR$$
-
-| Typ | Warunek |
-| :--- | :--- |
-| **obserwacja odstająca** | poza przedziałem $[Q_1 - 1{,}5 IQR,\; Q_3 + 1{,}5 IQR]$ (na wykresie: kółko) |
-| **obserwacja ekstremalnie odstająca** | poza przedziałem $[Q_1 - 3 IQR,\; Q_3 + 3 IQR]$ (na wykresie: gwiazdka) |
-
-Wąsy sięgają do najdalszej obserwacji **mieszczącej się** w granicach; mediana to linia wewnątrz pudełka.
-
-### Przykład z wykładu
-
-Dane (wiek): `1, 5, 6, 6, 6, 7, 7, 7, 8, 8, 8, 9, 9, 11, 13, 15, 30` ($n=17$)
-
-- mediana $=8$, $Q_1 = 6$, $Q_3 = 9$, więc $IQR = 3$,
-- granice zwykłe: $6-4{,}5 = 1{,}5$ i $9+4{,}5 = 13{,}5$ → odstające: **1** i **15**,
-- granice ekstremalne: $6-9=-3$ i $9+9=18$ → ekstremalnie odstająca: **30**.
-
-## Porównanie: z-score
-
-$$z_i = \frac{x_i - \bar{x}}{s}$$
-
-Obserwacja jest podejrzana, gdy $|z_i| > 3$ (przy założeniu rozkładu normalnego odległość ponad 3 odchyleń standardowych od średniej). Można też przyjąć „wskazany procent najbardziej oddalonych obserwacji”.
-
-Dla tych samych danych: $\bar{x} = 9{,}18$, $s = 6{,}22$; wartość 30 ma $z = 3{,}35$ → odstająca; wartości 1 ($z=-1{,}32$) i 15 ($z=0{,}94$) **nie** zostają wykryte.
-
-| | Reguła IQR | z-score |
-| :--- | :--- | :--- |
-| Oparta na | kwartylach (pozycyjne) | średniej i odchyleniu std. |
-| Odporność na outliery | **wysoka** | niska (outlier zawyża $s$ i „maskuje” siebie) |
-| Założenie o rozkładzie | brak | (w przybliżeniu) normalny |
-| Przypadek wielowymiarowy | każda zmienna osobno | każda zmienna osobno |
-
-## Wielowymiarowe wykrywanie anomalii
-
-- **Wykres rozrzutu** dwóch zmiennych – na wykładzie dwie obserwacje odstające $(-1{,}35;\ 30)$ i $(3{,}35;\ 30)$.
-- Obserwacja może nie być odstająca w żadnym pojedynczym wymiarze, a być odstająca w kombinacji zmiennych (stąd Mahalanobis, LOF, Isolation Forest).
-- **Isolation Forest**: buduje losowe drzewa dzielące dane na losowych cechach i progach; punkty anomalne są „rzadkie i różne”, więc **wymagają mniej podziałów** do odizolowania (krótka ścieżka w drzewie = wysoka ocena anomalii).
-- **Metody skupieniowe**: DBSCAN – punkt, który nie jest ani rdzeniowy, ani graniczny, to szum (outlier).
+* **Konstrukcja i wskaźniki:**
+  * Metoda opiera się na kwartylach: kwartylu dolnym \\(Q_1\\) (25% obserwacji) oraz kwartylu górnym \\(Q_3\\) (75% obserwacji).
+  * Oblicza się **rozstęp międzykwartylowy**: \\(IQR = Q_3 - Q_1\\).
+* **Kryterium kwalifikacji obserwacji:**
+  * **Obserwacja odstająca:** wartość leżąca w odległości większej niż \\(1.5 \cdot IQR\\) poniżej kwartyla dolnego lub powyżej kwartyla górnego (poza zakresem wąsów).
+  * **Obserwacja ekstremalnie odstająca:** wartość oddalona od kwartyli o więcej niż \\(3 \cdot IQR\\).
+* **Główne zalety:**
+  * **Odporność (robustness):** W przeciwieństwie do metody z-score opartej na średniej, kwartyle i mediana są odporne na obecność samych wartości ekstremalnych, co daje stabilne granice detekcji.
+  * Prosta wizualizacja i jednoznaczna interpretacja graficzna.
 
 ## Podsumowanie
 

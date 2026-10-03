@@ -84,22 +84,5 @@ $$f(x)=\frac{1}{\sigma\sqrt{2\pi}}\,e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
 - **reguła trzech sigm**: w $\mu\pm\sigma$ jest ok. 68,3% obserwacji, w $\mu\pm 1{,}96\sigma$ – 95%, w $\mu\pm3\sigma$ – 99,7%,
 - **standaryzacja**: $U=\frac{X-\mu}{\sigma} \sim N(0,1)$.
 
-### Wykresy do wstępnej analizy
-
-wykres kropkowy, diagram łodyga–liście, wykres skrzynkowy (pudełko z wąsami), słupkowy, histogram. Liczbę klas histogramu można wyznaczyć ze wzoru Sturgesa $k = 1 + 3{,}32\log_{10} n$.
-
-## Narzędzia
-
-| Narzędzie | Charakterystyka |
-| :--- | :--- |
-| **RapidMiner** | dawniej YALE (2001); budowa modelu z „operatorów” (bloczków) przeciąganych na ekran; wersja darmowa i komercyjne |
-| **R** | język i środowisko do obliczeń statystycznych (GNU GPL), tekstowy, świetne wykresy |
-| **Weka** | Java, GNU GPL, zbiór algorytmów ML (preprocessing, klasyfikacja, regresja, klastrowanie, asocjacje, wizualizacja); moduły Explorer i Knowledge Flow |
-| **KNIME** | graficzny, GNU GPL, obróbka i analiza danych |
-| **Python** | `pandas`, `numpy`, `scipy`, `scikit-learn`, `statsmodels`, `matplotlib`, `seaborn` |
-| **Kaggle** | społeczność: konkursy, zbiory danych, notebooki, oferty pracy |
-
-Kryteria wyboru narzędzia: licencja, dostępność potrzebnych algorytmów, przejrzystość interfejsu, możliwość importu danych potrzebnego typu.
-
 ---
 [⬅️ Poprzedni temat](ZaawansowanaEksploracjaDanych_tytul.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](1_Metody_identyfikacji_obserwacji_odstających.md)
