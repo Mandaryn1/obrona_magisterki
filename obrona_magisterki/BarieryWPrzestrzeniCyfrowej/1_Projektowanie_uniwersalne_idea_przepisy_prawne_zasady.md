@@ -25,7 +25,7 @@
 
 - PU = projektowanie dla jak największej liczby osób od początku, bez adaptacji; cel: samodzielność i równe prawa.
 - Podstawy: humanocentryczność, równość szans, prawo (Konstytucja, ustawy 2019, dyrektywa 2016/2102, konwencja ONZ, EAA).
-- 8 zasad (wg wykładu): równy dostęp, elastyczność, prostota i intuicyjność, czytelna informacja, tolerancja na błędy, mały wysiłek fizyczny, odpowiednia wielkość i przestrzeń, percepcja równości.
+- 7 zasad: równy dostęp, elastyczność, prostota i intuicyjność, czytelna informacja, tolerancja na błędy, mały wysiłek fizyczny, odpowiednia wielkość i przestrzeń.
 - W Polsce standardem minimalnym dostępności cyfrowej podmiotów publicznych jest WCAG 2.1.
 
 ---
