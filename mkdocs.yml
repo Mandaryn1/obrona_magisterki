@@ -1,4 +1,5 @@
 site_name: Notatki na Obronę Magisterską
+site_url: https://Mandaryn1.github.io/obrona_magisterki/
 theme:
   name: material
   features:
