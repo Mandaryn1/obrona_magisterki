@@ -1,5 +1,10 @@
 # Metody estymacji gęstości rozkładu prawdopodobieństwa. Wymień znane metody i omów jedną z nich
 
+> **💬 Gotowa wypowiedź ustna:**
+> *"Estymacja gęstości rozkładu służy do odtworzenia funkcji pokazującej, jak prawdopodobieństwo rozkłada się w przestrzeni danych. Metody dzielimy na parametryczne, w których zakładamy z góry typ rozkładu – np. normalny – i szukamy jego parametrów, oraz nieparametryczne, które odtwarzają kształt bezpośrednio z danych. Do głównych metod nieparametrycznych należą histogram, estymator najbliższego sąsiedztwa oraz estymator jądrowy.
+> 
+> Najprostszą metodą jest histogram. Polega on na podziale przestrzeni na rozłączne przedziały klasowe i zliczaniu w nich liczby obserwacji. Kluczowym elementem jest wybór szerokości klasy: zbyt szerokie przedziały zacierają charakterystyczne cechy rozkładu, a zbyt wąskie wywołują szum. Jego zaletą jest intuicyjność, natomiast wadą nieciągłość uzyskanej funkcji."*
+
 ## 1. Podział metod estymacji
 
 * **Metody klasyczne (parametryczne):** polegają na przyjęciu z góry konkretnego typu rozkładu (np. rozkładu normalnego) oraz wyznaczeniu jego parametrów na podstawie próby losowej.

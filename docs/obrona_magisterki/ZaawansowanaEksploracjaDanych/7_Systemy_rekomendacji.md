@@ -1,5 +1,10 @@
 # Systemy rekomendacji. Wymień rodzaje systemów rekomendacji i omów przykładowy
 
+> **💬 Gotowa wypowiedź ustna:**
+> *"Systemy rekomendacji służą do personalizacji oferty i podpowiadania produktów na podstawie danych historycznych. Dzielimy je na metody oparte na treści, analizujące atrybuty produktów, oraz metody kolaboratywne, opierające się na zachowaniach całej społeczności.
+> 
+> W filtrowaniu kolaboratywnym system nie musi znać cech samego produktu. Wariacja User-to-User szuka użytkowników o podobnych ocenach i poleca produkty wybierane przez tych sąsiadów. Z kolei wariant Item-to-Item analizuje, które produkty są powtarzalnie oceniane razem przez tych samych ludzi. Główną zaletą jest elastyczność i niezależność od treści, a podstawowym wyzwaniem jest problem zimnego startu dla nowych użytkowników i produktów."*
+
 ## 1. Definicja i cel systemów rekomendacji
 
 * **Definicja:** Systemy rekomendacji to algorytmy predykcyjne, które wybierają z bardzo dużego zbioru dostępnych opcji te obiekty (produkty, filmy, artykuły, reklamy), którymi dany użytkownik może być najbardziej zainteresowany.

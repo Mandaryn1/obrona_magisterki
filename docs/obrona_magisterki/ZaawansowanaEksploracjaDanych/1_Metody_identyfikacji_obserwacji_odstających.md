@@ -1,5 +1,10 @@
 # Metody identyfikacji obserwacji odstających. Wymień znane metody i omów jedną z nich
 
+> **💬 Gotowa wypowiedź ustna:**
+> *"Obserwacje odstające to wartości skrajne, które znacząco odbiegają od reszty danych. Wykrywamy je, ponieważ mogą zniekształcać wyniki statystyk wrażliwych, takich jak średnia czy wariancja. Do najważniejszych metod identyfikacji należą metody graficzne, takie jak wykres pudełkowy, metody statystyczne oparte na standaryzacji Z-score oraz algorytmy uczenia maszynowego, np. DBSCAN.
+> 
+> Chciałbym omówić wykres pudełkowy i regułę IQR. Pudełko wyznaczone jest przez kwartyl dolny $Q_1$ i górny $Q_3$, a ich różnica to rozstęp międzykwartylowy $IQR$. Wartości uznajemy za odstające, jeśli leżą dalej niż półtora rozstępu $IQR$ poniżej pierwszego lub powyżej trzeciego kwartylu. Główną zaletą tej metody jest jej odporność – kwartyle i mediana w przeciwieństwie do średniej nie dają się zaburzyć przez obecność wartości skrajnych."*
+
 ## 1. Definicja i znaczenie obserwacji odstających
 
 * **Obserwacje odstające (outliers):** to skrajne wartości w zbiorze danych, które leżą blisko granic zakresu zmiennej lub są sprzeczne z ogólnym trendem pozostałych danych.

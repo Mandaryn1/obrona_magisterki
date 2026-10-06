@@ -1,5 +1,10 @@
 # Ocena jakości modeli klasyfikacyjnych
 
+> **💬 Gotowa wypowiedź ustna:**
+> *"Jakość modeli klasyfikacyjnych oceniamy na podstawie macierzy pomyłek, która zestawi decyzje modelu ze stanem faktycznym, dzieląc wyniki na TP, TN, FP i FN.
+> 
+> Na jej podstawie obliczamy metryki: Dokładność mierzy ogólny procent poprawnych odpowiedzi, ale bywa myląca przy nierównowadze klas. Precyzja mówi, ile zaklasyfikowanych przypadków pozytywnych było prawdziwych, a Czułość – jaki procent wszystkich rzeczywistych przypadków wyłapaliśmy. Średnią harmoniczną obu jest miara F1-score. Ogólną jakość niezależnie od progu odcięcia oceniamy zaś krzywą ROC i polem pod nią, czyli wskaźnikiem AUC."*
+
 ## 1. Macierz pomyłek (Confusion Matrix)
 
 * **Podstawa ewaluacji:** Jest to tabela zestawiąca wartości rzeczywiste z wartościami przewidzianymi przez model klasyfikacyjny. Dla klasyfikacji binarnej składa się z 4 pól:

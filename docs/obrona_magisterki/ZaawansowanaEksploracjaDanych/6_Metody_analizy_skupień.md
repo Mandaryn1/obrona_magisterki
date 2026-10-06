@@ -1,5 +1,10 @@
 # Metody analizy skupień. Wymień znane metody i omów jedną z nich
 
+> **💬 Gotowa wypowiedź ustna:**
+> *"Analiza skupień to nienadzorowana metoda grupowania obiektów w jednorodne klastry bez znajomości wcześniejszych etykiet. Metody dzielimy na podziałowe, hierarchiczne dające dendrogram oraz gęstościowe, takie jak DBSCAN.
+> 
+> Naj popularniejszym algorytmem podziałowym jest algorytm $k$-średnich. Wymaga on podania liczby klastrów $k$. Działa w pętli: najpierw losuje $k$ centroidów, przypisuje każdy punkt do najbliższego centroidu, a następnie przelicza nowe położenie centroidów jako średnią punktów w danej grupie. Proces powtarza się do ustabilizowania wyników. Zalety to szybkość i prostota, a wady to konieczność wyboru $k$ oraz wrażliwość na wartości odstające."*
+
 ## 1. Istota i cel analizy skupień (klasteryzacji)
 
 * **Definicja:** Analiza skupień to nienadzorowana metoda uczenia maszynowego służąca do podziału zbioru obiektów na jednorodne grupy (skupienia/klastry).

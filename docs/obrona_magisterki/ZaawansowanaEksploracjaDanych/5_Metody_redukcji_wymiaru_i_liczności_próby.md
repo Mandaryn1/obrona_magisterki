@@ -1,62 +1,83 @@
 # Metody redukcji wymiaru i liczności próby. Wymień znane metody i omów jedną z nich
 
-## 1. Cel i istota redukcji wymiarowości i liczności próby
+> **💬 Gotowa wypowiedź ustna:**
+> *"Redukcja wymiarowości i liczności danych zapobiega przekleństwu wymiarowości, które prowadzi do przeuczenia modeli i wysokich kosztów obliczeniowych. Redukcję liczności próby wykonujemy poprzez losowanie lub klasteryzację, natomiast redukcję wymiaru poprzez selekcję cech lub ich ekstrakcję.
+> 
+> Najważniejszą metodą ekstrakcji jest Analiza Składowych Głównych (PCA). Jest to metoda nienadzorowana, która zamienia skorelowane zmienne pierwotne w nowy układ nieskorelowanych zmiennych, zwanych składowymi głównymi. Pierwsza składowa przejmuje największą część wariancji danych, a kolejne coraz mniej. Liczbę składowych dobieramy na podstawie procentu wyjaśnionej wariancji, kryterium Kaisera lub wykresu osypiska. Zalety PCA to usunięcie współliniowości i spadek wymiaru, a wadą jest trudniejsza interpretacja nowych zmiennych."*
 
-* **Problem "klątwy wymiarowości":** Wraz ze wzrostem liczby cech (wymiarów) wykładniczo rośnie objętość przestrzeni danych, co wymaga drastycznego zwiększenia liczby obserwacji, wydłuża czas obliczeń i wywołuje ryzyko przeuczenia modelu (overfittingu).
-* **Redukcja wymiaru (cech/kolumn):** Polega na usunięciu zmiennych nieistotnych, nadmiarowych (skorelowanych) lub na utworzeniu nowego, mniej licznego zestawu syntetycznych cech.
-* **Redukcja liczności próby (obserwacji/wierszy):** Polega na zmniejszeniu liczby obiektów (wierszy) w zbiorze danych przy zachowaniu reprezentatywności całej populacji.
-* **Główne korzyści:** Skrócenie czasu trenowania modeli, usunięcie szumu, obniżenie kosztów pozyskiwania danych oraz możliwość łatwiejszej wizualizacji (np. na płaszczyźnie 2D/3D).
+## 1. Cel i istota redukcji
 
----
+- **Redukcja wymiaru** – zmniejszamy liczbę **cech (kolumn)**: usuwamy zmienne nieistotne lub powtarzające się albo tworzymy mniejszy zestaw nowych cech.
+- **Redukcja liczności próby** – zmniejszamy liczbę **obserwacji (wierszy)**, zachowując reprezentatywność danych.
+- **Klątwa wymiarowości** – im więcej cech, tym szybciej rośnie przestrzeń, w której leżą dane. Potrzeba wtedy znacznie więcej obserwacji, obliczenia trwają dłużej, a rośnie ryzyko **przeuczenia** modelu.
+- **Korzyści:** szybsze uczenie modeli, mniej szumu, niższe koszty zbierania danych, łatwiejsza wizualizacja (np. na wykresie 2D lub 3D).
 
 ## 2. Przegląd znanych metod
 
-* **Metody redukcji wymiaru (cech):**
-  * **Selekcja cech (wybór podzbioru zmiennych):**
-    * *Metody oparte na filtrach (Filter):* ocena zmiennych za pomocą statystyk bez udziału modelu (np. test $(\chi^2$), współczynnik korelacji Pearsona, progi wariancji).
-    * *Metody opakowane (Wrapper):* iteracyjne sprawdzanie podzbiorów cech z użyciem konkretnego modelu (np. rekurencyjna eliminacja cech – RFE).
-    * *Metody wbudowane (Embedded):* algorytmy z automatyczną selekcją w trakcie uczenia (np. regularyzacja L1 / Lasso, ważność cech w Lasach Losowych).
-  * **Ekstrakcja i konstrukcja nowych cech (projekcja):**
-    * *Analiza Składowych Głównych (PCA – Principal Component Analysis)* – metoda nienadzorowana.
-    * *Liniowa Analiza Dyskryminacyjna (LDA)* – metoda nadzorowana.
-    * *Analiza Składowych Niezależnych (ICA)* oraz metody nieliniowe (np. t-SNE, UMAP, mapy Kohonena SOM).
-* **Metody redukcji liczności próby (obserwacji):**
-  * **Losowanie próby (Sampling):** losowanie proste, warstwowe lub systematyczne.
-  * **Agregacja i analiza skupień:** zastępowanie grup podobnych obiektów ich reprezentantami/centroidami (np. algorytm $(k$)-średnich).
-  * **Czyszczenie danych:** usuwanie zduplikowanych rekordów oraz wartości odstających.
-  * **Redukcja klas w zbiorach niezbalansowanych:** podpróbkowanie (Undersampling, np. Tomek Links).
+### Redukcja wymiaru (cech)
 
----
+**Selekcja cech** – wybieramy podzbiór istniejących zmiennych:
 
-## 3. Omówienie wybranej metody: Analiza Składowych Głównych (PCA)
+- **Filter (filtry)** – oceniamy cechy statystyką, bez udziału modelu (np. test chi-kwadrat, korelacja Pearsona, próg wariancji).
+- **Wrapper (opakowane)** – sprawdzamy podzbiory cech, używając konkretnego modelu (np. rekurencyjna eliminacja cech, RFE).
+- **Embedded (wbudowane)** – selekcja zachodzi w trakcie uczenia modelu (np. regularyzacja L1/Lasso, ważność cech w lasach losowych).
 
-* **Zasada działania:**  
-  PCA to nienadzorowana technika przekształcania pierwotnych skorelowanych zmiennych w nowy układ ortogonalnych (nieskorelowanych) zmiennych, zwanych **składowymi głównymi**. Zmienne te są liniowymi kombinacjami zmiennych pierwotnych i są uporządkowane według ilości wyjaśnianej wariancji.
+**Ekstrakcja cech** – tworzymy nowe cechy z istniejących:
 
-* **Kroki algorytmu PCA:**
-  1. **Standaryzacja danych:** Przekształcenie zmiennych tak, aby miały średnią równą $(0$) i odchylenie standardowe równe $(1$) (metoda Z-score).
-  2. **Wyznaczenie macierzy kowariancji (lub korelacji):** Ocena zależności liniowych pomiędzy wszystkimi parami zmiennych.
-  3. **Obliczenie wartości własnych i wektorów własnych:**
-     * *Wektory własne* wyznaczają nowe kierunki (osie) w przestrzeni danych.
-     * *Wartości własne* określają wielkość wariancji (ilość informacji) przenoszoną przez daną składową.
-  4. **Projekcja danych:** Rzutowanie oryginalnych obserwacji na przestrzeń wyznaczoną przez wybrane wektory własne.
+- **PCA** – metoda nienadzorowana, nowe cechy uporządkowane według ilości informacji.
+- **LDA** – metoda nadzorowana, nowe osie najlepiej rozdzielają klasy.
+- **Inne:** ICA oraz metody nieliniowe (t-SNE, UMAP, mapy Kohonena SOM).
 
-* **Kryteria doboru liczby składowych:**
-  * **Procent wyjaśnionej wariancji:** Wybiera się tyle pierwszych składowych, aby łącznie wyjaśniały przyjęty próg całkowitej wariancji (np. 80%–95%).
-  * **Kryterium Kaisera:** Pozostawia się tylko te składowe, których wartości własne są większe od $(1$).
-  * **Kryterium osypiska (Scree plot):** Na wykresie wartości własnych szuka się punktu załamania ("łokcia") i odrzuca składowe leżące po prawej stronie.
+### Redukcja liczności próby (obserwacji)
 
-* **Zalety i ograniczenia:**
-  * **Zalety:** Całkowite wyeliminowanie problemu współliniowości zmiennych oraz skuteczna redukcja wymiaru przy minimalnej utracie informacji.
-  * **Wady:** Nowo powstałe składowe główne są trudniejsze w bezpośredniej interpretacji dziedzinowej niż oryginalne zmienne.
+- **Losowanie próby (sampling)** – proste, warstwowe lub systematyczne.
+- **Agregacja i analiza skupień** – grupę podobnych obiektów zastępujemy jej reprezentantem (centroidem), np. w algorytmie k-średnich.
+- **Czyszczenie danych** – usuwanie duplikatów i wartości odstających.
+- **Redukcja klas w zbiorach niezbalansowanych** – podpróbkowanie (undersampling), np. Tomek Links.
+
+## 3. Omówienie wybranej metody: PCA (Analiza Składowych Głównych)
+
+### Zasada działania
+
+PCA przekształca pierwotne, skorelowane zmienne w nowy zestaw **nieskorelowanych zmiennych**, zwanych **składowymi głównymi**. Każda składowa jest kombinacją liniową zmiennych pierwotnych. Są one uporządkowane od tej, która niesie najwięcej informacji (wyjaśnia największą część zmienności), do tej, która niesie najmniej. Zwykle zostawiamy kilka pierwszych i pomijamy resztę.
+
+*Intuicja:* PCA szuka „najlepszego kąta patrzenia" na dane, czyli takiego kierunku, w którym dane są najbardziej rozproszone, i rzutuje na niego obserwacje, jak cień na ścianę.
+
+### Kroki algorytmu
+
+1. **Standaryzacja danych** – każda zmienna ma średnią 0 i odchylenie standardowe 1 (z-score), żeby żadna nie dominowała przez samą skalę.
+2. **Macierz kowariancji (lub korelacji)** – opis zależności liniowych między wszystkimi parami zmiennych.
+3. **Wartości i wektory własne:**
+   - *wektory własne* wyznaczają nowe kierunki (osie),
+   - *wartości własne* mówią, ile zmienności niesie dana składowa.
+4. **Projekcja** – obserwacje rzutujemy na wybrane wektory własne i otrzymujemy dane o mniejszej liczbie wymiarów.
+
+### Dobór liczby składowych
+
+- **Procent wyjaśnionej wariancji** – zostawiamy tyle składowych, by łącznie wyjaśniały ustalony próg (np. 80–95%).
+- **Kryterium Kaisera** – zostawiamy składowe o wartości własnej większej niż 1.
+- **Wykres osypiska (scree plot)** – szukamy „łokcia", czyli punktu załamania wykresu, i odrzucamy składowe za nim.
+
+### Zalety i wady
+
+**Zalety:**
+
+- usuwa współliniowość zmiennych,
+- daje dużą redukcję wymiaru przy małej utracie informacji,
+- jest przydatna do wizualizacji.
+
+**Wady:**
+
+- składowe trudniej zinterpretować niż oryginalne zmienne,
+- wykrywa tylko zależności **liniowe**,
+- jest wrażliwa na skalę zmiennych (stąd standaryzacja).
 
 ## Podsumowanie
 
-- Redukcja = mniej zmiennych (wymiar) i/lub mniej obserwacji (liczność), aby poprawić jakość, szybkość i czytelność.
-- Przekleństwo wymiarowości: liczba potrzebnych obserwacji rośnie wykładniczo z liczbą zmiennych.
-- Wymiar: **selekcja cech** (filter / wrapper / embedded) albo **konstrukcja cech** (PCA).
-- **PCA**: standaryzacja → macierz kowariancji → wektory i wartości własne → wybór $k$ składowych (90–95% wariancji, Kaiser $\lambda>1$, osypisko) → projekcja. Składowe są ortogonalne, wariancja składowej = wartość własna.
-- Liczność: próbkowanie (proste, systematyczne, warstwowe), selekcja przykładów, klastrowanie, usuwanie duplikatów/odstających.
+- Redukcja = mniej zmiennych (wymiar) i/lub mniej obserwacji (liczność), co poprawia jakość, szybkość i czytelność analizy.
+- Wymiar: **selekcja cech** (filter, wrapper, embedded) albo **ekstrakcja cech** (PCA, LDA).
+- **PCA:** standaryzacja → macierz kowariancji → wektory i wartości własne → wybór liczby składowych (próg wariancji, Kaiser, osypisko) → projekcja.
+- Liczność: próbkowanie, klastrowanie, usuwanie duplikatów i odstających, podpróbkowanie klas.
 
 ---
 [⬅️ Poprzedni temat](4_Modele_regresji_Regresja_wielokrotna.md) | [🏠 Powrót do spisu treści](../../README.md) | [Następny temat ➡️](6_Metody_analizy_skupień.md)

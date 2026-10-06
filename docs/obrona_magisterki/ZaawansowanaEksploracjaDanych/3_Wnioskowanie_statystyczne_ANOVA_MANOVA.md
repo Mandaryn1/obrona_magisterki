@@ -1,5 +1,10 @@
 # Wnioskowanie statystyczne. ANOVA, MANOVA – postawienie zagadnienia, przykłady zastosowań
 
+> **💬 Gotowa wypowiedź ustna:**
+> *"ANOVA służy do jednoczesnego porównywania średnich w trzech lub więcej grupach. Używamy jej zamiast serii testów t-Studenta, aby zapobiec kumulacji błędu pierwszego rodzaju. Działa tak, że porównuje zmienność między średnimi grup a zmiennością wewnątrz grup. Jeśli różnice między grupami są znacznie większe niż szum wewnątrz nich, odrzucamy hipotezę o równości średnich. Do założeń należą rozkład normalny w grupach i jednorodność wariancji. Ponieważ ANOVA informuje tylko, że różnica istnieje, po jej wykonaniu stosujemy testy post-hoc, np. test Tukeya, aby ustalić, które konkretnie grupy się różnią.
+> 
+> MANOVA jest rozszerzeniem tej metody na sytuacje, w których badamy jednocześnie wiele zmiennych zależnych. Zamiast porównywać pojedyncze średnie, porównuje całe wektory średnich, uwzględniając współzależności między cechami, np. przy użyciu Lambdy Wilksa."*
+
 ## 1. ANOVA (Jednowymiarowa analiza wariancji) – postawienie zagadnienia
 
 * **Cel metody:** Służy do weryfikacji hipotezy o jednoczesnej równości wartości średnich badanej cechy ilościowej w więcej niż dwóch (\\(k > 2\\)) populacjach.

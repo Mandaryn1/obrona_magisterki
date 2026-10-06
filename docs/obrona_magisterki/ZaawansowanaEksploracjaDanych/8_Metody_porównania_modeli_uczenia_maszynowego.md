@@ -1,5 +1,10 @@
 # Metody porównania modeli uczenia maszynowego. Omów na przykładzie
 
+> **💬 Gotowa wypowiedź ustna:**
+> *"Stosujemy testy statystyczne do porównywania modeli ML, aby sprawdzić, czy różnica w ich wynikach jest statystycznie istotna, czy wynika jedynie z losowego podziału danych. Zwykły test t-Studenta nie nadaje się do walidacji krzyżowej, ponieważ nakładanie się zbiorów w kolejnych krokach łamie założenie o niezależności próby i prowadzi do fałszywych wniosków.
+> 
+> Dla dwóch klasyfikatorów na jednym zbiorze testowym stosuje się test McNemara. Jest to test nieparametryczny, który analizuje wyłącznie te przypadki, w których modele dały odmienne odpowiedzi. Buduje się tabelę niezgodności i oblicza statystykę $\chi^2$. Jeśli wyliczona wartość przekracza wartość krytyczną, odrzucamy hipotezę o jednakowej dokładności modeli i stwierdzamy istotną różnicę w ich działaniu."*
+
 ## 1. Cel stosowania testów statystycznych do porównywania modeli
 
 * **Problem prostej oceny:** Porównanie wyłącznie wartości wskaźników (np. dokładności czy błędu klasyfikacji) dla pojedynczego podziału na zbiór treningowy i testowy nie wystarcza, ponieważ różnice mogą wynikać z przypadkowego losowania danych.

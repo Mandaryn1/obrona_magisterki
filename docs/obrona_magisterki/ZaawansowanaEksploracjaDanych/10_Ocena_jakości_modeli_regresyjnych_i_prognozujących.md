@@ -1,5 +1,10 @@
 # Ocena jakości modeli regresyjnych i prognozujących
 
+> **💬 Gotowa wypowiedź ustna:**
+> *"W modelach regresyjnych i prognozujących przewidujemy wartości ciągłe, a jakość oceniamy na podstawie analizy błędów, czyli różnic między wartością rzeczywistą a prognozowaną.
+> 
+> Do głównych miar należą MAE, określające średni błąd w oryginalnych jednostkach, RMSE, które silniej karze duże odchylenia, oraz MAPE pokazujący błąd w procentach. Dopasowanie modelu mierzymy współczynnikiem $R^2$. Bardzo ważną zasadą przy szeregach czasowych jest zakaz stosowania losowej walidacji krzyżowej – dane musimy dzielić ściśle chronologicznie, uczyć model na przeszłości i testować na przyszłości, aby uniknąć wycieku danych."*
+
 ## 1. Podstawowe miary błędu predykcji
 
 * **MAE (Mean Absolute Error – Średni błąd bezwzględny):**  

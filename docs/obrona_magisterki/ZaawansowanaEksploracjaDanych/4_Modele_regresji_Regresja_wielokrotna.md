@@ -1,52 +1,43 @@
 # Modele regresji. Regresja wielokrotna. Postawienie zagadnienia
 
-## 1. Istota i cel analizy regresji
+> **💬 Gotowa wypowiedź ustna:**
+> *"Analiza regresji służy do modelowania zależności i prognozowania zmiennej objaśnianej $Y$ na podstawie zmiennych objaśniających $X$. W regresji wielokrotnej uwzględniamy wiele czynników naraz, a każdy współczynnik regresji mówi, o ile zmieni się wartość $Y$, gdy dana zmienna wzrośnie o jednostkę przy niezmienionych pozostałych zmiennych.
+> 
+> Parametry szacujemy Metodą Najmniejszych Kwadratów, minimalizując sumę kwadratów reszt. Aby wnioskowanie było poprawne, reszty modelu muszą mieć średnią zerową, stałą wariancję, brak autokorelacji oraz rozkład normalny. Jakość modelu oceniamy współczynnikiem determinacji $R^2$ oraz skorygowanym $R^2$, a istotność sprawdzamy testem F dla całego modelu oraz testem t dla poszczególnych zmiennych."*
 
-* **Definicja:** Analiza regresji to metoda statystyczna służąca do badania zależności i modelowania związku pomiędzy zmienną zależną (objaśnianą, celem $(Y)$) a jedną lub wieloma zmiennymi niezależnymi (objaśniającymi $(X_1, X_2, \dots, X_k)$).
-* **Cel:** Opis charakteru związku (kształt, kierunek) oraz predykcja (prognozowanie) wartości zmiennej zależnej na podstawie znanych wartości zmiennych objaśniających.
+**Regresja** to sposób **przewidywania jednej liczby na podstawie innych**. Szukamy zależności i zapisujemy ją jako prosty „przepis", którym potem można prognozować.
 
----
+Przykład: chcemy przewidzieć **cenę mieszkania**. Cena to **zmienna objaśniana** (to, co przewidujemy). Dane, z których przewidujemy, to **zmienne objaśniające**, np. metraż, liczba pokoi, piętro, odległość od centrum.
 
-## 2. Regresja wielokrotna – postawienie zagadnienia
+**Regresja prosta** używa tylko jednej zmiennej objaśniającej (np. samego metrażu). Zależność to wtedy linia prosta: im większy metraż, tym wyższa cena.
 
-* **Postać liniowego modelu regresji wielokrotnej:**  
-  Gdy zmienna celu $(Y)$ zależy od $(k)$ zmiennych objaśniających, model liniowy w populacji przyjmuje postać:
-  $[Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_k X_k + \epsilon]$
-  lub w zapisie macierzowym:
-  $[y = X\beta + \epsilon$]
-  gdzie:
-  * $(y$) – $(n$)-wymiarowy wektor obserwacji zmiennej zależnej.
-  * $(X$) – macierz obserwacji na zmiennych objaśniających o wymiarze $(n \times (k+1)$) (pierwsza kolumna jedynek odpowiada wyrazowi wolnemu).
-  * $(\beta$) – wektor nieznanych parametrów (współczynników regresji).
-  * $(\epsilon$) – wektor składników losowych (błędów/zakłóceń).
+**Regresja wielokrotna** używa **kilku zmiennych objaśniających naraz**. Cena zależy od metrażu, liczby pokoi, piętra i odległości od centrum jednocześnie. Model liczy dla każdej z nich **współczynnik**, który mówi, o ile zmienia się cena, gdy ta zmienna wzrośnie o jednostkę, a pozostałe się nie zmieniają. Do tego dochodzi stała wartość wyjściowa i **błąd losowy** (część ceny, której model nie wyjaśnia).
 
-* **Interpretacja współczynników ($(\beta_j$)):**  
-  Współczynnik $(\beta_j$) informuje, o ile średnio zmieni się wartość zmiennej zależnej $(Y$), gdy wartość zmiennej objaśniającej $(X_j$) wzrośnie o jedną jednostkę, przy założeniu, że pozostałe zmienne objaśniające w modelu pozostają bez zmian (*ceteris paribus*).
+**Postawienie zagadnienia:**
 
----
+- mamy zebrane dane o wielu przypadkach (mieszkaniach), w których znamy zarówno cechy, jak i prawdziwą cenę,
+- szukamy takich współczynników, żeby przewidywane ceny były **jak najbliższe prawdziwym**. Zwykle robi się to metodą najmniejszych kwadratów: wybieramy współczynniki, dla których suma kwadratów błędów jest najmniejsza,
+- gotowy model pozwala przewidzieć cenę nowego mieszkania i ocenić, **które cechy mają największy wpływ**.
 
-## 3. Założenia klasycznego modelu regresji liniowej
+**Założenia modelu** (żeby wyniki były wiarygodne):
 
-Poprawność wnioskowania w modelu regresji wymaga spełnienia założeń dotyczących składnika losowego $(\epsilon$):
-* **Oczekiwana wartość błędu wynosi zero:** $(E(\epsilon_i) = 0$).
-* **Stałość wariancji (homoscedastyczność):** $(Var(\epsilon_i) = \sigma^2$) dla wszystkich obserwacji.
-* **Brak autokorelacji:** Składniki losowe dla różnych obserwacji są niezależne ($(Cov(\epsilon_i, \epsilon_j) = 0$) dla $(i \neq j$)).
-* **Rozkład normalny:** Składnik losowy ma rozkład normalny $(\epsilon \sim N(0, \sigma^2)$).
+- zależność jest w przybliżeniu **liniowa**,
+- błędy są losowe, niezależne od siebie i mają podobny rozrzut,
+- zmienne objaśniające **nie powtarzają tej samej informacji** (np. metraż i liczba metrów w pokojach).
 
----
+**Jak ocenia się model:**
 
-## 4. Estymacja parametrów i ocena jakości modelu
+- **R²:** jaka część zmienności cen jest wyjaśniona przez model (blisko 1 to dobrze),
+- **testy istotności:** czy dana cecha naprawdę wpływa na cenę, czy to przypadek,
+- **analiza błędów:** czy nie ma wyraźnych wzorców, które świadczą o złym modelu.
 
-* **Metoda Najmniejszych Kwadratów (MNK / KNM):**  
-  Estymatory $(\hat{\beta}$) wyznacza się tak, aby zminimalizować sumę kwadratów reszt (odchyleń wartości rzeczywistych od wartości przewidywanych przez model):
-  $[SS_E = \sum (y_i - \hat{y}_i)^2 \rightarrow \min$]
-* **Współczynnik determinacji ($(R^2$)):**  
-  Mierzy, jaka część całkowitej zmienności zmiennej $(Y$) została wyjaśniona przez liniowy model regresji. Przyjmuje wartości z przedziału $($).
-* **Skorygowany $(R^2$) ($(R^2_{adj}$)):**  
-  Uwzględnia "karę" za liczbę zmiennych wprowadzonych do modelu, zapobiegając sztucznemu zawyżaniu $(R^2$) przez nieistotne zmienne objaśniające.
-* **Weryfikacja istotności (ANOVA dla regresji):**
-  * **Test $(F$) (istotność całego modelu):** weryfikuje hipotezę zerową $(H_0: \beta_1 = \beta_2 = \dots = \beta_k = 0$) (brak liniowej zależności od całego zbioru zmiennych).
-  * **Test $(t$)-Studenta (istotność pojedynczej zmiennej):** weryfikuje hipotezę $(H_0: \beta_j = 0$) przy założeniu obecności pozostałych zmiennych w modelu.
+**Dodatki:**
+
+- cechy jakościowe (np. dzielnica) zamienia się na zmienne 0/1,
+- zmienne do modelu wybiera się metodami: dołączanie, eliminacja lub krokowa,
+- **regresja logistyczna** to pokrewna metoda dla odpowiedzi typu tak/nie.
+
+**W skrócie:** regresja wielokrotna zamienia wiele cech na jedną prognozę i pokazuje, jak mocno każda cecha na nią wpływa.
 
 ## Podsumowanie
 
