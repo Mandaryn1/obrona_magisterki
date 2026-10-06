@@ -1,5 +1,12 @@
 # Omów rolę klucza w kryptografii symetrycznej i asymetrycznej. Jakie problemy rozwiązuje kryptografia klucza publicznego?
 
+> **💬 Gotowa wypowiedź ustna:**
+> *"W kryptografii symetrycznej klucz jest jeden, tajny i wspólny dla nadawcy i odbiorcy: służy zarówno do szyfrowania, jak i do deszyfrowania. Całe bezpieczeństwo systemu zależy od tego, czy klucz pozostaje tajny, a sam algorytm jest jawny. Takie szyfry, na przykład AES, są bardzo szybkie, więc dobrze nadają się do szyfrowania dużych ilości danych. Mają jednak dwa problemy: strony muszą jakoś bezpiecznie uzgodnić klucz, zanim zaczną komunikację, oraz liczba kluczy szybko rośnie, bo przy n użytkownikach, z których każda para potrzebuje osobnego klucza, trzeba ich n(n-1)/2.
+>
+> W kryptografii asymetrycznej każdy użytkownik ma parę kluczy: publiczny, który może swobodnie rozpowszechniać, i prywatny, który zachowuje w tajemnicy. Klucz publiczny służy do szyfrowania lub weryfikacji podpisu, a prywatny do deszyfrowania lub składania podpisu. Z klucza publicznego nie da się praktycznie wyliczyć prywatnego, bo opiera się to na trudnych problemach matematycznych, takich jak faktoryzacja czy logarytm dyskretny.
+>
+> Kryptografia klucza publicznego rozwiązuje kilka problemów. Po pierwsze, problem dystrybucji kluczy, bo nie trzeba przesyłać żadnego sekretu, wystarczy opublikować klucz publiczny. Po drugie, skalowalność: każdy użytkownik potrzebuje tylko jednej pary kluczy, a nie osobnego klucza dla każdego rozmówcy. Po trzecie, umożliwia podpisy cyfrowe, a więc uwierzytelnianie i niezaprzeczalność. Jej wadą jest mała wydajność, dlatego w praktyce stosuje się systemy hybrydowe, jak TLS: kryptografia asymetryczna służy do uzgodnienia klucza sesji, a dane szyfruje szybki algorytm symetryczny. Klucz asymetryczny musi być też dłuższy, na przykład ECC 256-bitowy odpowiada w przybliżeniu RSA 3072-bitowemu i AES-128."*
+
 ## Klucz w kryptografii
 
 **Klucz** to parametr (zwykle losowy ciąg bitów), który **steruje działaniem algorytmu** kryptograficznego. Zgodnie z **zasadą Kerckhoffsa** całe bezpieczeństwo systemu spoczywa na **tajności klucza** (symetryczne: klucz tajny; asymetryczne: klucz prywatny). Dlatego kluczowe są: **generowanie** (dobra losowość), **przechowywanie** (HSM, KMS), **dystrybucja**, **rotacja**, **unieważnianie**, **niszczenie**.

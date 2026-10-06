@@ -1,61 +1,58 @@
 # Na czym opiera się bezpieczeństwo kryptosystemu RSA? Jaką rolę odgrywają w nim liczby pierwsze, arytmetyka modularna i trudność faktoryzacji?
 
-## Czym jest RSA
+> **💬 Gotowa wypowiedź ustna:**
+> *"Bezpieczeństwo kryptosystemu RSA opiera się na trudności faktoryzacji, czyli rozkładu dużej liczby na czynniki pierwsze. Pomnożenie dwóch dużych liczb pierwszych jest łatwe, natomiast mając tylko wynik, bardzo trudno ustalić, z jakich liczb powstał.
+>
+> Liczby pierwsze odgrywają tu kluczową rolę. Wybieramy dwie duże, tajne liczby pierwsze, p i q, a ich iloczyn n jest jawny i wchodzi do klucza publicznego. Klucz prywatny można obliczyć tylko wtedy, gdy zna się p i q, więc atakujący musiałby rozłożyć n na czynniki.
+>
+> Drugim elementem jest arytmetyka modularna. Szyfrowanie i deszyfrowanie to potęgowanie modulo n, które jest szybkie do wykonania, ale praktycznie nieodwracalne bez klucza. Odpowiednio dobrane klucze, publiczny i prywatny, są wzajemnie odwrotne, dzięki czemu deszyfrowanie odtwarza oryginalną wiadomość. Na przykład dla p równego 61 i q równego 53 liczba 65 po zaszyfrowaniu daje 2790, a po odszyfrowaniu znowu 65.
+>
+> W praktyce stosuje się klucze co najmniej 2048-bitowe oraz wypełnienie OAEP, ponieważ czysty RSA jest deterministyczny. Trzeba też pamiętać, że RSA łamie algorytm Shora na komputerze kwantowym."*
 
-**RSA** – **kryptosystem klucza publicznego** służący do **szyfrowania** i **podpisów cyfrowych**. Jego bezpieczeństwo opiera się na **trudności rozkładu dużej liczby na czynniki pierwsze (faktoryzacji)**.
+# 9. Bezpieczeństwo kryptosystemu RSA
 
-## Generowanie kluczy
+**RSA** to kryptosystem z kluczem publicznym. Każdy może zaszyfrować wiadomość kluczem publicznym, ale odszyfrować ją potrafi tylko właściciel klucza prywatnego.
 
-1. Wybierz **dwie duże, losowe liczby pierwsze** $p$ i $q$ (każda ≥ 1024 bity przy kluczu 2048-bitowym).
-2. Oblicz **moduł** $n=p\cdot q$.
-3. Oblicz **funkcję Eulera** $\varphi(n)=(p-1)(q-1)$.
-4. Wybierz **wykładnik publiczny** $e$ takie, że $1<e<\varphi(n)$ i $\gcd(e,\varphi(n))=1$ (zwykle $e=65537=2^{16}+1$).
-5. Oblicz **wykładnik prywatny** $d\equiv e^{-1}\pmod{\varphi(n)}$ (rozszerzony algorytm Euklidesa), tzn. $e\cdot d\equiv1\pmod{\varphi(n)}$.
+## Na czym opiera się bezpieczeństwo
 
-- **Klucz publiczny:** $(n,e)$. **Klucz prywatny:** $d$ (oraz $p,q,\varphi(n)$ tajne).
-
-## Szyfrowanie i deszyfrowanie
-
-$$
-c=m^e\bmod n\qquad m=c^d\bmod n
-$$
-
-(dla wiadomości $0\le m<n$). Podpis: $s=h^d\bmod n$, weryfikacja: $s^e\bmod n=h$.
+Na **trudności rozkładu dużej liczby na czynniki pierwsze (faktoryzacji)**. Pomnożenie dwóch dużych liczb pierwszych jest łatwe, ale mając tylko wynik, bardzo trudno odkryć, z jakich liczb powstał. Klucz prywatny można wyliczyć tylko wtedy, gdy zna się te dwie liczby pierwsze.
 
 ## Rola liczb pierwszych
 
-- Liczby $p,q$ są **tajną „zapadką" (trapdoor)**: znajomość rozkładu $n=pq$ pozwala **łatwo obliczyć $\varphi(n)$**, a więc $d$.
-- Mnożenie dużych liczb pierwszych jest **łatwe** ($n=p\cdot q$), a **rozkład** $n$ na czynniki jest **trudny** – to asymetria, na której opiera się funkcja jednokierunkowa RSA.
-- Liczby pierwsze muszą być **losowe, duże i niezwiązane** (ani $p\approx q$ – atak Fermata, ani $p-1$ lub $p+1$ o małych czynnikach – atak Pollarda), generowane z dobrej losowości.
-- **Testy pierwszości:** probabilistyczne **Miller-Rabin** (praktycznie standard), deterministyczny AKS (wolny). Generowanie klucza = wybór losowej liczby nieparzystej i test pierwszości (gęstość liczb pierwszych ok. $1/\ln N$).
+- Wybieramy dwie duże, tajne liczby pierwsze, p i q (dziś po ok. 1024 bity każda).
+- Ich iloczyn n = p·q jest jawny i wchodzi do klucza publicznego.
+- Znajomość p i q pozwala obliczyć tajny składnik klucza prywatnego. Bez nich atakujący musiałby rozłożyć n na czynniki.
 
 ## Rola arytmetyki modularnej
 
-- Wszystkie operacje wykonywane są **modulo $n$** – wyniki mieszczą się w $[0,n)$ i „zawijają się", co daje **funkcję „zapadkową"** (obliczanie $m^e\bmod n$ jest szybkie, odwracanie bez $d$ – trudne).
-- **Szybkie potęgowanie modularne** (*square-and-multiply*) – złożoność $O(\log e)$ mnożeń; dla $e=65537$ szyfrowanie jest szybkie. Deszyfrowanie jest wolniejsze ($d$ duże) – przyspiesza **CRT** (chińskie twierdzenie o resztach – liczenie mod $p$ i mod $q$ osobno, ok. 4× szybciej).
-- **Odwrotność modularna** ($d=e^{-1}\bmod\varphi(n)$) – rozszerzony algorytm Euklidesa.
-- **Twierdzenie Eulera / Fermata** gwarantuje poprawność deszyfrowania.
+- Wszystkie obliczenia robimy „na zegarze" o rozmiarze n, czyli liczymy tylko reszty z dzielenia przez n.
+- Szyfrowanie i deszyfrowanie to **potęgowanie modulo n**. Jest szybkie, ale odwrócenie go bez klucza jest praktycznie niewykonalne.
+- Działa to dzięki twierdzeniu Eulera: odpowiednio dobrane klucze (publiczny e i prywatny d) są wzajemnie odwrotne, więc deszyfrowanie „cofa" szyfrowanie.
 
-## Rola trudności faktoryzacji
+## Jak to działa w skrócie
 
-Bezpieczeństwo RSA bazuje na dwóch powiązanych założeniach:
+1. Wybieramy p i q, liczymy n = p·q.
+2. Wybieramy liczbę publiczną e i wyliczamy z niej tajną d, do czego potrzebna jest znajomość p i q.
+3. Klucz publiczny to (n, e), a prywatny to d.
+4. **Szyfrowanie:** szyfrogram = wiadomość podniesiona do potęgi e (modulo n).
+5. **Deszyfrowanie:** szyfrogram podniesiony do potęgi d (modulo n) daje z powrotem wiadomość.
 
-1. **Problem faktoryzacji:** mając $n=pq$, znaleźć $p,q$. Jeśli ktoś je znajdzie, wylicza $\varphi(n)$ i $d$ → **łamie RSA całkowicie**.
-2. **Problem RSA:** mając $(n,e,c)$, znaleźć $m$ takie, że $m^e\equiv c\pmod n$. **Rozwiązanie faktoryzacji ⟹ rozwiązanie problemu RSA**; odwrotnie – nie wiadomo, czy to równoważne (problem RSA nie jest udowodnione tak trudny jak faktoryzacja).
+## Przykład z małymi liczbami
 
-[Komputer **kwantowy** z algorytmem **Shora** rozłożyłby $n$ w czasie wielomianowym – RSA przestanie być bezpieczny.](./15_Komputery_kwantowe_a_kryptografia_kwantowa_i_postkwantowa.md)
+p = 61, q = 53, więc n = 3233, e = 17, d = 2753. Wiadomość 65 po zaszyfrowaniu daje 2790, a po odszyfrowaniu znowu 65. W prawdziwym RSA liczby mają ponad 2000 bitów, więc rozkład n jest niewykonalny.
 
-## Zastosowania i praktyka
+## W jednym zdaniu
 
-- **Szyfrowanie kluczy symetrycznych** (RSA-KEM, RSA-OAEP), **podpisy** (RSA-PSS, RSASSA-PKCS1-v1_5), certyfikaty X.509, SSH, PGP/GPG.
-- **Nie do szyfrowania dużych danych** – ograniczony rozmiar wiadomości ($<n$) i wolny; używa się **hybrydowo** (RSA + AES).
-- W nowych systemach często zastępowany przez **ECC** (krótsze klucze) i docelowo przez algorytmy postkwantowe.
+Bezpieczeństwo RSA wynika z tego, że mnożenie liczb pierwszych jest łatwe, a rozkład wyniku na czynniki jest bardzo trudny.
+
+Przy kolejnych tematach będę zaczynał notatkę od takiego bloku „Gotowa wypowiedź ustna": ciągły tekst do powiedzenia, bez wypunktowań i bez numerowanych instrukcji.
 
 ## Podsumowanie
 
 - **RSA:** $n=pq$, $\varphi(n)=(p-1)(q-1)$, $ed\equiv1\bmod\varphi(n)$; $c=m^e\bmod n$, $m=c^d\bmod n$.
 - **Liczby pierwsze** tworzą tajną zapadkę; **arytmetyka modularna** (twierdzenie Eulera, szybkie potęgowanie, odwrotność modularna) zapewnia poprawność i wydajność; bezpieczeństwo = **trudność faktoryzacji** (problem RSA).
 - Wymaga kluczy ≥ 2048 bitów, losowych liczb pierwszych i **paddingu (OAEP/PSS)**; zagrożony przez komputery kwantowe (Shor).
+- Komputery kwantowe (algorytm Shora) rozkładają liczby na czynniki szybko, więc RSA przestanie być bezpieczny. Dlatego powstają algorytmy postkwantowe.
 
 ---
 

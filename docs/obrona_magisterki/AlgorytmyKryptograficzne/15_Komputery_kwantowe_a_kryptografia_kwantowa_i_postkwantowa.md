@@ -1,5 +1,12 @@
 # Omów ogólnie, jakie wyzwania dla współczesnej kryptografii wiążą się z rozwojem komputerów kwantowych. Czym różni się kryptografia kwantowa od kryptografii postkwantowej?
 
+> **💬 Gotowa wypowiedź ustna:**
+> *"Głównym wyzwaniem jest algorytm Shora, który na komputerze kwantowym pozwala w czasie wielomianowym rozkładać liczby na czynniki i obliczać logarytm dyskretny. Łamie więc RSA, Diffiego-Hellmana, ElGamala i krzywe eliptyczne, czyli prawie całą dzisiejszą kryptografię klucza publicznego, a zwiększanie długości klucza nie pomaga. Algorytm Grovera osłabia klucze symetryczne mniej więcej o połowę, ale to łatwo naprawić, stosując AES-256. Ważne jest też zagrożenie „harvest now, decrypt later": przeciwnik może już dziś zbierać zaszyfrowane dane i odszyfrować je za kilkanaście lat, dlatego migrację trzeba zacząć z wyprzedzeniem.
+>
+> Kryptografia kwantowa wykorzystuje prawa fizyki, a jej głównym przykładem jest QKD, na przykład protokół BB84. Klucz przesyła się w stanach pojedynczych fotonów, a ponieważ pomiar zmienia stan, a stanu kwantowego nie da się sklonować, podsłuch można wykryć. Wymaga to jednak specjalnego sprzętu, ma ograniczony zasięg i służy tylko do uzgadniania klucza, nie do podpisów.
+>
+> Kryptografia postkwantowa to natomiast zwykłe algorytmy klasyczne, działające na zwykłych komputerach, ale oparte na problemach trudnych także dla komputerów kwantowych, na przykład na kratach. Nie wymaga nowego sprzętu, więc jest praktycznym rozwiązaniem. NIST w 2024 roku opublikował standardy ML-KEM, ML-DSA i SLH-DSA, które wdraża się często hybrydowo, razem z algorytmami klasycznymi."*
+
 **Wyzwania, jakie stwarzają komputery kwantowe:**
 
 - **Algorytm Shora** pozwala na komputerze kwantowym w czasie wielomianowym rozkładać liczby na czynniki i liczyć logarytm dyskretny. Łamie więc **RSA, Diffiego-Hellmana, ElGamala i ECC**, czyli prawie całą dzisiejszą kryptografię klucza publicznego: wymianę kluczy i podpisy cyfrowe. Zwiększanie długości klucza nie pomaga.

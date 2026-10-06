@@ -1,5 +1,12 @@
 # Wyjaśnij ogólną ideę protokołu Diffiego-Hellmana. Dlaczego umożliwia on uzgodnienie wspólnego sekretu przez niezabezpieczony kanał komunikacyjny?
 
+> **💬 Gotowa wypowiedź ustna:**
+> *"Protokół Diffiego-Hellmana pozwala dwóm stronom uzgodnić wspólny tajny klucz przez kanał, który może być podsłuchiwany. Obie strony ustalają publicznie dużą liczbę pierwszą p oraz podstawę g. Przykład: Alicja wybiera tajną liczbę a, a Bob tajną liczbę b i żadna z nich nie jest nigdy przesyłana. Alicja wysyła Bobowi wartość g do potęgi a modulo p, a Bob wysyła Alicji wartość g do potęgi b modulo p. Potem każda ze stron podnosi otrzymaną wartość do potęgi swojego sekretu i obie dochodzą do tego samego wyniku, czyli g do potęgi a·b modulo p, który jest wspólnym kluczem. Na przykład dla p równego 23 i g równego 5 przy sekretach 6 i 15 obie strony otrzymują klucz 2.
+>
+> Przez niezabezpieczony kanał działa to dlatego, że podsłuchujący widzi tylko p, g i dwie przesłane wartości. Żeby obliczyć klucz, musiałby poznać jeden z sekretów, a to wymaga rozwiązania problemu logarytmu dyskretnego, który dla dużych liczb jest praktycznie niewykonalny. Potęgowanie modulo jest łatwe, a jego odwrócenie bardzo trudne.
+>
+> Trzeba jednak pamiętać, że sam protokół nie uwierzytelnia stron, więc jest podatny na atak man-in-the-middle. Dlatego w praktyce łączy się go z certyfikatami lub podpisami, na przykład w TLS jako ECDHE, który dodatkowo zapewnia forward secrecy."*
+
 ## Cel
 
 **Protokół Diffiego-Hellmana** (Whitfield Diffie, Martin Hellman, 1976; niezależnie wcześniej Malcolm Williamson w GCHQ) to **pierwszy opublikowany protokół kryptografii klucza publicznego**. Pozwala dwóm stronom **uzgodnić wspólny tajny klucz** (sekret) przez **niezabezpieczony kanał**, bez wcześniejszego dzielenia się żadną tajemnicą. Uzgodniony sekret służy zwykle do wyprowadzenia klucza **symetrycznego** (np. AES).
