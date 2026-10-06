@@ -1,0 +1,5377 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://Mandaryn1.github.io/obrona_magisterki/obrona_magisterki/OchronaSieciDost%C4%99powych/4_Narz%C4%99dzia_do_monitorowania_i_analizy_ruchu_w_lokalnych_sieciach_komputerowych/">
+      
+      
+        <link rel="prev" href="../3_Znaczenie_monitorowania_sieci_lokalnej_w_wykrywaniu_i_analizie_incydent%C3%B3w/">
+      
+      
+        <link rel="next" href="../5_Zasady_projektowania_bezpiecznej_infrastruktury_sieci_lokalnej_i_zabezpieczanie_urz%C4%85dze%C5%84/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Narzędzia wykorzystywane do monitorowania i analizy ruchu w lokalnych sieciach komputerowych - Notatki na Obronę Magisterską</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0.16.9/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#narzedzia-wykorzystywane-do-monitorowania-i-analizy-ruchu-w-lokalnych-sieciach-komputerowych" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Notatki na Obronę Magisterską" class="md-header__button md-logo" aria-label="Notatki na Obronę Magisterską" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Notatki na Obronę Magisterską
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Narzędzia wykorzystywane do monitorowania i analizy ruchu w lokalnych sieciach komputerowych
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Przełącz na tryb ciemny"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Przełącz na tryb ciemny" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Przełącz na tryb jasny"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Przełącz na tryb jasny" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Przygotowanie do Obrony Pracy Magisterskiej
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../testowy/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Testowy
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../AlgorytmyKryptograficzne/0_Wstep/" class="md-tabs__link">
+          
+  
+  
+  Obrona magisterki
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Notatki na Obronę Magisterską" class="md-nav__button md-logo" aria-label="Notatki na Obronę Magisterską" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Notatki na Obronę Magisterską
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Przygotowanie do Obrony Pracy Magisterskiej
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../testowy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testowy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Obrona magisterki
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Obrona magisterki
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AlgorytmyKryptograficzne
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AlgorytmyKryptograficzne
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AlgorytmyKryptograficzne/0_Wstep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algorytmy kryptograficzne – wprowadzenie i ściągawka
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AlgorytmyKryptograficzne/10_Por%C3%B3wnanie_RSA_i_ElGamala/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Porównaj kryptosystemy RSA i Elgamala. Jakie problemy matematyczne leżą u podstaw ich bezpieczeństwa?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AlgorytmyKryptograficzne/11_Podpis_elektroniczny/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Czym jest podpis elektroniczny i jakie własności bezpieczeństwa powinien zapewniać? Wyjaśnij różnicę między szyfrowaniem a podpisywaniem wiadomości.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AlgorytmyKryptograficzne/12_Funkcje_skr%C3%B3tu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wyjaśnij, czym są funkcje skrótu. Jakie cechy powinna mieć bezpieczna kryptograficzna funkcja skrótu?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AlgorytmyKryptograficzne/13_Kody_MAC_i_por%C3%B3wnanie_z_podpisem_cyfrowym/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Do czego służą kody MAC? Porównaj ogólnie uwierzytelnianie wiadomości za pomocą MAC z podpisem cyfrowym.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AlgorytmyKryptograficzne/14_Kryptografia_krzywych_eliptycznych/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Na czym polega główna idea kryptografii krzywych eliptycznych? Dlaczego jest ona atrakcyjna w porównaniu z klasycznymi systemami asymetrycznymi?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AlgorytmyKryptograficzne/15_Komputery_kwantowe_a_kryptografia_kwantowa_i_postkwantowa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Omów ogólnie, jakie wyzwania dla współczesnej kryptografii wiążą się z rozwojem komputerów kwantowych. Czym różni się kryptografia kwantowa od kryptografii postkwantowej?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AlgorytmyKryptograficzne/1_Kryptografia_i_kryptoanaliza_cele_mechanizm%C3%B3w_kryptograficznych/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wyjaśnij, czym zajmuje się kryptografia, a czym kryptoanaliza. Jakie są podstawowe cele stosowania mechanizmów kryptograficznych?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AlgorytmyKryptograficzne/2_Klasyfikacja_system%C3%B3w_kryptograficznych/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Przedstaw podstawową klasyfikację systemów kryptograficznych. Wyjaśnij różnice między systemami symetrycznymi i asymetrycznymi oraz strumieniowymi i blokowymi.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AlgorytmyKryptograficzne/3_Zasada_Kerckhoffsa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Na czym polega zasada Kerckhoffsa i dlaczego jest ważna przy projektowaniu bezpiecznych systemów kryptograficznych?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AlgorytmyKryptograficzne/4_Tajno%C5%9B%C4%87_doskona%C5%82a_i_szyfr_z_kluczem_jednorazowym/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wyjaśnij pojęcie tajności doskonałej. Dlaczego szyfr z kluczem jednorazowym jest doskonale tajny, ale ponowne użycie tego samego klucza jest niebezpieczne?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AlgorytmyKryptograficzne/5_Szyfry_klasyczne_a_nowoczesne_algorytmy_kryptograficzne/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Porównaj klasyczne szyfry podstawieniowe i przestawieniowe z nowoczesnymi algorytmami kryptograficznymi. Jak zmieniło się podejście do bezpieczeństwa szyfrów?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AlgorytmyKryptograficzne/6_Tryby_pracy_szyfr%C3%B3w_blokowych/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Czym są tryby pracy szyfrów blokowych i dlaczego są potrzebne? Omów ogólnie znaczenie takich trybów jak ECB, CBC, CFB, OFB, CTR lub GCM.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AlgorytmyKryptograficzne/7_Rola_klucza_w_kryptografii_symetrycznej_i_asymetrycznej/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Omów rolę klucza w kryptografii symetrycznej i asymetrycznej. Jakie problemy rozwiązuje kryptografia klucza publicznego?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AlgorytmyKryptograficzne/8_Protok%C3%B3%C5%82_Diffiego-Hellmana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wyjaśnij ogólną ideę protokołu Diffiego-Hellmana. Dlaczego umożliwia on uzgodnienie wspólnego sekretu przez niezabezpieczony kanał komunikacyjny?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AlgorytmyKryptograficzne/9_Bezpiecze%C5%84stwo_kryptosystemu_RSA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Na czym opiera się bezpieczeństwo kryptosystemu RSA? Jaką rolę odgrywają w nim liczby pierwsze, arytmetyka modularna i trudność faktoryzacji?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AlgorytmyKryptograficzne/AlgorytmyKryptograficzne_tytul/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zagadnienia z przedmiotu Algorytmy Kryptograficzne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BarieryWPrzestrzeniCyfrowej
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    BarieryWPrzestrzeniCyfrowej
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BarieryWPrzestrzeniCyfrowej/0_Wstep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bariery w przestrzeni cyfrowej – wprowadzenie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BarieryWPrzestrzeniCyfrowej/10_Okulografia_idea_istota_urz%C4%85dzenia_eksperyment_rezultaty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Okulografia (eyetracking) – idea, istota, urządzenia, eksperyment, rezultaty
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BarieryWPrzestrzeniCyfrowej/1_Projektowanie_uniwersalne_idea_przepisy_prawne_zasady/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projektowanie uniwersalne – idea, przepisy prawne, zasady
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BarieryWPrzestrzeniCyfrowej/2_Ergonomia_interfejs%C3%B3w_oprogramowania/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ergonomia interfejsów oprogramowania – definicja, obszary, typy i przykłady
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BarieryWPrzestrzeniCyfrowej/3_U%C5%BCyteczno%C5%9B%C4%87_i_dost%C4%99pno%C5%9B%C4%87_interfejsu_oprogramowania/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Użyteczność i dostępność interfejsu oprogramowania
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BarieryWPrzestrzeniCyfrowej/4_Technologie_wspomagaj%C4%85ce_osoby_z_niepe%C5%82nosprawno%C5%9Bciami/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technologie wspomagające osoby z niepełnosprawnościami
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BarieryWPrzestrzeniCyfrowej/5_Wytyczne_WCAG_2.1_zasady_poziomy_weryfikacja/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wytyczne dostępności treści internetowych WCAG 2.1 – zasady, poziomy, weryfikacja
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BarieryWPrzestrzeniCyfrowej/6_Metody_oceny_jako%C5%9Bci_interfejsu_klasyfikacja_typy_metod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metody oceny jakości interfejsu – klasyfikacja, typy metod
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BarieryWPrzestrzeniCyfrowej/7_Techniki_oceny_jako%C5%9Bci_interfejs%C3%B3w_z_udzia%C5%82em_i_bez_udzia%C5%82u_u%C5%BCytkownik%C3%B3w/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Techniki oceny jakości interfejsów z udziałem i bez udziału użytkowników
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BarieryWPrzestrzeniCyfrowej/8_Metodyka_SUS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metodyka SUS (System Usability Scale)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BarieryWPrzestrzeniCyfrowej/9_Ocena_heurystyczna_heurystyki_Nielsena-Molicha/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ocena heurystyczna – heurystyki Nielsena-Molicha
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BarieryWPrzestrzeniCyfrowej/BarieryWPrzestrzeniCyfrowej_tytul/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zagadnienia z przedmiotu Bariery w Przestrzeni Cyfrowej
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BezpieczeństwoSieciTeleinformatycznych
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    BezpieczeństwoSieciTeleinformatycznych
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoSieciTeleinformatycznych/0_Wstep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bezpieczeństwo sieci teleinformatycznych – wprowadzenie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoSieciTeleinformatycznych/10_Etapy_i_metody_testowania_bezpiecze%C5%84stwa_sieci_teleinformatycznych/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Etapy i metody testowania bezpieczeństwa sieci teleinformatycznych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoSieciTeleinformatycznych/11_Zastosowanie_sztucznej_inteligencji_i_uczenia_maszynowego_w_ochronie_sieci/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rola sztucznej inteligencji i uczenia maszynowego w ochronie sieci teleinformatycznych.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoSieciTeleinformatycznych/1_Ataki_polegaj%C4%85ce_na_rozpoznaniu_uzyskaniu_dost%C4%99pu_oraz_in%C5%BCynierii_spo%C5%82ecznej/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ataki polegające na rozpoznaniu, uzyskaniu dostępu oraz inżynierii społecznej
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoSieciTeleinformatycznych/2_Standardy_i_dobre_praktyki_bezpiecze%C5%84stwa_ISO_27001_NIS2_i_inne_normy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standardy i dobre praktyki bezpieczeństwa: ISO 27001, NIS2 oraz inne wybrane normy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoSieciTeleinformatycznych/3_Zabezpieczanie_styku_sieci_teleinformatycznej_z_sieciami_zewn%C4%99trznymi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zabezpieczanie styku sieci teleinformatycznej z sieciami zewnętrznymi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoSieciTeleinformatycznych/4_Kontrola_dost%C4%99pu_do_sieci_oraz_mechanizmy_NAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kontrola dostępu do sieci oraz mechanizmy NAC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoSieciTeleinformatycznych/5_Technologie_uwierzytelniania_i_autoryzacji_RADIUS_TACACS_plus_oraz_ISE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technologie uwierzytelniania i autoryzacji: RADIUS, TACACS+ oraz ISE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoSieciTeleinformatycznych/6_Rodzaje_firewalli_oraz_zasady_tworzenia_polityk_i_regu%C5%82_bezpiecze%C5%84stwa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rodzaje firewalli oraz zasady tworzenia polityk i reguł bezpieczeństwa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoSieciTeleinformatycznych/7_Szczeg%C3%B3%C5%82owa_inspekcja_pakiet%C3%B3w_oraz_systemy_IDS_i_IPS_zadania_i_ograniczenia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Szczegółowa inspekcja pakietów w wykrywaniu i blokowaniu zagrożeń. Zadania oraz ograniczenia systemów IDS i IPS w ochronie sieci teleinformatycznych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoSieciTeleinformatycznych/8_Adaptacyjne_urz%C4%85dzenia_zabezpieczaj%C4%85ce_i_ich_rola_w_sieciach_korporacyjnych/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adaptacyjne urządzenia zabezpieczające i ich rola w sieciach korporacyjnych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoSieciTeleinformatycznych/9_Zastosowanie_sieci_VPN_w_bezpiecznej_komunikacji_oraz_wybrane_technologie_VPN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zastosowanie sieci VPN w bezpiecznej komunikacji oraz wybrane technologie VPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoSieciTeleinformatycznych/Bezpiecze%C5%84stwoSieciTeleinformatycznych_tytul/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zagadnienia z przedmiotu Bezpieczeństwo Sieci Teleinformatycznych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BezpieczeństwoSystemówOperacyjnychIUsług
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    BezpieczeństwoSystemówOperacyjnychIUsług
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoSystem%C3%B3wOperacyjnychIUs%C5%82ug/0_Wstep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bezpieczeństwo systemów operacyjnych i usług – wprowadzenie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoSystem%C3%B3wOperacyjnychIUs%C5%82ug/10_Bezpiecze%C5%84stwo_podstawowych_us%C5%82ug_sieci_lokalnej_DHCP_DNS_NAT_HTTP_FTP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bezpieczeństwo podstawowych usług sieci lokalnej: DHCP, DNS, NAT, HTTP, FTP, itp.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoSystem%C3%B3wOperacyjnychIUs%C5%82ug/11_Proces_reagowania_na_incydenty_i_podstawy_analizy_pow%C5%82amaniowej/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proces reagowania na incydenty oraz podstawy analizy powłamaniowej
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoSystem%C3%B3wOperacyjnychIUs%C5%82ug/12_Testy_penetracyjne_ocena_podatno%C5%9Bci_oraz_bazy_CVE_i_MITRE_ATTCK/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testy penetracyjne, ocena podatności oraz bazy CVE i MITRE ATT&amp;CK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoSystem%C3%B3wOperacyjnychIUs%C5%82ug/1_Podstawowe_cele_bezpiecze%C5%84stwa_system%C3%B3w_operacyjnych_i_us%C5%82ug_sieciowych/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Podstawowe cele bezpieczeństwa systemów operacyjnych i usług sieciowych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoSystem%C3%B3wOperacyjnychIUs%C5%82ug/2_Architektura_systemu_operacyjnego_z_punktu_widzenia_bezpiecze%C5%84stwa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architektura systemu operacyjnego z punktu widzenia bezpieczeństwa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoSystem%C3%B3wOperacyjnychIUs%C5%82ug/3_J%C4%85dro_systemu_separacja_przestrzeni_u%C5%BCytkownika_i_ochrona_pami%C4%99ci/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jądro systemu, separacja przestrzeni użytkownika i mechanizmy ochrony pamięci
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoSystem%C3%B3wOperacyjnychIUs%C5%82ug/4_Zarz%C4%85dzanie_u%C5%BCytkownikami_uprawnieniami_i_kontrol%C4%85_dost%C4%99pu_w_systemach_operacyjnych/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zarządzanie użytkownikami, uprawnieniami i kontrolą dostępu w systemach operacyjnych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoSystem%C3%B3wOperacyjnychIUs%C5%82ug/5_Modele_kontroli_dost%C4%99pu_DAC_MAC_i_RBAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modele kontroli dostępu: DAC, MAC i RBAC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoSystem%C3%B3wOperacyjnychIUs%C5%82ug/6_Mechanizmy_uwierzytelniania_has%C5%82a_klucze_SSH_2FA_IAM_i_SSO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mechanizmy uwierzytelniania: hasła, klucze SSH, uwierzytelnianie dwuskładnikowe, IAM i SSO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoSystem%C3%B3wOperacyjnychIUs%C5%82ug/7_Zapobieganie_i_wykrywanie_zagro%C5%BCe%C5%84_w_systemach_operacyjnych/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zapobieganie i wykrywanie zagrożeń w systemach operacyjnych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoSystem%C3%B3wOperacyjnychIUs%C5%82ug/8_Zastosowanie_kryptografii_w_ochronie_danych_i_komunikacji/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zastosowanie kryptografii w ochronie danych i komunikacji
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoSystem%C3%B3wOperacyjnychIUs%C5%82ug/9_Najcz%C4%99stsze_ataki_na_aplikacje_webowe_i_mechanizmy_ich_ograniczania/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Najczęstsze ataki na aplikacje webowe oraz podstawowe mechanizmy ich ograniczania
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoSystem%C3%B3wOperacyjnychIUs%C5%82ug/Bezpiecze%C5%84stwoSystem%C3%B3wOperacyjnychIUs%C5%82ug_tytul/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zagadnienia z przedmiotu Bezpieczeństwo Systemów Operacyjnych i Usług
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BezpieczeństwoWSieciachKomputerowych
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    BezpieczeństwoWSieciachKomputerowych
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoWSieciachKomputerowych/0_Wstep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bezpieczeństwo w sieciach komputerowych – wprowadzenie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoWSieciachKomputerowych/10_Segmentacja_sieci_minimalizacja_uprawnie%C5%84_inspekcja_ruchu_i_kontrola_dost%C4%99pu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Segmentacja sieci, minimalizacja uprawnień, inspekcja ruchu i kontrola dostępu w ograniczaniu skutków ataków
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoWSieciachKomputerowych/11_Podstawowe_dzia%C5%82ania_administratora_w_zakresie_zabezpieczania_infrastruktury_sieciowej/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Podstawowe działania administratora w zakresie zabezpieczania infrastruktury sieciowej
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoWSieciachKomputerowych/12_Praktyczne_znaczenie_Wireshark_nmap_i_systemowych_narz%C4%99dzi_diagnostycznych/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Praktyczne znaczenie narzędzi: Wireshark, nmap oraz systemowe narzędzia diagnostyczne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoWSieciachKomputerowych/1_Podstawowe_zadania_bezpiecze%C5%84stwa_i_cyberbezpiecze%C5%84stwa_w_infrastrukturze_sieciowej/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Podstawowe zadania bezpieczeństwa i cyberbezpieczeństwa w infrastrukturze sieciowej
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoWSieciachKomputerowych/2_Rola_system%C3%B3w_Windows_i_Linux_w_analizie_bezpiecze%C5%84stwa_sieci/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rola systemów Windows i Linux w analizie bezpieczeństwa sieci komputerowej
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoWSieciachKomputerowych/3_Analiza_protoko%C5%82%C3%B3w_i_us%C5%82ug_sieciowych_w_ocenie_bezpiecze%C5%84stwa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analiza protokołów i usług sieciowych w ocenie bezpieczeństwa sieci
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoWSieciachKomputerowych/4_Klasyfikacja_najwa%C5%BCniejszych_rodzaj%C3%B3w_atak%C3%B3w_sieciowych/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Klasyfikacja najważniejszych rodzajów ataków sieciowych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoWSieciachKomputerowych/5_Metody_detekcji_i_obrony_przed_atakami_w_warstwie_II_modelu_OSI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metody detekcji i obrony przed atakami w warstwie II modelu OSI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoWSieciachKomputerowych/6_Metody_detekcji_i_obrony_przed_atakami_w_warstwie_III_modelu_OSI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metody detekcji i obrony przed atakami w warstwie III modelu OSI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoWSieciachKomputerowych/7_Narz%C4%99dzia_do_identyfikacji_atak%C3%B3w_na_protoko%C5%82y_i_us%C5%82ugi_sieciowe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Narzędzia służące do identyfikacji ataków na protokoły i usługi sieciowe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoWSieciachKomputerowych/8_Monitorowanie_ruchu_sieciowego_w_wykrywaniu_nieprawid%C5%82owo%C5%9Bci_i_incydent%C3%B3w/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monitorowanie ruchu sieciowego w wykrywaniu nieprawidłowości i incydentów
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoWSieciachKomputerowych/9_Metody_zapobiegania_nieuprawnionemu_dost%C4%99powi_do_zasob%C3%B3w_sprz%C4%99towych_i_programowych/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metody zapobiegania nieuprawnionemu dostępowi do zasobów sprzętowych i programowych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwoWSieciachKomputerowych/Bezpiecze%C5%84stwoWSieciachKomputerowych_tytul/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zagadnienia z przedmiotu Bezpieczeństwo w Sieciach Komputerowych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BezpieczeństwoŚrodowiskaIAplikacjiChmurowych
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    BezpieczeństwoŚrodowiskaIAplikacjiChmurowych
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwo%C5%9ArodowiskaIAplikacjiChmurowych/0_Wstep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bezpieczeństwo środowiska i aplikacji chmurowych – wprowadzenie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwo%C5%9ArodowiskaIAplikacjiChmurowych/10_RPO_Recovery_Point_Objective/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Czym jest RPO (Recovery Point Objective)?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwo%C5%9ArodowiskaIAplikacjiChmurowych/11_RTO_Recovery_Time_Objective/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Czym jest RTO (Recovery Time Objective)?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwo%C5%9ArodowiskaIAplikacjiChmurowych/12_VPC_Virtual_Private_Cloud_w_bezpiecze%C5%84stwie_chmury/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Do czego służą Virtual Private Clouds (VPC) w kontekście bezpieczeństwa chmury?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwo%C5%9ArodowiskaIAplikacjiChmurowych/13_TDE_Transparent_Data_Encryption/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Czym jest mechanizm TDE?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwo%C5%9ArodowiskaIAplikacjiChmurowych/14_Data_minimization_minimalizacja_danych/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Co oznacza pojęcie Data minimization?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwo%C5%9ArodowiskaIAplikacjiChmurowych/15_OWASP_Top_10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Czym jest OWASP Top 10 ?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwo%C5%9ArodowiskaIAplikacjiChmurowych/1_Cechy_chmury_obliczeniowej_wg_NIST/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jakie są cechy chmury obliczeniowej wg NIST?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwo%C5%9ArodowiskaIAplikacjiChmurowych/2_G%C5%82%C3%B3wne_zagro%C5%BCenia_bezpiecze%C5%84stwa_chmury/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jakie są główne zagrożenia bezpieczeństwa chmury?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwo%C5%9ArodowiskaIAplikacjiChmurowych/3_Modele_chmur_komputerowych/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jakie znasz modele chmur komputerowych?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwo%C5%9ArodowiskaIAplikacjiChmurowych/4_Czy_bezpiecze%C5%84stwo_chmury_wymaga_innego_podej%C5%9Bcia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Czy i ewentualnie dlaczego (tak lub nie) do bezpieczeństwa chmury musimy podchodzić inaczej niż w przypadku standardowych metod bezpieczeństwa IT?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwo%C5%9ArodowiskaIAplikacjiChmurowych/5_Model_chmury_w_kt%C3%B3rym_dostawca_odpowiada_za_infrastruktur%C4%99_i_platform%C4%99/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W jakim modelu chmury dostawca odpowiada za bezpieczeństwo infrastruktury i platformy, a klient za aplikacje i dane?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwo%C5%9ArodowiskaIAplikacjiChmurowych/6_IAM_w_bezpiecze%C5%84stwie_chmurowym/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Czym jest IAM w bezpieczeństwie chmurowym?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwo%C5%9ArodowiskaIAplikacjiChmurowych/7_MFA_w_kontek%C5%9Bcie_chmury/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Czym jest MFA w kontekście chmury?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwo%C5%9ArodowiskaIAplikacjiChmurowych/8_Mechanizmy_RBAC_i_ABAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Czym są mechanizmy RBAC i ABAC?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwo%C5%9ArodowiskaIAplikacjiChmurowych/9_Szyfrowanie_danych_w_spoczynku_i_w_tranzycie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Na czym polega szyfrowanie danych w spoczynku i w tranzycie?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bezpiecze%C5%84stwo%C5%9ArodowiskaIAplikacjiChmurowych/Bezpiecze%C5%84stwo%C5%9ArodowiskaIAplikacjiChmurowych_tytul/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zagadnienia z przedmiotu Bezpieczeństwo Środowiska i Aplikacji Chmurowych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    InternetRzeczy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    InternetRzeczy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../InternetRzeczy/0_Wstep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internet Rzeczy – wprowadzenie i ściągawka pojęć
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../InternetRzeczy/10_Modulacja_szeroko%C5%9Bci_impuls%C3%B3w_PWM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Opisz zasadę działania modulacji szerokości impulsów PWM (ang. pulse width modulation).
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../InternetRzeczy/1_Zagadnienie_Internetu_Rzeczy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Krótko opisz zagadnienie Internetu Rzeczy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../InternetRzeczy/2_Magistrala_interfejs_protok%C3%B3%C5%82/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Co to jest magistrala, interfejs, protokół? Scharakteryzuj i opisz różnice.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../InternetRzeczy/3_Mikrokontroler_i_mikroprocesor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scharakteryzuj pojęcie mikrokontrolera i mikroprocesora. Podaj różnice między tymi pojęciami.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../InternetRzeczy/4_Architektura_CISC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wyjaśnij, co oznacza skrót CISC. Krótko opisz ten termin.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../InternetRzeczy/5_Architektura_RISC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wyjaśnij, co oznacza skrót RISC. Krótko opisz to pojęcie.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../InternetRzeczy/6_UART_i_USRT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Opisz i podaj różnice pomiędzy UART a USRT.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../InternetRzeczy/7_Pojemno%C5%9B%C4%87_paso%C5%BCytnicza/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Czym jest i co powoduje pojemność pasożytnicza?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../InternetRzeczy/8_Cechy_sensora_inteligentnego/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jakie cechy powinien posiadać sensor inteligentny?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../InternetRzeczy/9_Aktuatory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Czym są i do czego służą aktuatory?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../InternetRzeczy/InternetRzeczy_tytul/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zagadnienia z przedmiotu Internet Rzeczy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MetodyWnioskowaniaWielokryterialnego
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MetodyWnioskowaniaWielokryterialnego
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MetodyWnioskowaniaWielokryterialnego/0_Wstep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metody wnioskowania wielokryterialnego – wprowadzenie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MetodyWnioskowaniaWielokryterialnego/1_G%C5%82%C3%B3wne_zadania_normalizacji_warto%C5%9Bci_kryteri%C3%B3w_optymalizacji/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jakie są główne zadania normalizacji wartości analizowanych kryteriów optymalizacji?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MetodyWnioskowaniaWielokryterialnego/2_Metoda_leksykograficzna/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Na czym polega metoda leksykograficzna?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MetodyWnioskowaniaWielokryterialnego/3_Wyznaczanie_wag_wa%C5%BCno%C5%9Bci_kryteri%C3%B3w_w_metodzie_AHP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W jaki sposób wyznaczane są wagi ważności kryteriów w metodzie AHP?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MetodyWnioskowaniaWielokryterialnego/4_Warianty_optymalne_w_sensie_Pareto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Opisz warianty należące do zbioru wariantów optymalnych w sensie Pareto.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MetodyWnioskowaniaWielokryterialnego/5_Metoda_Blina/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scharakteryzuj metodę Blina.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MetodyWnioskowaniaWielokryterialnego/MetodyWnioskowaniaWielokryterialnego_tytul/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zagadnienia z przedmiotu Metody Wnioskowania Wielokryterialnego
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OchronaSieciDostępowych
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OchronaSieciDostępowych
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0_Wstep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ochrona sieci dostępowych – wprowadzenie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_Systemy_zarz%C4%85dzania_bezpiecze%C5%84stwem_informacji_w_ochronie_sieci_lokalnych/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Systemy zarządzania bezpieczeństwem informacji w ochronie sieci lokalnych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11_Zagro%C5%BCenia_i_metody_ochrony_system%C3%B3w_mobilnych_oraz_urz%C4%85dze%C5%84_IoT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zagrożenia i metody ochrony systemów mobilnych oraz urządzeń IoT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_Podstawowe_zagro%C5%BCenia_w_lokalnych_sieciach_komputerowych/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Podstawowe zagrożenia występujące w lokalnych sieciach komputerowych i ich wpływ na bezpieczeństwo infrastruktury
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_Podatno%C5%9Bci_Ethernetu_i_protoko%C5%82%C3%B3w_lokalnych_sieci_komputerowych/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Podatności technologii Ethernet oraz protokołów wykorzystywanych w lokalnych sieciach komputerowych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_Znaczenie_monitorowania_sieci_lokalnej_w_wykrywaniu_i_analizie_incydent%C3%B3w/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Znaczenie monitorowania sieci lokalnej w wykrywaniu i analizie incydentów bezpieczeństwa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Narzędzia wykorzystywane do monitorowania i analizy ruchu w lokalnych sieciach komputerowych
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Narzędzia wykorzystywane do monitorowania i analizy ruchu w lokalnych sieciach komputerowych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dobor-narzedzia-do-zadania" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dobór narzędzia do zadania
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#podsumowanie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Podsumowanie
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5_Zasady_projektowania_bezpiecznej_infrastruktury_sieci_lokalnej_i_zabezpieczanie_urz%C4%85dze%C5%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zasady projektowania bezpiecznej infrastruktury sieci lokalnej. Metody zabezpieczania urządzeń końcowych i pośredniczących w sieci dostępowej
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6_Zagro%C5%BCenia_komunikacji_bezprzewodowej_i_sposoby_jej_zabezpieczania/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zagrożenia związane z komunikacją bezprzewodową oraz sposoby jej zabezpieczania
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7_Rola_wielowarstwowej_ochrony_w_zabezpieczaniu_lokalnych_sieci_komputerowych/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rola wielowarstwowej ochrony w zabezpieczaniu lokalnych sieci komputerowych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8_Audyt_bezpiecze%C5%84stwa_testy_penetracyjne_i_ocena_podatno%C5%9Bci/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audyt bezpieczeństwa, testy penetracyjne i ocena podatności w ochronie sieci dostępowych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9_%C5%B9r%C3%B3d%C5%82a_struktura_i_ocena_alert%C3%B3w_bezpiecze%C5%84stwa_w_lokalnych_sieciach_komputerowych/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Źródła, struktura i ocena alertów bezpieczeństwa w lokalnych sieciach komputerowych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OchronaSieciDost%C4%99powych_tytul/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zagadnienia z przedmiotu Ochrona Sieci Dostępowych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PrzygotowanieIPublikowanieArtykułówNaukowych
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PrzygotowanieIPublikowanieArtykułówNaukowych
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PrzygotowanieIPublikowanieArtyku%C5%82%C3%B3wNaukowych/0_Wstep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Etapy procesu badawczego
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PrzygotowanieIPublikowanieArtyku%C5%82%C3%B3wNaukowych/1_Struktura_publikacji_naukowych_schemat_IMRaD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Struktura publikacji naukowych, schemat IMRaD.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PrzygotowanieIPublikowanieArtyku%C5%82%C3%B3wNaukowych/2_Identyfikator_ORCID_Indeks_Hirscha/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identyfikator ORCID. Indeks Hirscha.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PrzygotowanieIPublikowanieArtyku%C5%82%C3%B3wNaukowych/3_Rodzaje_artyku%C5%82%C3%B3w_naukowych/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rodzaje artykułów naukowych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PrzygotowanieIPublikowanieArtyku%C5%82%C3%B3wNaukowych/4_Wska%C5%BAniki_bibliometryczne_Lista_Filadelfijska/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wskaźniki bibliometryczne. Lista Filadelfijska.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PrzygotowanieIPublikowanieArtyku%C5%82%C3%B3wNaukowych/5_Bazy_danych_bibliograficznych_Baza_Scopus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bazy danych bibliograficznych. Baza Scopus.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PrzygotowanieIPublikowanieArtyku%C5%82%C3%B3wNaukowych/6_Narz%C4%99dzia_AI_w_pracy_naukowca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Narządzia AI w pracy naukowca
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PrzygotowanieIPublikowanieArtyku%C5%82%C3%B3wNaukowych/PrzygotowanieIPublikowanieArtyku%C5%82%C3%B3wNaukowych_tytul/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zagadnienia z przedmiotu Przygotowanie i Publikowanie Artykułów Naukowych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ZaawansowanaEksploracjaDanych
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ZaawansowanaEksploracjaDanych
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ZaawansowanaEksploracjaDanych/0_Wstep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zaawansowana eksploracja danych – wprowadzenie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ZaawansowanaEksploracjaDanych/10_Ocena_jako%C5%9Bci_modeli_regresyjnych_i_prognozuj%C4%85cych/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ocena jakości modeli regresyjnych i prognozujących
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ZaawansowanaEksploracjaDanych/1_Metody_identyfikacji_obserwacji_odstaj%C4%85cych/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metody identyfikacji obserwacji odstających. Wymień znane metody i omów jedną z nich
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ZaawansowanaEksploracjaDanych/2_Metody_estymacji_g%C4%99sto%C5%9Bci_rozk%C5%82adu_prawdopodobie%C5%84stwa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metody estymacji gęstości rozkładu prawdopodobieństwa. Wymień znane metody i omów jedną z nich
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ZaawansowanaEksploracjaDanych/3_Wnioskowanie_statystyczne_ANOVA_MANOVA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wnioskowanie statystyczne. ANOVA, MANOVA – postawienie zagadnienia, przykłady zastosowań
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ZaawansowanaEksploracjaDanych/4_Modele_regresji_Regresja_wielokrotna/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modele regresji. Regresja wielokrotna. Postawienie zagadnienia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ZaawansowanaEksploracjaDanych/5_Metody_redukcji_wymiaru_i_liczno%C5%9Bci_pr%C3%B3by/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metody redukcji wymiaru i liczności próby. Wymień znane metody i omów jedną z nich
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ZaawansowanaEksploracjaDanych/6_Metody_analizy_skupie%C5%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metody analizy skupień. Wymień znane metody i omów jedną z nich
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ZaawansowanaEksploracjaDanych/7_Systemy_rekomendacji/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Systemy rekomendacji. Wymień rodzaje systemów rekomendacji i omów przykładowy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ZaawansowanaEksploracjaDanych/8_Metody_por%C3%B3wnania_modeli_uczenia_maszynowego/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metody porównania modeli uczenia maszynowego. Omów na przykładzie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ZaawansowanaEksploracjaDanych/9_Ocena_jako%C5%9Bci_modeli_klasyfikacyjnych/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ocena jakości modeli klasyfikacyjnych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ZaawansowanaEksploracjaDanych/ZaawansowanaEksploracjaDanych_tytul/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zagadnienia z przedmiotu Zaawansowana Eksploracja Danych
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dobor-narzedzia-do-zadania" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dobór narzędzia do zadania
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#podsumowanie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Podsumowanie
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="narzedzia-wykorzystywane-do-monitorowania-i-analizy-ruchu-w-lokalnych-sieciach-komputerowych">Narzędzia wykorzystywane do monitorowania i analizy ruchu w lokalnych sieciach komputerowych<a class="headerlink" href="#narzedzia-wykorzystywane-do-monitorowania-i-analizy-ruchu-w-lokalnych-sieciach-komputerowych" title="Permanent link">&para;</a></h1>
+<p>Narzędzia do monitorowania i analizy ruchu w LAN można podzielić według tego, co robią.</p>
+<p><strong>1. Sniffery (analiza pakietów):</strong></p>
+<ul>
+<li><strong>Wireshark</strong> (analiza z interfejsem graficznym) i <strong>tcpdump</strong> (wiersz poleceń) przechwytują ruch i dekodują protokoły.</li>
+<li><strong>Zastosowania:</strong> diagnostyka, forensics, wykrywanie ataków L2 i niezaszyfrowanych danych, porównanie np. Telnetu (czytelny) i SSH (zaszyfrowany).</li>
+<li>Wymagają dostępu do ruchu: <strong>port SPAN lub TAP</strong> na przełączniku.</li>
+</ul>
+<p><strong>2. Skanery sieci:</strong></p>
+<ul>
+<li><strong>Nmap/Zenmap</strong> wykrywają hosty, porty, usługi, wersje i system operacyjny (OS fingerprinting), także w warstwie 3. Podobnie <strong>SuperScan</strong> w Windows.</li>
+<li>Służą do inwentaryzacji i audytu własnej sieci.</li>
+</ul>
+<p><strong>3. Narzędzia wiersza poleceń:</strong></p>
+<ul>
+<li><code>ipconfig</code>/<code>ip</code>, <code>ping</code>, <code>arp</code>, <code>tracert</code>/<code>traceroute</code>, <code>nslookup</code>, <code>netstat</code>/<code>ss</code>, <code>nbtstat</code>, netcat, hping.</li>
+<li>Szybka diagnostyka łączności, tablicy ARP, DNS i otwartych połączeń.</li>
+</ul>
+<p><strong>4. Monitoring przepływów:</strong></p>
+<ul>
+<li><strong>NetFlow/sFlow/IPFIX</strong> zbierają <strong>metadane przepływów</strong> (kto z kim, ile danych). Dobrze skalują się i działają także przy ruchu szyfrowanym. Pomagają wykrywać anomalie i DDoS.</li>
+</ul>
+<p><strong>5. IDS/IPS i NSM (Network Security Monitoring):</strong></p>
+<ul>
+<li><strong>Snort i Suricata</strong> (wykrywanie i blokowanie ataków) oraz <strong>Zeek</strong> (logi metadanych, np. <code>conn.log</code> i <code>dns.log</code>).</li>
+<li><strong>HIDS:</strong> OSSEC/Wazuh na hostach.</li>
+</ul>
+<p><strong>6. SIEM i SOAR:</strong></p>
+<ul>
+<li>Gromadzą logi z wielu źródeł, <strong>korelują zdarzenia</strong>, generują alerty i przechowują dane do analizy powłamaniowej. SOAR automatyzuje reakcję.</li>
+</ul>
+<p><strong>7. Skanery podatności i narzędzia uzupełniające:</strong></p>
+<ul>
+<li><strong>Nessus, Retina, GFI LANguard</strong> (wykrywanie podatności),</li>
+<li><strong>Tripwire</strong> (kontrola integralności plików), <strong>Metasploit</strong> (testy penetracyjne),</li>
+<li><strong>Fing</strong>, <strong>GlassWire</strong> (proste narzędzia do wykrywania urządzeń i ruchu).</li>
+</ul>
+<p><strong>Wniosek:</strong> każde narzędzie pokazuje inny wycinek. Sniffer daje szczegóły pakietów, NetFlow ogólny obraz ruchu, IDS wykrywa ataki, a SIEM łączy dane w całość. Używa się ich w ramach polityki bezpieczeństwa, za zgodą administratora sieci.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Kategoria</th>
+<th style="text-align: left;">Zadanie</th>
+<th style="text-align: left;">Przykłady</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Analizatory pakietów (sniffery)</strong></td>
+<td style="text-align: left;">przechwytywanie i dekodowanie ruchu</td>
+<td style="text-align: left;">Wireshark, tcpdump, tshark</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Skanery sieci i portów</strong></td>
+<td style="text-align: left;">odkrywanie hostów, portów, usług, systemów</td>
+<td style="text-align: left;"><strong>Nmap/Zenmap</strong>, <strong>SuperScan</strong>, masscan, hping, netcat</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Analiza przepływów</strong></td>
+<td style="text-align: left;">statystyka ruchu, wykrywanie anomalii</td>
+<td style="text-align: left;"><strong>NetFlow, sFlow, IPFIX</strong> (ntop, Scrutinizer)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IDS/IPS i NSM</strong></td>
+<td style="text-align: left;">wykrywanie ataków</td>
+<td style="text-align: left;">Snort, Suricata, Zeek</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SIEM / SOAR</strong></td>
+<td style="text-align: left;">agregacja, korelacja, automatyzacja</td>
+<td style="text-align: left;">Splunk, QRadar, Sentinel, ELK, Wazuh</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Skanery podatności</strong></td>
+<td style="text-align: left;">podatności, konfiguracje</td>
+<td style="text-align: left;">Nessus, OpenVAS, Retina, Core Impact, GFI LANguard, Qualys</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Kontrola integralności</strong></td>
+<td style="text-align: left;">wykrywanie zmian</td>
+<td style="text-align: left;">Tripwire, OSSEC</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Systemy zarządzania siecią</strong></td>
+<td style="text-align: left;">dostępność, obciążenie</td>
+<td style="text-align: left;">SNMP: Zabbix, Nagios, PRTG, LibreNMS</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Kontrola dostępu / profilowanie</strong></td>
+<td style="text-align: left;">kto jest w sieci</td>
+<td style="text-align: left;">NAC, <strong>Cisco ISE</strong>, 802.1X</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Narzędzia dla użytkowników domowych/SOHO</strong></td>
+<td style="text-align: left;">lista urządzeń, alerty</td>
+<td style="text-align: left;"><strong>Fing</strong>, <strong>GlassWire</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Narzędzia CLI</strong></td>
+<td style="text-align: left;">diagnostyka</td>
+<td style="text-align: left;">ipconfig/ifconfig, ping, arp, tracert, nslookup, netstat, nbtstat</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dobor-narzedzia-do-zadania">Dobór narzędzia do zadania<a class="headerlink" href="#dobor-narzedzia-do-zadania" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Zadanie</th>
+<th style="text-align: left;">Narzędzie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">„Co płynie w sieci i czy jest szyfrowane?"</td>
+<td style="text-align: left;">Wireshark, tcpdump</td>
+</tr>
+<tr>
+<td style="text-align: left;">„Jakie hosty/usługi istnieją?"</td>
+<td style="text-align: left;">Nmap, SuperScan</td>
+</tr>
+<tr>
+<td style="text-align: left;">„Czy ruch odbiega od normy?"</td>
+<td style="text-align: left;">NetFlow + baseline, NBA</td>
+</tr>
+<tr>
+<td style="text-align: left;">„Czy ktoś nas atakuje?"</td>
+<td style="text-align: left;">Snort/Suricata/Zeek</td>
+</tr>
+<tr>
+<td style="text-align: left;">„Co się stało w ostatniej godzinie w całej firmie?"</td>
+<td style="text-align: left;">SIEM</td>
+</tr>
+<tr>
+<td style="text-align: left;">„Jakie podatności mamy?"</td>
+<td style="text-align: left;">Nessus, OpenVAS</td>
+</tr>
+<tr>
+<td style="text-align: left;">„Czy ktoś zmienił pliki/konfigurację?"</td>
+<td style="text-align: left;">Tripwire, OSSEC</td>
+</tr>
+<tr>
+<td style="text-align: left;">„Szybka diagnoza problemu"</td>
+<td style="text-align: left;">ping, tracert, netstat, arp, nslookup</td>
+</tr>
+</tbody>
+</table>
+<h2 id="podsumowanie">Podsumowanie<a class="headerlink" href="#podsumowanie" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Podstawowy zestaw: <strong>sniffery</strong> (Wireshark, tcpdump), <strong>skanery</strong> (Nmap/Zenmap, SuperScan), <strong>analiza przepływów</strong> (NetFlow/sFlow), <strong>IDS/IPS i NSM</strong>, <strong>SIEM/SOAR</strong>, <strong>skanery podatności</strong>, <strong>kontrola integralności</strong> (Tripwire), narzędzia <strong>CLI</strong> (ping, arp, netstat, tracert, nslookup, netcat, hping).</li>
+<li>Dobór zależy od pytania (zawartość ruchu, inwentaryzacja, anomalie, ataki, korelacja, podatności).</li>
+<li>Stosować legalnie i etycznie; łączyć narzędzia w ramach monitoringu i procesu reagowania.</li>
+</ul>
+<hr />
+<p><a href="../3_Znaczenie_monitorowania_sieci_lokalnej_w_wykrywaniu_i_analizie_incydent%C3%B3w/">⬅️ Poprzedni temat</a> | <a href="../../README.md">🏠 Powrót do spisu treści</a> | <a href="../5_Zasady_projektowania_bezpiecznej_infrastruktury_sieci_lokalnej_i_zabezpieczanie_urz%C4%85dze%C5%84/">Następny temat ➡️</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.9/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
